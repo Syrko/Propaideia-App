@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace PropaideiaApp
 {
-    public partial class Form1 : Form
+    public partial class LoginScreen : Form
     {
-        public Form1()
+        public LoginScreen()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginScreen_Load(object sender, EventArgs e)
         {
 
         }

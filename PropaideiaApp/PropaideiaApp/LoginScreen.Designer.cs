@@ -1,6 +1,6 @@
 ﻿namespace PropaideiaApp
 {
-    partial class Form1
+    partial class LoginScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginScreen));
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
@@ -135,7 +135,7 @@
             this.pictureBoxNo10.TabIndex = 7;
             this.pictureBoxNo10.TabStop = false;
             // 
-            // Form1
+            // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -149,8 +149,9 @@
             this.Controls.Add(this.pictureBoxNo6);
             this.Controls.Add(this.pictureBoxNo3);
             this.Controls.Add(this.pictureBoxNo1);
-            this.Name = "Form1";
+            this.Name = "LoginScreen";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.LoginScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo6)).EndInit();
