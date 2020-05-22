@@ -6,21 +6,21 @@ using System.Threading.Tasks;
 
 namespace PropaideiaApp.Users
 {
-    /// <summary>
-    /// Class that has the necessary information of a student's progress.
-    /// A default is created when the a new student is registered.
-    /// You always retrieve the copy from the database.
-    /// </summary>
     class StudentProgress
     {
-        // TODO change class diagram
         private string username;
         private List<int> propaideiaProgress;
         private int finalExam;
 
-        StudentProgress(string username)
+        public StudentProgress(string username, List<int> propaideiaProgress, int finalExam)
         {
-            // TODO get from database
+            this.username = username;
+            this.propaideiaProgress = propaideiaProgress;
+            this.finalExam = finalExam;
         }
+
+        internal string Username { get => username; set => username = value; }
+        internal List<int> PropaideiaProgress { get => propaideiaProgress; set => propaideiaProgress = value; }
+        internal int FinalExam { get => finalExam; set => finalExam = value; }
     }
 }

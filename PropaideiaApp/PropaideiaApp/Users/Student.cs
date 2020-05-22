@@ -6,34 +6,18 @@ using System.Threading.Tasks;
 
 namespace PropaideiaApp.Users
 {
-    class Student: User
+    class Student : User
     {
         private int level;
         private StudentProgress studentProgress;
 
-        /// <summary>
-        /// Constructor for a new student object
-        /// </summary>
-        /// <param name="username">The username of the new student</param>
-        /// <param name="level">The level of the new student</param>
-        /// <param name="studentProgress">The student's progress</param>
-        internal Student(string username, int level, StudentProgress studentProgress)
+        internal Student(string username, string name, string surname, int level, StudentProgress studentProgress) : base(username, name, surname)
         {
-            this.Username = username;
             this.level = level;
             this.studentProgress = studentProgress;
         }
 
-        /// <summary>
-        /// Get a new student object with the given username from the database
-        /// </summary>
-        /// <param name="username">The username of the student to retrieve</param>
-        internal Student(string username)
-        {
-            // TODO get from database
-        }
-
-        public int Level { get => level; }
-        internal StudentProgress StudentProgress { get => studentProgress; }
+        internal int Level { get => level; set => level = value; }
+        internal StudentProgress StudentProgress { get => studentProgress; set => studentProgress = value; }
     }
 }
