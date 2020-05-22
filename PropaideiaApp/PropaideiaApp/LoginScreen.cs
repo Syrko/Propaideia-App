@@ -24,6 +24,9 @@ namespace PropaideiaApp
                 labelPassword.Visible = true;
                 textBoxPassword.Visible = true;
             }
+            this.Hide();
+            MainScreen mainForm = new MainScreen();
+            mainForm.Show();
         }
 
         private void LoginScreen_Load(object sender, EventArgs e)
