@@ -44,8 +44,14 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.pictureBoxNo6 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button12 = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.labelTitleNumber = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo6)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -280,12 +286,76 @@
             // pictureBoxNo6
             // 
             this.pictureBoxNo6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNo6.Image")));
-            this.pictureBoxNo6.Location = new System.Drawing.Point(611, 263);
+            this.pictureBoxNo6.Location = new System.Drawing.Point(664, 276);
             this.pictureBoxNo6.Name = "pictureBoxNo6";
             this.pictureBoxNo6.Size = new System.Drawing.Size(147, 175);
             this.pictureBoxNo6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxNo6.TabIndex = 6;
             this.pictureBoxNo6.TabStop = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.richTextBox1);
+            this.panel2.Location = new System.Drawing.Point(202, 68);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(481, 274);
+            this.panel2.TabIndex = 7;
+            // 
+            // button12
+            // 
+            this.button12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.button12.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button12.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.button12.FlatAppearance.BorderSize = 2;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.button12.ForeColor = System.Drawing.Color.White;
+            this.button12.Location = new System.Drawing.Point(385, 366);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(113, 44);
+            this.button12.TabIndex = 8;
+            this.button12.Text = "Take Quiz";
+            this.button12.UseVisualStyleBackColor = false;
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.richTextBox1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.richTextBox1.Font = new System.Drawing.Font("Minion Pro", 14.2F);
+            this.richTextBox1.ForeColor = System.Drawing.Color.White;
+            this.richTextBox1.Location = new System.Drawing.Point(3, 3);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox1.Size = new System.Drawing.Size(475, 268);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "10 * 1 = 10\n10 * 2 = 20\n10 * 3 = 30\n10 * 4 = 40\n10 * 5 = 50\n10 * 6 = 60\n10 * 7 = " +
+    "70\n10 * 8 = 80\n10 * 9 = 90\n10 * 10 = 100";
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Minion Pro", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.White;
+            this.labelTitle.Location = new System.Drawing.Point(207, 19);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(342, 37);
+            this.labelTitle.TabIndex = 12;
+            this.labelTitle.Text = "Μαθαίνω την προπαίδεια του";
+            this.labelTitle.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // labelTitleNumber
+            // 
+            this.labelTitleNumber.AutoSize = true;
+            this.labelTitleNumber.Font = new System.Drawing.Font("Minion Pro", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleNumber.ForeColor = System.Drawing.Color.White;
+            this.labelTitleNumber.Location = new System.Drawing.Point(544, 16);
+            this.labelTitleNumber.Name = "labelTitleNumber";
+            this.labelTitleNumber.Size = new System.Drawing.Size(47, 40);
+            this.labelTitleNumber.TabIndex = 13;
+            this.labelTitleNumber.Text = "10";
             // 
             // MainScreen
             // 
@@ -293,15 +363,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(60)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.pictureBoxNo6);
+            this.Controls.Add(this.labelTitleNumber);
+            this.Controls.Add(this.labelTitle);
+            this.Controls.Add(this.button12);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pictureBoxNo6);
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Προπαίδεια";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo6)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -322,5 +398,10 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.PictureBox pictureBoxNo6;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label labelTitleNumber;
     }
 }
