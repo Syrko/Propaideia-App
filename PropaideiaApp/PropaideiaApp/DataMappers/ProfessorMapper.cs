@@ -105,11 +105,7 @@ namespace PropaideiaApp.DataMappers
                     SQLiteCommand cmd = new SQLiteCommand(conn);
 
                     cmd.CommandText = "INSERT INTO users (username, user_type, name, surname, password) " +
-                                                        "username=@username," +
-                                                        "user_type=@user_type" +
-                                                        "name=@name," +
-                                                        "surname=@surname" +
-                                                        "password=@password;";
+                                                        "VALUES(@username, @user_type, @name, @surname, @password);";
                     cmd.Parameters.AddWithValue("@username", professor.Username);
                     cmd.Parameters.AddWithValue("@user_type", UserTypes.PROFESSOR);
                     cmd.Parameters.AddWithValue("@name", professor.Name);
