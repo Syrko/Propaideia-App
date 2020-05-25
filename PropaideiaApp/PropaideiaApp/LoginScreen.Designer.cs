@@ -92,6 +92,7 @@
             this.buttonRegister.TabIndex = 2;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = false;
+            this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             this.buttonRegister.MouseEnter += new System.EventHandler(this.buttonRegister_MouseEnter);
             this.buttonRegister.MouseLeave += new System.EventHandler(this.buttonRegister_MouseLeave);
             // 
