@@ -28,8 +28,9 @@ namespace PropaideiaApp.DataMappers
 
                     SQLiteCommand cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "SELECT * FROM users WHERE username='@username';";
+                    cmd.CommandText = "SELECT * FROM users WHERE username='@username' AND user_type=@user_type;";
                     cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@user_type", UserTypes.PROFESSOR);
                     SQLiteDataReader reader = cmd.ExecuteReader();
 
                     // Because we search with username which is unique
