@@ -213,6 +213,7 @@
             this.Controls.Add(this.pictureBoxNo1);
             this.MinimumSize = new System.Drawing.Size(760, 440);
             this.Name = "LoginScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Προπαίδεια";
             this.Load += new System.EventHandler(this.LoginScreen_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo1)).EndInit();
