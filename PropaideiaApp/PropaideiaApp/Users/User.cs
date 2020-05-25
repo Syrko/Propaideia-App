@@ -19,8 +19,8 @@ namespace PropaideiaApp.Users
             this.surname = surname;
         }
 
-        protected string Name { get => name; set => name = value; }
-        protected string Surname { get => surname; set => surname = value; }
-        protected string Username { get => username; set => username = value; }
+        internal string Name { get => name; set => name = value; }
+        internal string Surname { get => surname; set => surname = value; }
+        internal string Username { get => username; set => username = value; }
     }
 }
