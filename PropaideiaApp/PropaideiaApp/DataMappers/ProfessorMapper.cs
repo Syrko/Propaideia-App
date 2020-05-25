@@ -8,9 +8,16 @@ using PropaideiaApp.Users;
 
 namespace PropaideiaApp.DataMappers
 {
+    /// <summary>
+    /// Contains the necessary database methods for the professor objects
+    /// </summary>
     class ProfessorMapper
     {
-        //internal static 
+        /// <summary>
+        /// Get a professor user from the database
+        /// </summary>
+        /// <param name="username">Username of the professor</param>
+        /// <returns>A professor object with the necessary values</returns>
         internal static Professor Get(string username)
         {
             using (SQLiteConnection conn = new SQLiteConnection("Data source=" + Database.DATABASE_NAME + ";"))
@@ -45,6 +52,13 @@ namespace PropaideiaApp.DataMappers
             }
         }
 
+        /// <summary>
+        /// Updates a professor entry in the database
+        /// </summary>
+        /// <param name="username">Username of the professor to be updated.
+        /// If the user has changed username this should be the old one.</param>
+        /// <param name="professor">Professor object with the necessary information to update the database.</param>
+        /// <returns>True if operation is successful</returns>
         internal static bool Update(string username, Professor professor)
         {
             using (SQLiteConnection conn = new SQLiteConnection("Data source=" + Database.DATABASE_NAME + ";"))
@@ -55,31 +69,16 @@ namespace PropaideiaApp.DataMappers
 
                     SQLiteCommand cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "SELECT * FROM users WHERE username='@username';";
+                    cmd.CommandText = "UPDATE users SET username=@new_username," +
+                                                       "name=@name," +
+                                                       "surname=@surname" +
+                                                   "WHERE username='@username';";
                     cmd.Parameters.AddWithValue("@username", username);
-                    SQLiteDataReader reader = cmd.ExecuteReader();
-
-                    if (reader.HasRows)
-                    {
-                        cmd = new SQLiteCommand(conn);
-
-                        cmd.CommandText = "UPDATE users SET " +
-                                                        "username=@new_username," +
-                                                        "name=@name," +
-                                                        "surname=@surname" +
-                                                        "WHERE username='@username';";
-                        cmd.Parameters.AddWithValue("@username", username);
-                        cmd.Parameters.AddWithValue("@new_username", professor.Username);
-                        cmd.Parameters.AddWithValue("@name", professor.Name);
-                        cmd.Parameters.AddWithValue("@surname", professor.Surname);
-                        cmd.ExecuteNonQuery();
-                        return true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Couldn't edit professor!");
-                        return false;
-                    }
+                    cmd.Parameters.AddWithValue("@new_username", professor.Username);
+                    cmd.Parameters.AddWithValue("@name", professor.Name);
+                    cmd.Parameters.AddWithValue("@surname", professor.Surname);
+                    cmd.ExecuteNonQuery();
+                    return true;
                 }
                 catch (Exception e)
                 {
@@ -89,6 +88,12 @@ namespace PropaideiaApp.DataMappers
             }
         }
 
+        /// <summary>
+        /// Inserts a new professor in the database
+        /// </summary>
+        /// <param name="professor">A professor object with the necessary information</param>
+        /// <param name="password">The password of the new professor account</param>
+        /// <returns>True if operation is successful</returns>
         internal static bool Insert(Professor professor, string password)
         {
             using (SQLiteConnection conn = new SQLiteConnection("Data source=" + Database.DATABASE_NAME + ";"))
@@ -99,33 +104,19 @@ namespace PropaideiaApp.DataMappers
 
                     SQLiteCommand cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "SELECT * FROM users WHERE username='@username';";
-                    cmd.Parameters.AddWithValue("@username", professor.Username);
-                    SQLiteDataReader reader = cmd.ExecuteReader();
-
-                    if (!reader.HasRows)
-                    {
-                        cmd = new SQLiteCommand(conn);
-
-                        cmd.CommandText = "INSERT INTO users (username, user_type, name, surname, password) " +
+                    cmd.CommandText = "INSERT INTO users (username, user_type, name, surname, password) " +
                                                         "username=@username," +
                                                         "user_type=@user_type" +
                                                         "name=@name," +
                                                         "surname=@surname" +
                                                         "password=@password;";
-                        cmd.Parameters.AddWithValue("@username", professor.Username);
-                        cmd.Parameters.AddWithValue("@user_type", UserTypes.PROFESSOR);
-                        cmd.Parameters.AddWithValue("@name", professor.Name);
-                        cmd.Parameters.AddWithValue("@surname", professor.Surname);
-                        cmd.Parameters.AddWithValue("@password", password);
-                        cmd.ExecuteNonQuery();
-                        return true;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Couldn't insert professor!");
-                        return false;
-                    }
+                    cmd.Parameters.AddWithValue("@username", professor.Username);
+                    cmd.Parameters.AddWithValue("@user_type", UserTypes.PROFESSOR);
+                    cmd.Parameters.AddWithValue("@name", professor.Name);
+                    cmd.Parameters.AddWithValue("@surname", professor.Surname);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.ExecuteNonQuery();
+                    return true;
                 }
                 catch (Exception e)
                 {
@@ -135,6 +126,11 @@ namespace PropaideiaApp.DataMappers
             }
         }
 
+        /// <summary>
+        /// Deletes a professor account
+        /// </summary>
+        /// <param name="professor">Data of the professor to be deleted</param>
+        /// <returns>True if operation is successful</returns>
         internal static bool Delete(Professor professor)
         {
             using (SQLiteConnection conn = new SQLiteConnection("Data source=" + Database.DATABASE_NAME + ";"))
@@ -153,7 +149,7 @@ namespace PropaideiaApp.DataMappers
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("Exception at ProfessorMapper - Insert: " + e.Message);
+                    Console.WriteLine("Exception at ProfessorMapper - Delete: " + e.Message);
                     return false;
                 }
             }
