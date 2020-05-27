@@ -83,6 +83,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Quizes\Question.cs" />
+    <Compile Include="Quizes\QuestionFG.cs" />
+    <Compile Include="Quizes\QuestionGenerator.cs" />
+    <Compile Include="Quizes\QuestionMC.cs" />
+    <Compile Include="Quizes\QuestionTF.cs" />
+    <Compile Include="Quizes\QuizManager.cs" />
     <Compile Include="Users\Professor.cs" />
     <Compile Include="Users\Student.cs" />
     <Compile Include="Users\StudentProgress.cs" />
