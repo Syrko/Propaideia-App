@@ -33,5 +33,20 @@ namespace PropaideiaApp
         {
 
         }
+
+        private void buttonTakeQuiz_Click(object sender, EventArgs e)
+        {
+            pictureBoxNext.Visible = true;
+            buttonTakeQuiz.Visible = false;
+            textBoxMain.Visible = false;
+            labelTitle.Text = "Quiz για την προπαίδεια του: ";
+            panelTF.Visible = true;
+            panelTF.Enabled = true;
+        }
+
+        private void MainScreen_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

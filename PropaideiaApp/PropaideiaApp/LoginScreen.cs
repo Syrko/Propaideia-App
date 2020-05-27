@@ -63,5 +63,10 @@ namespace PropaideiaApp
         {
 
         }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
