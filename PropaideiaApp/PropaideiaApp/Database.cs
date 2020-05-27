@@ -22,22 +22,16 @@ namespace PropaideiaApp
 
                     // Create the users table
                     cmd.CommandText = "CREATE TABLE IF NOT EXISTS users(username text NOT NULL PRIMARY KEY, " +
+                                                                        "password text NOT NULL," +
                                                                         "user_type text NOT NULL," +
                                                                         "name text NOT NULL," +
-                                                                        "surname text NOT NULL);"; // TODO change diagram
+                                                                        "surname text NOT NULL);";
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
 
                     // Create the students table
                     cmd.CommandText = "CREATE TABLE IF NOT EXISTS students(username text NOT NULL PRIMARY KEY, " +
                                                                             "level integer DEFAULT 1," +
-                                                                            "FOREIGN KEY(username) REFERENCES users(username));";
-                    cmd.Prepare();
-                    cmd.ExecuteNonQuery();
-
-                    // Create the professors table
-                    cmd.CommandText = "CREATE TABLE IF NOT EXISTS professors(username text NOT NULL PRIMARY KEY, " +
-                                                                            "password text NOT NULL," +
                                                                             "FOREIGN KEY(username) REFERENCES users(username));";
                     cmd.Prepare();
                     cmd.ExecuteNonQuery();
@@ -87,9 +81,10 @@ namespace PropaideiaApp
 
                     // Insert users
                     cmd = new SQLiteCommand(conn);
-                    cmd.CommandText = "INSERT INTO users(username, user_type, name, surname) " +
-                                        "VALUES(@username, @user_type, @name, @surname);";
+                    cmd.CommandText = "INSERT INTO users(username, password, user_type, name, surname) " +
+                                        "VALUES(@username, @password, @user_type, @name, @surname);";
                     cmd.Parameters.AddWithValue("@username", surnames[0]);
+                    cmd.Parameters.AddWithValue("@password", "admin");
                     cmd.Parameters.AddWithValue("@user_type", UserTypes.PROFESSOR);
                     cmd.Parameters.AddWithValue("@name", names[0]);
                     cmd.Parameters.AddWithValue("@surname", surnames[0]);
@@ -98,9 +93,10 @@ namespace PropaideiaApp
                     for (int i = 1; i < names.Count; i++)
                     {
                         cmd = new SQLiteCommand(conn);
-                        cmd.CommandText = "INSERT INTO users(username, user_type, name, surname) " +
-                                            "VALUES(@username, @user_type, @name, @surname);";
+                        cmd.CommandText = "INSERT INTO users(username, password, user_type, name, surname) " +
+                                            "VALUES(@username, @password, @user_type, @name, @surname);";
                         cmd.Parameters.AddWithValue("@username", surnames[i]);
+                        cmd.Parameters.AddWithValue("@password", "pass" + surnames[i]);
                         cmd.Parameters.AddWithValue("@user_type", UserTypes.STUDENT);
                         cmd.Parameters.AddWithValue("@name", names[i]);
                         cmd.Parameters.AddWithValue("@surname", surnames[i]);
@@ -119,15 +115,6 @@ namespace PropaideiaApp
                         cmd.Prepare();
                         cmd.ExecuteNonQuery();
                     }
-
-                    // Insert professor
-                    cmd = new SQLiteCommand(conn);
-                    cmd.CommandText = "insert into professors(username, password) " +
-                                        "values(@username, @password);";
-                    cmd.Parameters.AddWithValue("@username", surnames[0]);
-                    cmd.Parameters.AddWithValue("@password", "admin");
-                    cmd.Prepare();
-                    cmd.ExecuteNonQuery();
 
                     // Insert progress
                     for (int i = 1; i < names.Count; i++)

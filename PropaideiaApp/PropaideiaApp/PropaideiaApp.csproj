@@ -67,6 +67,8 @@
   <ItemGroup>
     <Compile Include="Database.cs" />
     <Compile Include="DataMappers\ProfessorMapper.cs" />
+    <Compile Include="DataMappers\StudentMapper.cs" />
+    <Compile Include="DataMappers\StudentProgressMapper.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
