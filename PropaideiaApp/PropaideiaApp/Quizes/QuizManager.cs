@@ -51,10 +51,10 @@ namespace PropaideiaApp.Quizes
 			{
 				if (q.Result)
 				{
-					QuizGrade++;
+					quizGrade++;
 				}
 			}
-			QuizGrade = QuizGrade / questionsNum * 100;
+			quizGrade = quizGrade / questionsNum * 100;
 		}
 	}
 
