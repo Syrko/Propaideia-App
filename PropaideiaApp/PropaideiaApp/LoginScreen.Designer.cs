@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginScreen));
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
@@ -98,7 +97,7 @@
             // 
             // pictureBoxNo1
             // 
-            this.pictureBoxNo1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNo1.Image")));
+            this.pictureBoxNo1.Image = global::PropaideiaApp.Properties.Resources._1;
             this.pictureBoxNo1.Location = new System.Drawing.Point(134, 229);
             this.pictureBoxNo1.Name = "pictureBoxNo1";
             this.pictureBoxNo1.Size = new System.Drawing.Size(147, 175);
@@ -108,7 +107,7 @@
             // 
             // pictureBoxNo3
             // 
-            this.pictureBoxNo3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNo3.Image")));
+            this.pictureBoxNo3.Image = global::PropaideiaApp.Properties.Resources._3;
             this.pictureBoxNo3.Location = new System.Drawing.Point(521, -10);
             this.pictureBoxNo3.Name = "pictureBoxNo3";
             this.pictureBoxNo3.Size = new System.Drawing.Size(147, 175);
@@ -118,7 +117,7 @@
             // 
             // pictureBoxNo6
             // 
-            this.pictureBoxNo6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNo6.Image")));
+            this.pictureBoxNo6.Image = global::PropaideiaApp.Properties.Resources._6;
             this.pictureBoxNo6.Location = new System.Drawing.Point(12, 79);
             this.pictureBoxNo6.Name = "pictureBoxNo6";
             this.pictureBoxNo6.Size = new System.Drawing.Size(147, 175);
@@ -128,7 +127,7 @@
             // 
             // pictureBoxNo7
             // 
-            this.pictureBoxNo7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNo7.Image")));
+            this.pictureBoxNo7.Image = global::PropaideiaApp.Properties.Resources._7;
             this.pictureBoxNo7.Location = new System.Drawing.Point(616, 180);
             this.pictureBoxNo7.Name = "pictureBoxNo7";
             this.pictureBoxNo7.Size = new System.Drawing.Size(147, 175);
@@ -138,7 +137,7 @@
             // 
             // pictureBoxNo10
             // 
-            this.pictureBoxNo10.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNo10.Image")));
+            this.pictureBoxNo10.Image = global::PropaideiaApp.Properties.Resources._10;
             this.pictureBoxNo10.Location = new System.Drawing.Point(382, 292);
             this.pictureBoxNo10.Name = "pictureBoxNo10";
             this.pictureBoxNo10.Size = new System.Drawing.Size(147, 175);

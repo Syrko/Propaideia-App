@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropaideiaApp.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace PropaideiaApp
 {
     public partial class MainScreen : Form
     {
+        List<Button> buttonList = new List<Button>();
         public MainScreen()
         {
             InitializeComponent();
@@ -36,6 +38,17 @@ namespace PropaideiaApp
             panelBlank.Visible = false;
             panelMult.Visible = false;
             panelTF.Visible = false;
+            buttonList.Add(button1);
+            buttonList.Add(button2);
+            buttonList.Add(button3);
+            buttonList.Add(button4);
+            buttonList.Add(button5);
+            buttonList.Add(button6);
+            buttonList.Add(button7);
+            buttonList.Add(button8);
+            buttonList.Add(button9);
+            buttonList.Add(button10);
+            buttonList.Add(buttonFinalExam);
         }
 
         private void pictureBoxNext_Click(object sender, EventArgs e)
@@ -110,6 +123,14 @@ namespace PropaideiaApp
             panelBlank.Visible = true;
             panelTF.Visible = false;
             panelMult.Visible = false;
+        }
+
+        private void updateProgress(int chapter)
+        {
+            buttonList[chapter].Image = Resources.tick;
+            buttonList[chapter + 1].Image = Resources.unlock;
+            buttonList[chapter + 1].Enabled = true;
+            //Update DB
         }
     }
 }
