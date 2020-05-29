@@ -34,13 +34,6 @@
             this.buttonFinalExam = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
             this.textBoxMain = new System.Windows.Forms.RichTextBox();
             this.panelTF = new System.Windows.Forms.Panel();
@@ -59,19 +52,29 @@
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelTitleNumber = new System.Windows.Forms.Label();
             this.toolTipNextQ = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBoxNext = new System.Windows.Forms.PictureBox();
             this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBoxNo6 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNumber = new System.Windows.Forms.PictureBox();
+            this.labelTip = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelTF.SuspendLayout();
             this.panelMult.SuspendLayout();
             this.panelBlank.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericBlank)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -144,156 +147,10 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "Προπαίδεια";
             // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Enabled = false;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Image = global::PropaideiaApp.Properties.Resources.lock1;
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button9.Location = new System.Drawing.Point(-2, 283);
-            this.button9.Margin = new System.Windows.Forms.Padding(0);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(172, 29);
-            this.button9.TabIndex = 7;
-            this.button9.Text = "Προπαίδεια του 9";
-            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.Enabled = false;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = global::PropaideiaApp.Properties.Resources.lock1;
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button8.Location = new System.Drawing.Point(-2, 254);
-            this.button8.Margin = new System.Windows.Forms.Padding(0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(172, 29);
-            this.button8.TabIndex = 6;
-            this.button8.Text = "Προπαίδεια του 8";
-            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Enabled = false;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Image = global::PropaideiaApp.Properties.Resources.lock1;
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button7.Location = new System.Drawing.Point(-2, 225);
-            this.button7.Margin = new System.Windows.Forms.Padding(0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(172, 29);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "Προπαίδεια του 7";
-            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Enabled = false;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = global::PropaideiaApp.Properties.Resources.lock1;
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button6.Location = new System.Drawing.Point(-2, 196);
-            this.button6.Margin = new System.Windows.Forms.Padding(0);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(172, 29);
-            this.button6.TabIndex = 4;
-            this.button6.Text = "Προπαίδεια του 6";
-            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Enabled = false;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::PropaideiaApp.Properties.Resources.lock1;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button5.Location = new System.Drawing.Point(-2, 167);
-            this.button5.Margin = new System.Windows.Forms.Padding(0);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(172, 29);
-            this.button5.TabIndex = 3;
-            this.button5.Text = "Προπαίδεια του 5";
-            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Enabled = false;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::PropaideiaApp.Properties.Resources.lock1;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button4.Location = new System.Drawing.Point(-2, 138);
-            this.button4.Margin = new System.Windows.Forms.Padding(0);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(172, 29);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Προπαίδεια του 4";
-            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Enabled = false;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::PropaideiaApp.Properties.Resources.lock1;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.button3.Location = new System.Drawing.Point(-2, 109);
-            this.button3.Margin = new System.Windows.Forms.Padding(0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(172, 29);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Προπαίδεια του 3";
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
+            this.panelMain.Controls.Add(this.pictureBox1);
             this.panelMain.Controls.Add(this.textBoxMain);
             this.panelMain.Controls.Add(this.panelTF);
             this.panelMain.Controls.Add(this.panelMult);
@@ -314,7 +171,7 @@
             this.textBoxMain.Name = "textBoxMain";
             this.textBoxMain.ReadOnly = true;
             this.textBoxMain.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.textBoxMain.Size = new System.Drawing.Size(475, 268);
+            this.textBoxMain.Size = new System.Drawing.Size(478, 268);
             this.textBoxMain.TabIndex = 0;
             this.textBoxMain.Text = "10 * 1 = 10\n10 * 2 = 20\n10 * 3 = 30\n10 * 4 = 40\n10 * 5 = 50\n10 * 6 = 60\n10 * 7 = " +
     "70\n10 * 8 = 80\n10 * 9 = 90\n10 * 10 = 100";
@@ -503,6 +360,17 @@
             this.labelTitleNumber.TabIndex = 13;
             this.labelTitleNumber.Text = "10";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.pictureBox1.Image = global::PropaideiaApp.Properties.Resources.bubble;
+            this.pictureBox1.Location = new System.Drawing.Point(277, 75);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(214, 196);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
+            // 
             // pictureBoxNext
             // 
             this.pictureBoxNext.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -521,7 +389,6 @@
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.Enabled = false;
             this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -538,11 +405,150 @@
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button9.ForeColor = System.Drawing.Color.White;
+            this.button9.Image = global::PropaideiaApp.Properties.Resources.lock1;
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button9.Location = new System.Drawing.Point(-2, 283);
+            this.button9.Margin = new System.Windows.Forms.Padding(0);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(172, 29);
+            this.button9.TabIndex = 7;
+            this.button9.Text = "Προπαίδεια του 9";
+            this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button8.ForeColor = System.Drawing.Color.White;
+            this.button8.Image = global::PropaideiaApp.Properties.Resources.lock1;
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button8.Location = new System.Drawing.Point(-2, 254);
+            this.button8.Margin = new System.Windows.Forms.Padding(0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(172, 29);
+            this.button8.TabIndex = 6;
+            this.button8.Text = "Προπαίδεια του 8";
+            this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button7.ForeColor = System.Drawing.Color.White;
+            this.button7.Image = global::PropaideiaApp.Properties.Resources.lock1;
+            this.button7.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button7.Location = new System.Drawing.Point(-2, 225);
+            this.button7.Margin = new System.Windows.Forms.Padding(0);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(172, 29);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "Προπαίδεια του 7";
+            this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.Color.White;
+            this.button6.Image = global::PropaideiaApp.Properties.Resources.lock1;
+            this.button6.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button6.Location = new System.Drawing.Point(-2, 196);
+            this.button6.Margin = new System.Windows.Forms.Padding(0);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(172, 29);
+            this.button6.TabIndex = 4;
+            this.button6.Text = "Προπαίδεια του 6";
+            this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = global::PropaideiaApp.Properties.Resources.lock1;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button5.Location = new System.Drawing.Point(-2, 167);
+            this.button5.Margin = new System.Windows.Forms.Padding(0);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(172, 29);
+            this.button5.TabIndex = 3;
+            this.button5.Text = "Προπαίδεια του 5";
+            this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = global::PropaideiaApp.Properties.Resources.lock1;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button4.Location = new System.Drawing.Point(-2, 138);
+            this.button4.Margin = new System.Windows.Forms.Padding(0);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(172, 29);
+            this.button4.TabIndex = 2;
+            this.button4.Text = "Προπαίδεια του 4";
+            this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::PropaideiaApp.Properties.Resources.lock1;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button3.Location = new System.Drawing.Point(-2, 109);
+            this.button3.Margin = new System.Windows.Forms.Padding(0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(172, 29);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Προπαίδεια του 3";
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.Enabled = false;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -579,15 +585,27 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // pictureBoxNo6
+            // pictureBoxNumber
             // 
-            this.pictureBoxNo6.Image = global::PropaideiaApp.Properties.Resources._10;
-            this.pictureBoxNo6.Location = new System.Drawing.Point(664, 276);
-            this.pictureBoxNo6.Name = "pictureBoxNo6";
-            this.pictureBoxNo6.Size = new System.Drawing.Size(147, 175);
-            this.pictureBoxNo6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxNo6.TabIndex = 6;
-            this.pictureBoxNo6.TabStop = false;
+            this.pictureBoxNumber.Image = global::PropaideiaApp.Properties.Resources._10;
+            this.pictureBoxNumber.Location = new System.Drawing.Point(664, 276);
+            this.pictureBoxNumber.Name = "pictureBoxNumber";
+            this.pictureBoxNumber.Size = new System.Drawing.Size(147, 175);
+            this.pictureBoxNumber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNumber.TabIndex = 6;
+            this.pictureBoxNumber.TabStop = false;
+            // 
+            // labelTip
+            // 
+            this.labelTip.AutoSize = true;
+            this.labelTip.BackColor = System.Drawing.Color.White;
+            this.labelTip.Font = new System.Drawing.Font("Minion Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelTip.Location = new System.Drawing.Point(525, 215);
+            this.labelTip.Name = "labelTip";
+            this.labelTip.Size = new System.Drawing.Size(87, 18);
+            this.labelTip.TabIndex = 14;
+            this.labelTip.Text = "Just do it, LOL";
             // 
             // MainScreen
             // 
@@ -595,13 +613,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(60)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelTip);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.pictureBoxNext);
             this.Controls.Add(this.labelTitleNumber);
             this.Controls.Add(this.labelTitle);
             this.Controls.Add(this.buttonTakeQuiz);
             this.Controls.Add(this.panelMenu);
-            this.Controls.Add(this.pictureBoxNo6);
+            this.Controls.Add(this.pictureBoxNumber);
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Προπαίδεια";
@@ -616,8 +635,9 @@
             this.panelBlank.ResumeLayout(false);
             this.panelBlank.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericBlank)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -639,7 +659,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBoxNo6;
+        private System.Windows.Forms.PictureBox pictureBoxNumber;
         private System.Windows.Forms.Panel panelMain;
         private System.Windows.Forms.RichTextBox textBoxMain;
         private System.Windows.Forms.Button buttonTakeQuiz;
@@ -659,5 +679,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip toolTipNextQ;
         private System.Windows.Forms.NumericUpDown numericBlank;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label labelTip;
     }
 }
