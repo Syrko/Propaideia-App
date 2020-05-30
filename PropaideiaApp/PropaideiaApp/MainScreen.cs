@@ -1,4 +1,5 @@
 ﻿using PropaideiaApp.Properties;
+using PropaideiaApp.Quizes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,9 @@ namespace PropaideiaApp
     public partial class MainScreen : Form
     {
         List<Button> buttonList = new List<Button>();
+        List<Panel> questionPanelList = new List<Panel>();
         int currentNumber;
+
         public MainScreen()
         {
             InitializeComponent();
@@ -50,14 +53,17 @@ namespace PropaideiaApp
             buttonList.Add(button9);
             buttonList.Add(button10);
             buttonList.Add(buttonFinalExam);
+            questionPanelList.Add(panelBlank);
+            questionPanelList.Add(panelMult);
+            questionPanelList.Add(panelTF);
         }
 
         private void pictureBoxNext_Click(object sender, EventArgs e)
         {
             //TODO Call getNextQuest function
             panelBlank.Visible = false;
-            panelTF.Visible = true;
-            panelMult.Visible = false;
+            panelTF.Visible = false;
+            panelMult.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -138,7 +144,7 @@ namespace PropaideiaApp
             currentNumber = 10;
             changeLesson(currentNumber);
             pictureBoxNumber.Image = Resources._10;
-            labelTip.Text = "Ξαναγράφουμε τον\nαριθμό και γράφουμε\nδίπλα το ένα 0";
+            labelTip.Text = "Ξαναγράφουμε τον\nαριθμό και γράφουμε\nδίπλα του ένα 0";
         }
 
         private void buttonFinalExam_Click(object sender, EventArgs e)
@@ -155,6 +161,13 @@ namespace PropaideiaApp
             panelBlank.Visible = true;
             panelTF.Visible = false;
             panelMult.Visible = false;
+            pictureBoxTip.Visible = false;
+            labelTip.Visible = false;
+        }
+
+        private void takeQuiz()
+        {
+
         }
 
         private void updateProgress(int chapter)
@@ -162,7 +175,32 @@ namespace PropaideiaApp
             buttonList[chapter].Image = Resources.tick;
             buttonList[chapter + 1].Image = Resources.unlock;
             buttonList[chapter + 1].Enabled = true;
-            //Update DB
+            //TODO Update DB
+        }
+
+        private void showQuestion(string questionType)
+        {
+            //List: 0-Blank, 1-Multiple Choice, 2-True/False
+            //TODO get questions from db
+
+            if(questionType == "Blank")
+            {
+                questionPanelList[0].Visible = true;
+                questionPanelList[1].Visible = false;
+                questionPanelList[2].Visible = false;
+            }
+            else if(questionType == "Mult")
+            {
+                questionPanelList[0].Visible = false;
+                questionPanelList[1].Visible = true;
+                questionPanelList[2].Visible = false;
+            }
+            else if(questionType == "TF")
+            {
+                questionPanelList[0].Visible = false;
+                questionPanelList[1].Visible = false;
+                questionPanelList[2].Visible = true;
+            }
         }
 
         private void changeLesson(int current)
@@ -174,6 +212,7 @@ namespace PropaideiaApp
                     break;
                 case 2:
                     textBoxMain.Text = "2 * 1 = 2\n2 * 2 = 4\n2 * 3 = 6\n2 * 4 = 8\n2 * 5 = 10\n2 * 6 = 12\n2 * 7 = 14\n2 * 8 = 16\n2 * 9 = 18\n2 * 10 = 20\n";
+                    labelTip.Text = "Είναι όλοι οι\nζυγοί αριθμοί!";
                     break;
                 case 3:
                     textBoxMain.Text = "3 * 1 = 3\n3 * 2 = 6\n3 * 3 = 9\n3 * 4 = 12\n3 * 5 = 15\n3 * 6 = 18\n3 * 7 = 21\n3 * 8 = 24\n3 * 9 = 27\n3 * 10 = 30\n";
@@ -201,6 +240,11 @@ namespace PropaideiaApp
                     break;
             }
             
+        }
+
+        private void textBoxMain_Click(object sender, EventArgs e)
+        {
+            labelTitle.Focus();
         }
     }
 }

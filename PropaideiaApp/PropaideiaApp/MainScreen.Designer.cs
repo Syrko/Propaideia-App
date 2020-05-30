@@ -33,27 +33,7 @@
             this.panelMenu = new System.Windows.Forms.Panel();
             this.buttonFinalExam = new System.Windows.Forms.Button();
             this.buttonLogout = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panelMain = new System.Windows.Forms.Panel();
-            this.textBoxMain = new System.Windows.Forms.RichTextBox();
-            this.panelTF = new System.Windows.Forms.Panel();
-            this.radioButtonFalse = new System.Windows.Forms.RadioButton();
-            this.radioButtonTrue = new System.Windows.Forms.RadioButton();
-            this.labelTFQuest = new System.Windows.Forms.Label();
-            this.panelMult = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panelBlank = new System.Windows.Forms.Panel();
-            this.numericBlank = new System.Windows.Forms.NumericUpDown();
-            this.labelBlankQuest = new System.Windows.Forms.Label();
-            this.buttonTakeQuiz = new System.Windows.Forms.Button();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.labelTitleNumber = new System.Windows.Forms.Label();
-            this.toolTipNextQ = new System.Windows.Forms.ToolTip(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxNext = new System.Windows.Forms.PictureBox();
+            this.labelLogo = new System.Windows.Forms.Label();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -64,15 +44,35 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.panelMain = new System.Windows.Forms.Panel();
+            this.pictureBoxTip = new System.Windows.Forms.PictureBox();
+            this.textBoxMain = new System.Windows.Forms.RichTextBox();
+            this.panelTF = new System.Windows.Forms.Panel();
+            this.radioButtonFalse = new System.Windows.Forms.RadioButton();
+            this.radioButtonTrue = new System.Windows.Forms.RadioButton();
+            this.labelTFQuest = new System.Windows.Forms.Label();
+            this.panelMult = new System.Windows.Forms.Panel();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.labelMultQuest = new System.Windows.Forms.Label();
+            this.panelBlank = new System.Windows.Forms.Panel();
+            this.numericBlank = new System.Windows.Forms.NumericUpDown();
+            this.labelBlankQuest = new System.Windows.Forms.Label();
+            this.buttonTakeQuiz = new System.Windows.Forms.Button();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.labelTitleNumber = new System.Windows.Forms.Label();
+            this.toolTipNextQ = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBoxNext = new System.Windows.Forms.PictureBox();
             this.pictureBoxNumber = new System.Windows.Forms.PictureBox();
             this.labelTip = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelMain.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTip)).BeginInit();
             this.panelTF.SuspendLayout();
             this.panelMult.SuspendLayout();
             this.panelBlank.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericBlank)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).BeginInit();
             this.SuspendLayout();
@@ -85,7 +85,7 @@
             this.panelMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelMenu.Controls.Add(this.buttonFinalExam);
             this.panelMenu.Controls.Add(this.buttonLogout);
-            this.panelMenu.Controls.Add(this.label1);
+            this.panelMenu.Controls.Add(this.labelLogo);
             this.panelMenu.Controls.Add(this.button10);
             this.panelMenu.Controls.Add(this.button9);
             this.panelMenu.Controls.Add(this.button8);
@@ -136,254 +136,16 @@
             this.buttonLogout.UseVisualStyleBackColor = false;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
-            // label1
+            // labelLogo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Minion Pro", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(150, 37);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Προπαίδεια";
-            // 
-            // panelMain
-            // 
-            this.panelMain.BackColor = System.Drawing.Color.Transparent;
-            this.panelMain.Controls.Add(this.pictureBox1);
-            this.panelMain.Controls.Add(this.textBoxMain);
-            this.panelMain.Controls.Add(this.panelTF);
-            this.panelMain.Controls.Add(this.panelMult);
-            this.panelMain.Controls.Add(this.panelBlank);
-            this.panelMain.Location = new System.Drawing.Point(196, 76);
-            this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(481, 274);
-            this.panelMain.TabIndex = 7;
-            // 
-            // textBoxMain
-            // 
-            this.textBoxMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
-            this.textBoxMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxMain.Cursor = System.Windows.Forms.Cursors.Default;
-            this.textBoxMain.Font = new System.Drawing.Font("Minion Pro", 14.1F);
-            this.textBoxMain.ForeColor = System.Drawing.Color.White;
-            this.textBoxMain.Location = new System.Drawing.Point(3, 3);
-            this.textBoxMain.Name = "textBoxMain";
-            this.textBoxMain.ReadOnly = true;
-            this.textBoxMain.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.textBoxMain.Size = new System.Drawing.Size(478, 268);
-            this.textBoxMain.TabIndex = 0;
-            this.textBoxMain.Text = "10 * 1 = 10\n10 * 2 = 20\n10 * 3 = 30\n10 * 4 = 40\n10 * 5 = 50\n10 * 6 = 60\n10 * 7 = " +
-    "70\n10 * 8 = 80\n10 * 9 = 90\n10 * 10 = 100";
-            // 
-            // panelTF
-            // 
-            this.panelTF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
-            this.panelTF.Controls.Add(this.radioButtonFalse);
-            this.panelTF.Controls.Add(this.radioButtonTrue);
-            this.panelTF.Controls.Add(this.labelTFQuest);
-            this.panelTF.ForeColor = System.Drawing.Color.White;
-            this.panelTF.Location = new System.Drawing.Point(18, 22);
-            this.panelTF.Name = "panelTF";
-            this.panelTF.Size = new System.Drawing.Size(414, 242);
-            this.panelTF.TabIndex = 17;
-            // 
-            // radioButtonFalse
-            // 
-            this.radioButtonFalse.AutoSize = true;
-            this.radioButtonFalse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButtonFalse.FlatAppearance.BorderSize = 0;
-            this.radioButtonFalse.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonFalse.ForeColor = System.Drawing.Color.White;
-            this.radioButtonFalse.Location = new System.Drawing.Point(41, 111);
-            this.radioButtonFalse.Name = "radioButtonFalse";
-            this.radioButtonFalse.Size = new System.Drawing.Size(95, 36);
-            this.radioButtonFalse.TabIndex = 17;
-            this.radioButtonFalse.Text = "Λάθος";
-            this.radioButtonFalse.UseVisualStyleBackColor = true;
-            // 
-            // radioButtonTrue
-            // 
-            this.radioButtonTrue.AutoSize = true;
-            this.radioButtonTrue.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.radioButtonTrue.FlatAppearance.BorderSize = 0;
-            this.radioButtonTrue.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButtonTrue.ForeColor = System.Drawing.Color.White;
-            this.radioButtonTrue.Location = new System.Drawing.Point(41, 73);
-            this.radioButtonTrue.Name = "radioButtonTrue";
-            this.radioButtonTrue.Size = new System.Drawing.Size(97, 36);
-            this.radioButtonTrue.TabIndex = 16;
-            this.radioButtonTrue.Text = "Σωστό";
-            this.radioButtonTrue.UseVisualStyleBackColor = true;
-            // 
-            // labelTFQuest
-            // 
-            this.labelTFQuest.AutoSize = true;
-            this.labelTFQuest.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTFQuest.ForeColor = System.Drawing.Color.White;
-            this.labelTFQuest.Location = new System.Drawing.Point(19, 13);
-            this.labelTFQuest.Name = "labelTFQuest";
-            this.labelTFQuest.Size = new System.Drawing.Size(273, 33);
-            this.labelTFQuest.TabIndex = 15;
-            this.labelTFQuest.Text = "Η πράξη 10 * 3 = 40 είναι: ";
-            // 
-            // panelMult
-            // 
-            this.panelMult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
-            this.panelMult.Controls.Add(this.radioButton3);
-            this.panelMult.Controls.Add(this.radioButton1);
-            this.panelMult.Controls.Add(this.radioButton2);
-            this.panelMult.Controls.Add(this.label2);
-            this.panelMult.Location = new System.Drawing.Point(18, 22);
-            this.panelMult.Name = "panelMult";
-            this.panelMult.Size = new System.Drawing.Size(410, 239);
-            this.panelMult.TabIndex = 19;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.FlatAppearance.BorderSize = 0;
-            this.radioButton3.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.Color.White;
-            this.radioButton3.Location = new System.Drawing.Point(43, 101);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(57, 36);
-            this.radioButton3.TabIndex = 18;
-            this.radioButton3.Text = "40";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.FlatAppearance.BorderSize = 0;
-            this.radioButton1.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(43, 137);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(57, 36);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.Text = "30";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.FlatAppearance.BorderSize = 0;
-            this.radioButton2.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(43, 65);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(57, 36);
-            this.radioButton2.TabIndex = 16;
-            this.radioButton2.Text = "10";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Minion Pro", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(19, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(305, 37);
-            this.label2.TabIndex = 15;
-            this.label2.Text = "Η σωστή απάντηση είναι: ";
-            // 
-            // panelBlank
-            // 
-            this.panelBlank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
-            this.panelBlank.Controls.Add(this.numericBlank);
-            this.panelBlank.Controls.Add(this.labelBlankQuest);
-            this.panelBlank.Location = new System.Drawing.Point(18, 22);
-            this.panelBlank.Name = "panelBlank";
-            this.panelBlank.Size = new System.Drawing.Size(410, 239);
-            this.panelBlank.TabIndex = 20;
-            // 
-            // numericBlank
-            // 
-            this.numericBlank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.numericBlank.Font = new System.Drawing.Font("Minion Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericBlank.ForeColor = System.Drawing.Color.White;
-            this.numericBlank.Location = new System.Drawing.Point(27, 80);
-            this.numericBlank.Name = "numericBlank";
-            this.numericBlank.Size = new System.Drawing.Size(51, 33);
-            this.numericBlank.TabIndex = 20;
-            // 
-            // labelBlankQuest
-            // 
-            this.labelBlankQuest.AutoSize = true;
-            this.labelBlankQuest.Font = new System.Drawing.Font("Minion Pro", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBlankQuest.ForeColor = System.Drawing.Color.White;
-            this.labelBlankQuest.Location = new System.Drawing.Point(19, 13);
-            this.labelBlankQuest.Name = "labelBlankQuest";
-            this.labelBlankQuest.Size = new System.Drawing.Size(159, 44);
-            this.labelBlankQuest.TabIndex = 15;
-            this.labelBlankQuest.Text = "10 * _ = 40";
-            // 
-            // buttonTakeQuiz
-            // 
-            this.buttonTakeQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.buttonTakeQuiz.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonTakeQuiz.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.buttonTakeQuiz.FlatAppearance.BorderSize = 2;
-            this.buttonTakeQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTakeQuiz.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.buttonTakeQuiz.ForeColor = System.Drawing.Color.White;
-            this.buttonTakeQuiz.Location = new System.Drawing.Point(385, 366);
-            this.buttonTakeQuiz.Name = "buttonTakeQuiz";
-            this.buttonTakeQuiz.Size = new System.Drawing.Size(113, 44);
-            this.buttonTakeQuiz.TabIndex = 8;
-            this.buttonTakeQuiz.Text = "Take Quiz";
-            this.buttonTakeQuiz.UseVisualStyleBackColor = false;
-            this.buttonTakeQuiz.Click += new System.EventHandler(this.buttonTakeQuiz_Click);
-            // 
-            // labelTitle
-            // 
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Font = new System.Drawing.Font("Minion Pro", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(207, 19);
-            this.labelTitle.Name = "labelTitle";
-            this.labelTitle.Size = new System.Drawing.Size(342, 37);
-            this.labelTitle.TabIndex = 12;
-            this.labelTitle.Text = "Μαθαίνω την προπαίδεια του";
-            this.labelTitle.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // labelTitleNumber
-            // 
-            this.labelTitleNumber.AutoSize = true;
-            this.labelTitleNumber.Font = new System.Drawing.Font("Minion Pro", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTitleNumber.ForeColor = System.Drawing.Color.White;
-            this.labelTitleNumber.Location = new System.Drawing.Point(544, 16);
-            this.labelTitleNumber.Name = "labelTitleNumber";
-            this.labelTitleNumber.Size = new System.Drawing.Size(47, 40);
-            this.labelTitleNumber.TabIndex = 13;
-            this.labelTitleNumber.Text = "10";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
-            this.pictureBox1.Image = global::PropaideiaApp.Properties.Resources.bubble;
-            this.pictureBox1.Location = new System.Drawing.Point(277, 75);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(214, 196);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBoxNext
-            // 
-            this.pictureBoxNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxNext.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNext.Image")));
-            this.pictureBoxNext.Location = new System.Drawing.Point(572, 367);
-            this.pictureBoxNext.Name = "pictureBoxNext";
-            this.pictureBoxNext.Size = new System.Drawing.Size(47, 43);
-            this.pictureBoxNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxNext.TabIndex = 1;
-            this.pictureBoxNext.TabStop = false;
-            this.toolTipNextQ.SetToolTip(this.pictureBoxNext, "Επόμενη Ερώτηση");
-            this.pictureBoxNext.Visible = false;
-            this.pictureBoxNext.Click += new System.EventHandler(this.pictureBoxNext_Click);
+            this.labelLogo.AutoSize = true;
+            this.labelLogo.Font = new System.Drawing.Font("Minion Pro", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLogo.ForeColor = System.Drawing.Color.White;
+            this.labelLogo.Location = new System.Drawing.Point(3, 8);
+            this.labelLogo.Name = "labelLogo";
+            this.labelLogo.Size = new System.Drawing.Size(150, 37);
+            this.labelLogo.TabIndex = 9;
+            this.labelLogo.Text = "Προπαίδεια";
             // 
             // button10
             // 
@@ -585,6 +347,245 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // panelMain
+            // 
+            this.panelMain.BackColor = System.Drawing.Color.Transparent;
+            this.panelMain.Controls.Add(this.pictureBoxTip);
+            this.panelMain.Controls.Add(this.textBoxMain);
+            this.panelMain.Controls.Add(this.panelTF);
+            this.panelMain.Controls.Add(this.panelMult);
+            this.panelMain.Controls.Add(this.panelBlank);
+            this.panelMain.Location = new System.Drawing.Point(196, 76);
+            this.panelMain.Name = "panelMain";
+            this.panelMain.Size = new System.Drawing.Size(481, 274);
+            this.panelMain.TabIndex = 7;
+            // 
+            // pictureBoxTip
+            // 
+            this.pictureBoxTip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.pictureBoxTip.Image = global::PropaideiaApp.Properties.Resources.bubble;
+            this.pictureBoxTip.Location = new System.Drawing.Point(277, 75);
+            this.pictureBoxTip.Name = "pictureBoxTip";
+            this.pictureBoxTip.Size = new System.Drawing.Size(214, 196);
+            this.pictureBoxTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxTip.TabIndex = 21;
+            this.pictureBoxTip.TabStop = false;
+            // 
+            // textBoxMain
+            // 
+            this.textBoxMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.textBoxMain.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxMain.Cursor = System.Windows.Forms.Cursors.Default;
+            this.textBoxMain.Font = new System.Drawing.Font("Minion Pro", 14.1F);
+            this.textBoxMain.ForeColor = System.Drawing.Color.White;
+            this.textBoxMain.Location = new System.Drawing.Point(3, 3);
+            this.textBoxMain.Name = "textBoxMain";
+            this.textBoxMain.ReadOnly = true;
+            this.textBoxMain.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.textBoxMain.Size = new System.Drawing.Size(478, 268);
+            this.textBoxMain.TabIndex = 0;
+            this.textBoxMain.Text = "10 * 1 = 10\n10 * 2 = 20\n10 * 3 = 30\n10 * 4 = 40\n10 * 5 = 50\n10 * 6 = 60\n10 * 7 = " +
+    "70\n10 * 8 = 80\n10 * 9 = 90\n10 * 10 = 100";
+            this.textBoxMain.Click += new System.EventHandler(this.textBoxMain_Click);
+            // 
+            // panelTF
+            // 
+            this.panelTF.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.panelTF.Controls.Add(this.radioButtonFalse);
+            this.panelTF.Controls.Add(this.radioButtonTrue);
+            this.panelTF.Controls.Add(this.labelTFQuest);
+            this.panelTF.ForeColor = System.Drawing.Color.White;
+            this.panelTF.Location = new System.Drawing.Point(18, 22);
+            this.panelTF.Name = "panelTF";
+            this.panelTF.Size = new System.Drawing.Size(414, 242);
+            this.panelTF.TabIndex = 17;
+            // 
+            // radioButtonFalse
+            // 
+            this.radioButtonFalse.AutoSize = true;
+            this.radioButtonFalse.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButtonFalse.FlatAppearance.BorderSize = 0;
+            this.radioButtonFalse.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonFalse.ForeColor = System.Drawing.Color.White;
+            this.radioButtonFalse.Location = new System.Drawing.Point(41, 111);
+            this.radioButtonFalse.Name = "radioButtonFalse";
+            this.radioButtonFalse.Size = new System.Drawing.Size(95, 36);
+            this.radioButtonFalse.TabIndex = 17;
+            this.radioButtonFalse.Text = "Λάθος";
+            this.radioButtonFalse.UseVisualStyleBackColor = true;
+            // 
+            // radioButtonTrue
+            // 
+            this.radioButtonTrue.AutoSize = true;
+            this.radioButtonTrue.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.radioButtonTrue.FlatAppearance.BorderSize = 0;
+            this.radioButtonTrue.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonTrue.ForeColor = System.Drawing.Color.White;
+            this.radioButtonTrue.Location = new System.Drawing.Point(41, 73);
+            this.radioButtonTrue.Name = "radioButtonTrue";
+            this.radioButtonTrue.Size = new System.Drawing.Size(97, 36);
+            this.radioButtonTrue.TabIndex = 16;
+            this.radioButtonTrue.Text = "Σωστό";
+            this.radioButtonTrue.UseVisualStyleBackColor = true;
+            // 
+            // labelTFQuest
+            // 
+            this.labelTFQuest.AutoSize = true;
+            this.labelTFQuest.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTFQuest.ForeColor = System.Drawing.Color.White;
+            this.labelTFQuest.Location = new System.Drawing.Point(19, 13);
+            this.labelTFQuest.Name = "labelTFQuest";
+            this.labelTFQuest.Size = new System.Drawing.Size(273, 33);
+            this.labelTFQuest.TabIndex = 15;
+            this.labelTFQuest.Text = "Η πράξη 10 * 3 = 40 είναι: ";
+            // 
+            // panelMult
+            // 
+            this.panelMult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.panelMult.Controls.Add(this.radioButton3);
+            this.panelMult.Controls.Add(this.radioButton1);
+            this.panelMult.Controls.Add(this.radioButton2);
+            this.panelMult.Controls.Add(this.labelMultQuest);
+            this.panelMult.Location = new System.Drawing.Point(18, 22);
+            this.panelMult.Name = "panelMult";
+            this.panelMult.Size = new System.Drawing.Size(410, 239);
+            this.panelMult.TabIndex = 19;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.FlatAppearance.BorderSize = 0;
+            this.radioButton3.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton3.ForeColor = System.Drawing.Color.White;
+            this.radioButton3.Location = new System.Drawing.Point(43, 101);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(57, 36);
+            this.radioButton3.TabIndex = 18;
+            this.radioButton3.Text = "40";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.FlatAppearance.BorderSize = 0;
+            this.radioButton1.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton1.ForeColor = System.Drawing.Color.White;
+            this.radioButton1.Location = new System.Drawing.Point(43, 137);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(57, 36);
+            this.radioButton1.TabIndex = 17;
+            this.radioButton1.Text = "30";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.FlatAppearance.BorderSize = 0;
+            this.radioButton2.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButton2.ForeColor = System.Drawing.Color.White;
+            this.radioButton2.Location = new System.Drawing.Point(43, 65);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(57, 36);
+            this.radioButton2.TabIndex = 16;
+            this.radioButton2.Text = "10";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // labelMultQuest
+            // 
+            this.labelMultQuest.AutoSize = true;
+            this.labelMultQuest.Font = new System.Drawing.Font("Minion Pro", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMultQuest.ForeColor = System.Drawing.Color.White;
+            this.labelMultQuest.Location = new System.Drawing.Point(19, 13);
+            this.labelMultQuest.Name = "labelMultQuest";
+            this.labelMultQuest.Size = new System.Drawing.Size(305, 37);
+            this.labelMultQuest.TabIndex = 15;
+            this.labelMultQuest.Text = "Η σωστή απάντηση είναι: ";
+            // 
+            // panelBlank
+            // 
+            this.panelBlank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.panelBlank.Controls.Add(this.numericBlank);
+            this.panelBlank.Controls.Add(this.labelBlankQuest);
+            this.panelBlank.Location = new System.Drawing.Point(18, 22);
+            this.panelBlank.Name = "panelBlank";
+            this.panelBlank.Size = new System.Drawing.Size(410, 239);
+            this.panelBlank.TabIndex = 20;
+            // 
+            // numericBlank
+            // 
+            this.numericBlank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.numericBlank.Font = new System.Drawing.Font("Minion Pro", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericBlank.ForeColor = System.Drawing.Color.White;
+            this.numericBlank.Location = new System.Drawing.Point(27, 80);
+            this.numericBlank.Name = "numericBlank";
+            this.numericBlank.Size = new System.Drawing.Size(51, 33);
+            this.numericBlank.TabIndex = 20;
+            // 
+            // labelBlankQuest
+            // 
+            this.labelBlankQuest.AutoSize = true;
+            this.labelBlankQuest.Font = new System.Drawing.Font("Minion Pro", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelBlankQuest.ForeColor = System.Drawing.Color.White;
+            this.labelBlankQuest.Location = new System.Drawing.Point(19, 13);
+            this.labelBlankQuest.Name = "labelBlankQuest";
+            this.labelBlankQuest.Size = new System.Drawing.Size(159, 44);
+            this.labelBlankQuest.TabIndex = 15;
+            this.labelBlankQuest.Text = "10 * _ = 40";
+            // 
+            // buttonTakeQuiz
+            // 
+            this.buttonTakeQuiz.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.buttonTakeQuiz.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonTakeQuiz.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.buttonTakeQuiz.FlatAppearance.BorderSize = 2;
+            this.buttonTakeQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonTakeQuiz.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.buttonTakeQuiz.ForeColor = System.Drawing.Color.White;
+            this.buttonTakeQuiz.Location = new System.Drawing.Point(385, 366);
+            this.buttonTakeQuiz.Name = "buttonTakeQuiz";
+            this.buttonTakeQuiz.Size = new System.Drawing.Size(113, 44);
+            this.buttonTakeQuiz.TabIndex = 8;
+            this.buttonTakeQuiz.Text = "Take Quiz";
+            this.buttonTakeQuiz.UseVisualStyleBackColor = false;
+            this.buttonTakeQuiz.Click += new System.EventHandler(this.buttonTakeQuiz_Click);
+            // 
+            // labelTitle
+            // 
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Font = new System.Drawing.Font("Minion Pro", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitle.ForeColor = System.Drawing.Color.White;
+            this.labelTitle.Location = new System.Drawing.Point(207, 19);
+            this.labelTitle.Name = "labelTitle";
+            this.labelTitle.Size = new System.Drawing.Size(342, 37);
+            this.labelTitle.TabIndex = 12;
+            this.labelTitle.Text = "Μαθαίνω την προπαίδεια του";
+            this.labelTitle.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // labelTitleNumber
+            // 
+            this.labelTitleNumber.AutoSize = true;
+            this.labelTitleNumber.Font = new System.Drawing.Font("Minion Pro", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitleNumber.ForeColor = System.Drawing.Color.White;
+            this.labelTitleNumber.Location = new System.Drawing.Point(544, 16);
+            this.labelTitleNumber.Name = "labelTitleNumber";
+            this.labelTitleNumber.Size = new System.Drawing.Size(47, 40);
+            this.labelTitleNumber.TabIndex = 13;
+            this.labelTitleNumber.Text = "10";
+            // 
+            // pictureBoxNext
+            // 
+            this.pictureBoxNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxNext.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxNext.Image")));
+            this.pictureBoxNext.Location = new System.Drawing.Point(572, 367);
+            this.pictureBoxNext.Name = "pictureBoxNext";
+            this.pictureBoxNext.Size = new System.Drawing.Size(47, 43);
+            this.pictureBoxNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNext.TabIndex = 1;
+            this.pictureBoxNext.TabStop = false;
+            this.toolTipNextQ.SetToolTip(this.pictureBoxNext, "Επόμενη Ερώτηση");
+            this.pictureBoxNext.Visible = false;
+            this.pictureBoxNext.Click += new System.EventHandler(this.pictureBoxNext_Click);
+            // 
             // pictureBoxNumber
             // 
             this.pictureBoxNumber.Image = global::PropaideiaApp.Properties.Resources._10;
@@ -628,6 +629,7 @@
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelMain.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTip)).EndInit();
             this.panelTF.ResumeLayout(false);
             this.panelTF.PerformLayout();
             this.panelMult.ResumeLayout(false);
@@ -635,7 +637,6 @@
             this.panelBlank.ResumeLayout(false);
             this.panelBlank.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericBlank)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).EndInit();
             this.ResumeLayout(false);
@@ -649,7 +650,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonFinalExam;
         private System.Windows.Forms.Button buttonLogout;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelLogo;
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
@@ -676,10 +677,10 @@
         private System.Windows.Forms.Label labelBlankQuest;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelMultQuest;
         private System.Windows.Forms.ToolTip toolTipNextQ;
         private System.Windows.Forms.NumericUpDown numericBlank;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBoxTip;
         private System.Windows.Forms.Label labelTip;
     }
 }
