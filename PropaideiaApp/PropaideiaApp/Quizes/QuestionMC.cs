@@ -8,7 +8,7 @@ namespace PropaideiaApp.Quizes
 {
 	class QuestionMC : Question
 	{
-		private List<int> possibleAns = new List<int>(3);
+		private int[] possibleAns = new int[3];
 		public QuestionMC(int propaideia)
 		{
 			this.Propaideia = propaideia;
@@ -16,7 +16,7 @@ namespace PropaideiaApp.Quizes
 			GenerateQuestion();
 		}
 
-		public List<int> PossibleAns { get => possibleAns; }
+		public int[] PossibleAns { get => possibleAns; }
 
 		private void GenerateQuestion()
 		{

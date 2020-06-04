@@ -11,14 +11,12 @@ namespace PropaideiaApp.Quizes
 		private int propaideiaType;
 		private int questionNum;		// TODO change diagram
 		private List<Question> questions;
-		private int counter;
 
 		public QuestionGenerator(int propaideiaType, int questionNum)
 		{
 			this.propaideiaType = propaideiaType;
 			this.questionNum = questionNum;
 			this.Questions = new List<Question>(questionNum);
-			this.counter = 0;
 		}
 
 		internal List<Question> Questions { get => questions; set => questions = value; }
@@ -31,16 +29,15 @@ namespace PropaideiaApp.Quizes
 			switch (questionType)
 			{
 				case (int)QuestionFormat.FILL_GAPS:
-					Questions[counter] = new QuestionFG(propaideiaType);
+					Questions.Add(new QuestionFG(propaideiaType));
 					break;
 				case (int)QuestionFormat.TRUE_FALSE:
-					Questions[counter] = new QuestionTF(propaideiaType);
+					Questions.Add(new QuestionTF(propaideiaType));
 					break;
 				case (int)QuestionFormat.MULTIPLE_CHOICE:
-					Questions[counter] = new QuestionMC(propaideiaType);
+					Questions.Add(new QuestionMC(propaideiaType));
 					break;
 			}
-			counter++;
 		}
 	}
 }
