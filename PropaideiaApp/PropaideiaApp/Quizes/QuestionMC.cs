@@ -9,7 +9,7 @@ namespace PropaideiaApp.Quizes
 	class QuestionMC : Question
 	{
 		private int[] possibleAns = new int[3];
-		public QuestionMC(int propaideia)
+		public QuestionMC(PropaideiaType propaideia)
 		{
 			this.Propaideia = propaideia;
 
@@ -38,7 +38,7 @@ namespace PropaideiaApp.Quizes
 
 			int ans = Rand.Next(0, 3);
 			possibleAns[ans] = tempAsk[2];
-			this.Answer = possibleAns[ans].ToString();
+			this.CorrectAnswer = possibleAns[ans].ToString();
 			chance = (Rand.Next(100) - 50) < 0;
 			switch (ans)
 			{

@@ -89,6 +89,7 @@
     <Compile Include="Quizes\QuestionMC.cs" />
     <Compile Include="Quizes\QuestionTF.cs" />
     <Compile Include="Quizes\QuizManager.cs" />
+    <Compile Include="Quizes\Randomizer.cs" />
     <Compile Include="Users\Professor.cs" />
     <Compile Include="Users\Student.cs" />
     <Compile Include="Users\StudentProgress.cs" />

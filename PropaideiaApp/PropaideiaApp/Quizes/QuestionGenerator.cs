@@ -8,14 +8,12 @@ namespace PropaideiaApp.Quizes
 {
 	class QuestionGenerator // TODO change diagram
 	{
-		private int propaideiaType;
-		private int questionNum;		// TODO change diagram
+		private PropaideiaType propaideiaType;
 		private List<Question> questions;
 
-		public QuestionGenerator(int propaideiaType, int questionNum)
+		public QuestionGenerator(PropaideiaType propaideiaType, int questionNum)
 		{
 			this.propaideiaType = propaideiaType;
-			this.questionNum = questionNum;
 			this.Questions = new List<Question>(questionNum);
 		}
 
@@ -23,8 +21,7 @@ namespace PropaideiaApp.Quizes
 
 		internal void CreateNextQuestion()
 		{
-			Random rand = new Random();
-			int questionType = rand.Next(0, 3);
+			int questionType = Randomizer.RollZeroBasedD3();
 
 			switch (questionType)
 			{

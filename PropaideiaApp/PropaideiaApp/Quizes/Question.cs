@@ -8,16 +8,14 @@ namespace PropaideiaApp.Quizes
 {
 	abstract class Question
 	{
-		private bool result;
-		private string ask;
-		private string answer;
-		private int propaideia;
-		private Random rand = new Random();
+		private bool studentAnswer;
+		private string description;
+		private string correctAnswer;
+		private PropaideiaType propaideia;
 
-		public bool Result { get => result; set => result = value; }
-		public string Ask { get => ask; set => ask = value; }
-		public string Answer { get => answer; set => answer = value; }
-		public int Propaideia { get => propaideia; set => propaideia = value; }
-		public Random Rand { get => rand; }
+		public bool StudentAnswer { get => studentAnswer; set => studentAnswer = value; }
+		public string Description { get => description; set => description = value; }
+		public string CorrectAnswer { get => correctAnswer; set => correctAnswer = value; }
+		public PropaideiaType Propaideia { get => propaideia; set => propaideia = value; }
 	}
 }

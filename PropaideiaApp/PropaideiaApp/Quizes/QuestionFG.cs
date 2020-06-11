@@ -8,7 +8,7 @@ namespace PropaideiaApp.Quizes
 {
 	class QuestionFG : Question
 	{
-		public QuestionFG(int propaideia)
+		public QuestionFG(PropaideiaType propaideia)
 		{
 			this.Propaideia = propaideia;
 
@@ -35,8 +35,8 @@ namespace PropaideiaApp.Quizes
 					tempAsk[1] = this.Propaideia;
 					tempAsk[0] = Rand.Next(1, this.Propaideia + 1);
 				}
-				this.Answer = (tempAsk[0] * tempAsk[1]).ToString();
-				this.Ask = tempAsk[0].ToString() + " x " + tempAsk[1].ToString() + " = _";
+				this.CorrectAnswer = (tempAsk[0] * tempAsk[1]).ToString();
+				this.Description = tempAsk[0].ToString() + " x " + tempAsk[1].ToString() + " = _";
 			}
 			else
 			{
@@ -52,8 +52,8 @@ namespace PropaideiaApp.Quizes
 						tempAsk[1] = this.Propaideia;
 					}
 					tempAsk[2] = tempAsk[0] * tempAsk[1];
-					this.Answer = tempAsk[2].ToString();
-					this.Ask = "_ x " + tempAsk[1].ToString() + " = " + tempAsk[2].ToString();
+					this.CorrectAnswer = tempAsk[2].ToString();
+					this.Description = "_ x " + tempAsk[1].ToString() + " = " + tempAsk[2].ToString();
 				}
 				else
 				{
@@ -66,8 +66,8 @@ namespace PropaideiaApp.Quizes
 						tempAsk[0] = this.Propaideia;
 					}
 					tempAsk[2] = tempAsk[0] * tempAsk[1];
-					this.Answer = tempAsk[2].ToString();
-					this.Ask = tempAsk[0].ToString() + " x _ = " + tempAsk[2].ToString();
+					this.CorrectAnswer = tempAsk[2].ToString();
+					this.Description = tempAsk[0].ToString() + " x _ = " + tempAsk[2].ToString();
 				}
 			}
 		}

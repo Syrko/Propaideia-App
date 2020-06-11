@@ -8,49 +8,121 @@ namespace PropaideiaApp.Quizes
 {
 	class QuestionTF : Question
 	{
-		public QuestionTF(int propaideia)
+		private int[] descriptionComponents = new int[3];
+
+		public QuestionTF(PropaideiaType propaideia)
 		{
 			this.Propaideia = propaideia;
 
 			GenerateQuestion();
 		}
 
-		private void GenerateQuestion()
+		void GenerateQuestion()
 		{
-			int[] tempAsk = new int[3];
+			if(Propaideia == (int)PropaideiaType.FINAL_EXAM)
+			{
+				// For the final exam
 
-			bool chance = (Rand.Next(100) - 50) < 0;
-			if (chance)
-			{
-				tempAsk[0] = this.Propaideia;
-				tempAsk[1] = Rand.Next(1, this.Propaideia + 1);
-			}
-			else
-			{
-				tempAsk[1] = this.Propaideia;
-				tempAsk[0] = Rand.Next(1, this.Propaideia + 1);
-			}
+				// Randomize and construct description
+				descriptionComponents[0] = Randomizer.RollDX(10);
+				descriptionComponents[1] = Randomizer.RollDX(10);
 
-			chance = (Rand.Next(100) - 50) < 0;
-			if (chance)
-			{
-				tempAsk[2] = tempAsk[0] * tempAsk[1];
-				this.Answer = "True";
-			}
-			else
-			{
-				chance = (Rand.Next(100) - 50) < 0;
-				if (chance)
+				descriptionComponents[2] = descriptionComponents[0] * descriptionComponents[1];
+
+				if (Randomizer.FlipCoin())
 				{
-					tempAsk[2] = tempAsk[0] * tempAsk[1] + this.Propaideia;
+					// Finish generation of question after setting answer
+					CorrectAnswer = "true";
 				}
 				else
 				{
-					tempAsk[2] = tempAsk[0] * tempAsk[1] - this.Propaideia;
+					// Falsifying a component
+					CorrectAnswer = "false";
+
+					if (Randomizer.FlipCoin())
+					{
+						// Falsify the left part of the equation
+						if (Randomizer.FlipCoin())
+						{
+							if (Randomizer.FlipCoin())
+								descriptionComponents[1] += 1;
+							else
+								descriptionComponents[1] -= 1;
+						}
+						else
+						{
+							if (Randomizer.FlipCoin())
+								descriptionComponents[0] += 1;
+							else
+								descriptionComponents[0] -= 1;
+						}
+					}
+					else
+					{
+						// Falsify the right part of the equation
+						if (Randomizer.FlipCoin())
+							descriptionComponents[2] += Randomizer.RollDX(10);
+						else
+							descriptionComponents[2] -= Randomizer.RollDX(10);
+					}
 				}
-				this.Answer = "False";
 			}
-			this.Ask = tempAsk[0] + " x " + tempAsk[1] + " = " + tempAsk[2];
+			else
+			{
+				// For regular quizes
+
+				// Randomize and construct description
+				if (Randomizer.FlipCoin())
+				{
+					descriptionComponents[0] = (int)Propaideia;
+					descriptionComponents[1] = Randomizer.RollDX(10);
+				}
+				else
+				{
+					descriptionComponents[0] = Randomizer.RollDX(10);
+					descriptionComponents[1] = (int)Propaideia;
+				}
+
+				descriptionComponents[2] = descriptionComponents[0] * descriptionComponents[1];
+
+				if (Randomizer.FlipCoin())
+				{
+					// Finish generation of question after setting answer
+					CorrectAnswer = "true";
+				}
+				else
+				{
+					// Falsifying a component
+					CorrectAnswer = "false";
+
+					if (Randomizer.FlipCoin())
+					{
+						// Falsify the left part of the equation
+						if (descriptionComponents[0] == (int)Propaideia)
+						{
+							if (Randomizer.FlipCoin())
+								descriptionComponents[1] += 1;
+							else
+								descriptionComponents[1] -= 1;
+						}
+						else
+						{
+							if (Randomizer.FlipCoin())
+								descriptionComponents[0] += 1;
+							else
+								descriptionComponents[0] -= 1;
+						}
+					}
+					else
+					{
+						// Falsify the right part of the equation
+						if (Randomizer.FlipCoin())
+							descriptionComponents[2] += (int)Propaideia;
+						else
+							descriptionComponents[2] -= (int)Propaideia;
+					}
+				}
+			}
 		}
 	}
 }
