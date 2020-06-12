@@ -19,7 +19,7 @@ namespace PropaideiaApp.Quizes
 
 		void GenerateQuestion()
 		{
-			if(Propaideia == (int)PropaideiaType.FINAL_EXAM)
+			if(Propaideia == PropaideiaType.FINAL_EXAM)
 			{
 				// For the final exam
 
@@ -123,6 +123,8 @@ namespace PropaideiaApp.Quizes
 					}
 				}
 			}
+
+			Description = descriptionComponents[0] + " x " + descriptionComponents[1] + " = " + descriptionComponents[2];
 		}
 	}
 }
