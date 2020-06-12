@@ -11,7 +11,7 @@ namespace PropaideiaApp.Quizes
 		private QuestionGenerator questionGenerator;
 		private int questionsNum;
 		private PropaideiaType propaideiaType;
-		private List<string> correctAnswers;
+		private List<string> studentAnswers;
 
 		private int quizGrade;
 
@@ -22,7 +22,7 @@ namespace PropaideiaApp.Quizes
 			this.propaideiaType = propaideiaType;
 			this.questionsNum = questionsNum;
 			this.questionGenerator = new QuestionGenerator(this.propaideiaType, questionsNum);
-			this.correctAnswers = new List<string>(questionsNum);
+			this.studentAnswers = new List<string>(questionsNum);
 
 			GenerateQuestions();
 		}
@@ -35,9 +35,9 @@ namespace PropaideiaApp.Quizes
 			}
 		}
 
-		internal void AssignAnswer(string answer, int questionNumber)
+		internal void AssignAnswer(string answer)
 		{
-			correctAnswers[questionNumber] = answer;
+			studentAnswers.Add(answer);
 		}
 
 		internal Question GetQuestion(int questionNumber)
@@ -50,7 +50,7 @@ namespace PropaideiaApp.Quizes
 			List<Question> questions = questionGenerator.Questions;
 			for(int i = 0; i < questionsNum; i++)
 			{
-				questions[i].StudentAnswer = questions[i].CorrectAnswer == correctAnswers[i];
+				questions[i].StudentAnswer = questions[i].CorrectAnswer == studentAnswers[i];
 			}
 			foreach(Question q in questions)
 			{
