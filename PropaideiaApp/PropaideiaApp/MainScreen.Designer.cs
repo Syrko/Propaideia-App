@@ -45,6 +45,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panelMain = new System.Windows.Forms.Panel();
+            this.panelTip = new System.Windows.Forms.Panel();
+            this.labelTip = new System.Windows.Forms.Label();
             this.pictureBoxTip = new System.Windows.Forms.PictureBox();
             this.textBoxMain = new System.Windows.Forms.RichTextBox();
             this.panelTF = new System.Windows.Forms.Panel();
@@ -65,9 +67,14 @@
             this.toolTipNextQ = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBoxNext = new System.Windows.Forms.PictureBox();
             this.pictureBoxNumber = new System.Windows.Forms.PictureBox();
-            this.labelTip = new System.Windows.Forms.Label();
+            this.panelResult = new System.Windows.Forms.Panel();
+            this.progressBarResult = new System.Windows.Forms.ProgressBar();
+            this.labelResult = new System.Windows.Forms.Label();
+            this.buttonResult = new System.Windows.Forms.Button();
+            this.labelResultGrade = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelMain.SuspendLayout();
+            this.panelTip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTip)).BeginInit();
             this.panelTF.SuspendLayout();
             this.panelMult.SuspendLayout();
@@ -75,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericBlank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).BeginInit();
+            this.panelResult.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -350,21 +358,40 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.Transparent;
-            this.panelMain.Controls.Add(this.pictureBoxTip);
+            this.panelMain.Controls.Add(this.panelTip);
             this.panelMain.Controls.Add(this.textBoxMain);
-            this.panelMain.Controls.Add(this.panelTF);
-            this.panelMain.Controls.Add(this.panelMult);
-            this.panelMain.Controls.Add(this.panelBlank);
             this.panelMain.Location = new System.Drawing.Point(196, 76);
             this.panelMain.Name = "panelMain";
             this.panelMain.Size = new System.Drawing.Size(481, 274);
             this.panelMain.TabIndex = 7;
             // 
+            // panelTip
+            // 
+            this.panelTip.BackColor = System.Drawing.Color.White;
+            this.panelTip.Controls.Add(this.labelTip);
+            this.panelTip.Controls.Add(this.pictureBoxTip);
+            this.panelTip.Location = new System.Drawing.Point(266, 74);
+            this.panelTip.Name = "panelTip";
+            this.panelTip.Size = new System.Drawing.Size(214, 196);
+            this.panelTip.TabIndex = 22;
+            // 
+            // labelTip
+            // 
+            this.labelTip.AutoSize = true;
+            this.labelTip.BackColor = System.Drawing.Color.Transparent;
+            this.labelTip.Font = new System.Drawing.Font("Minion Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.labelTip.Location = new System.Drawing.Point(57, 69);
+            this.labelTip.Name = "labelTip";
+            this.labelTip.Size = new System.Drawing.Size(87, 18);
+            this.labelTip.TabIndex = 14;
+            this.labelTip.Text = "Just do it, LOL";
+            // 
             // pictureBoxTip
             // 
             this.pictureBoxTip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
             this.pictureBoxTip.Image = global::PropaideiaApp.Properties.Resources.bubble;
-            this.pictureBoxTip.Location = new System.Drawing.Point(277, 75);
+            this.pictureBoxTip.Location = new System.Drawing.Point(0, 0);
             this.pictureBoxTip.Name = "pictureBoxTip";
             this.pictureBoxTip.Size = new System.Drawing.Size(214, 196);
             this.pictureBoxTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -395,10 +422,11 @@
             this.panelTF.Controls.Add(this.radioButtonTrue);
             this.panelTF.Controls.Add(this.labelTFQuest);
             this.panelTF.ForeColor = System.Drawing.Color.White;
-            this.panelTF.Location = new System.Drawing.Point(18, 22);
+            this.panelTF.Location = new System.Drawing.Point(794, 439);
             this.panelTF.Name = "panelTF";
             this.panelTF.Size = new System.Drawing.Size(414, 242);
             this.panelTF.TabIndex = 17;
+            this.panelTF.Visible = false;
             // 
             // radioButtonFalse
             // 
@@ -446,10 +474,11 @@
             this.panelMult.Controls.Add(this.radioButton1);
             this.panelMult.Controls.Add(this.radioButton2);
             this.panelMult.Controls.Add(this.labelMultQuest);
-            this.panelMult.Location = new System.Drawing.Point(18, 22);
+            this.panelMult.Location = new System.Drawing.Point(798, 31);
             this.panelMult.Name = "panelMult";
             this.panelMult.Size = new System.Drawing.Size(410, 239);
             this.panelMult.TabIndex = 19;
+            this.panelMult.Visible = false;
             // 
             // radioButton3
             // 
@@ -506,10 +535,11 @@
             this.panelBlank.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
             this.panelBlank.Controls.Add(this.numericBlank);
             this.panelBlank.Controls.Add(this.labelBlankQuest);
-            this.panelBlank.Location = new System.Drawing.Point(18, 22);
+            this.panelBlank.Location = new System.Drawing.Point(181, 445);
             this.panelBlank.Name = "panelBlank";
             this.panelBlank.Size = new System.Drawing.Size(410, 239);
             this.panelBlank.TabIndex = 20;
+            this.panelBlank.Visible = false;
             // 
             // numericBlank
             // 
@@ -559,7 +589,6 @@
             this.labelTitle.Size = new System.Drawing.Size(342, 37);
             this.labelTitle.TabIndex = 12;
             this.labelTitle.Text = "Μαθαίνω την προπαίδεια του";
-            this.labelTitle.Click += new System.EventHandler(this.label2_Click);
             // 
             // labelTitleNumber
             // 
@@ -596,17 +625,64 @@
             this.pictureBoxNumber.TabIndex = 6;
             this.pictureBoxNumber.TabStop = false;
             // 
-            // labelTip
+            // panelResult
             // 
-            this.labelTip.AutoSize = true;
-            this.labelTip.BackColor = System.Drawing.Color.White;
-            this.labelTip.Font = new System.Drawing.Font("Minion Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelTip.Location = new System.Drawing.Point(525, 215);
-            this.labelTip.Name = "labelTip";
-            this.labelTip.Size = new System.Drawing.Size(87, 18);
-            this.labelTip.TabIndex = 14;
-            this.labelTip.Text = "Just do it, LOL";
+            this.panelResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.panelResult.Controls.Add(this.labelResultGrade);
+            this.panelResult.Controls.Add(this.buttonResult);
+            this.panelResult.Controls.Add(this.labelResult);
+            this.panelResult.Controls.Add(this.progressBarResult);
+            this.panelResult.Location = new System.Drawing.Point(612, 445);
+            this.panelResult.Name = "panelResult";
+            this.panelResult.Size = new System.Drawing.Size(410, 239);
+            this.panelResult.TabIndex = 21;
+            this.panelResult.Visible = false;
+            // 
+            // progressBarResult
+            // 
+            this.progressBarResult.Location = new System.Drawing.Point(106, 100);
+            this.progressBarResult.Name = "progressBarResult";
+            this.progressBarResult.Size = new System.Drawing.Size(100, 23);
+            this.progressBarResult.TabIndex = 0;
+            // 
+            // labelResult
+            // 
+            this.labelResult.AutoSize = true;
+            this.labelResult.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResult.ForeColor = System.Drawing.Color.White;
+            this.labelResult.Location = new System.Drawing.Point(26, 14);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(358, 33);
+            this.labelResult.TabIndex = 22;
+            this.labelResult.Text = "Το Quiz ολοκληρώθηκε με βαθμό: ";
+            // 
+            // buttonResult
+            // 
+            this.buttonResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.buttonResult.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonResult.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.buttonResult.FlatAppearance.BorderSize = 2;
+            this.buttonResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonResult.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.buttonResult.ForeColor = System.Drawing.Color.White;
+            this.buttonResult.Location = new System.Drawing.Point(149, 163);
+            this.buttonResult.Name = "buttonResult";
+            this.buttonResult.Size = new System.Drawing.Size(113, 44);
+            this.buttonResult.TabIndex = 22;
+            this.buttonResult.Text = "OK";
+            this.buttonResult.UseVisualStyleBackColor = false;
+            this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
+            // 
+            // labelResultGrade
+            // 
+            this.labelResultGrade.AutoSize = true;
+            this.labelResultGrade.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResultGrade.ForeColor = System.Drawing.Color.White;
+            this.labelResultGrade.Location = new System.Drawing.Point(229, 96);
+            this.labelResultGrade.Name = "labelResultGrade";
+            this.labelResultGrade.Size = new System.Drawing.Size(71, 33);
+            this.labelResultGrade.TabIndex = 23;
+            this.labelResultGrade.Text = "0/100";
             // 
             // MainScreen
             // 
@@ -614,7 +690,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(60)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.labelTip);
+            this.Controls.Add(this.panelResult);
+            this.Controls.Add(this.panelBlank);
+            this.Controls.Add(this.panelMult);
+            this.Controls.Add(this.panelTF);
             this.Controls.Add(this.panelMain);
             this.Controls.Add(this.pictureBoxNext);
             this.Controls.Add(this.labelTitleNumber);
@@ -629,6 +708,8 @@
             this.panelMenu.ResumeLayout(false);
             this.panelMenu.PerformLayout();
             this.panelMain.ResumeLayout(false);
+            this.panelTip.ResumeLayout(false);
+            this.panelTip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTip)).EndInit();
             this.panelTF.ResumeLayout(false);
             this.panelTF.PerformLayout();
@@ -639,6 +720,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericBlank)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).EndInit();
+            this.panelResult.ResumeLayout(false);
+            this.panelResult.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -682,5 +765,11 @@
         private System.Windows.Forms.NumericUpDown numericBlank;
         private System.Windows.Forms.PictureBox pictureBoxTip;
         private System.Windows.Forms.Label labelTip;
+        private System.Windows.Forms.Panel panelTip;
+        private System.Windows.Forms.Panel panelResult;
+        private System.Windows.Forms.Button buttonResult;
+        private System.Windows.Forms.Label labelResult;
+        private System.Windows.Forms.ProgressBar progressBarResult;
+        private System.Windows.Forms.Label labelResultGrade;
     }
 }

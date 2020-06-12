@@ -17,6 +17,12 @@ namespace PropaideiaApp
         List<Button> buttonList = new List<Button>();
         List<Panel> questionPanelList = new List<Panel>();
         int currentNumber;
+        Point questionPoint = new Point(214, 96);
+        Point hideTF = new Point(794, 442);
+        Point hideMult = new Point(798, 31);
+        Point hideBlank = new Point(181, 445);
+        Point hideResult = new Point(608, 446);
+        int i = 0; //TO DELETE
 
         public MainScreen()
         {
@@ -29,11 +35,6 @@ namespace PropaideiaApp
             this.Hide();
             LoginScreen loginForm = new LoginScreen();
             loginForm.Show();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
 
@@ -56,15 +57,9 @@ namespace PropaideiaApp
             questionPanelList.Add(panelBlank);
             questionPanelList.Add(panelMult);
             questionPanelList.Add(panelTF);
+            button1_Click(sender, e);
         }
 
-        private void pictureBoxNext_Click(object sender, EventArgs e)
-        {
-            //TODO Call getNextQuest function
-            panelBlank.Visible = false;
-            panelTF.Visible = false;
-            panelMult.Visible = true;
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -144,7 +139,6 @@ namespace PropaideiaApp
             currentNumber = 10;
             changeLesson(currentNumber);
             pictureBoxNumber.Image = Resources._10;
-            labelTip.Text = "Ξαναγράφουμε τον\nαριθμό και γράφουμε\nδίπλα του ένα 0";
         }
 
         private void buttonFinalExam_Click(object sender, EventArgs e)
@@ -158,11 +152,8 @@ namespace PropaideiaApp
             pictureBoxNext.Visible = true;
             buttonTakeQuiz.Visible = false;
             labelTitle.Text = "Quiz για την προπαίδεια του: ";
-            panelBlank.Visible = true;
-            panelTF.Visible = false;
-            panelMult.Visible = false;
-            pictureBoxTip.Visible = false;
-            labelTip.Visible = false;
+            panelTip.Visible = false;
+            showQuestion("TF");
         }
 
         private void takeQuiz()
@@ -170,12 +161,23 @@ namespace PropaideiaApp
 
         }
 
-        private void updateProgress(int chapter)
+        private void pictureBoxNext_Click(object sender, EventArgs e)
         {
-            buttonList[chapter].Image = Resources.tick;
-            buttonList[chapter + 1].Image = Resources.unlock;
-            buttonList[chapter + 1].Enabled = true;
-            //TODO Update DB
+            //TODO Call getNextQuest function
+            if (i == 0)
+            {
+                showQuestion("Blank");
+            }
+            else if (i == 1)
+            {
+                showQuestion("Mult");
+            }
+            else
+            {
+                endQuiz();
+                i = -1;
+            }
+            i++;
         }
 
         private void showQuestion(string questionType)
@@ -185,6 +187,7 @@ namespace PropaideiaApp
 
             if(questionType == "Blank")
             {
+                questionPanelList[0].Location = questionPoint;
                 questionPanelList[0].Visible = true;
                 questionPanelList[1].Visible = false;
                 questionPanelList[2].Visible = false;
@@ -192,6 +195,7 @@ namespace PropaideiaApp
             else if(questionType == "Mult")
             {
                 questionPanelList[0].Visible = false;
+                questionPanelList[1].Location = questionPoint;
                 questionPanelList[1].Visible = true;
                 questionPanelList[2].Visible = false;
             }
@@ -199,8 +203,43 @@ namespace PropaideiaApp
             {
                 questionPanelList[0].Visible = false;
                 questionPanelList[1].Visible = false;
+                questionPanelList[2].Location = questionPoint;
                 questionPanelList[2].Visible = true;
             }
+        }
+
+        private void endQuiz()
+        {
+            questionPanelList[0].Visible = false;
+            questionPanelList[0].Location = hideBlank;
+            questionPanelList[1].Visible = false;
+            questionPanelList[1].Location = hideMult;
+            questionPanelList[2].Visible = false;
+            questionPanelList[2].Location = hideTF;
+
+            panelResult.Visible = true;
+            panelResult.Location = questionPoint;
+
+            //TODO May need numbering changes
+            buttonList[currentNumber - 1].Image = Resources.tick;
+            buttonList[currentNumber].Image = Resources.unlock;
+            buttonList[currentNumber].Enabled = true;
+            
+            //Replace with grade funct
+            progressBarResult.Value = 60;
+            labelResultGrade.Text = 60.ToString() + "/100";
+            //Save Results to DB
+
+        }
+
+        private void buttonResult_Click(object sender, EventArgs e)
+        {
+            panelResult.Visible = false;
+            panelTip.Visible = true;
+            panelMain.Visible = true;
+            textBoxMain.Visible = true;
+            pictureBoxNext.Visible = false;
+            buttonTakeQuiz.Visible = true;
         }
 
         private void changeLesson(int current)
@@ -237,6 +276,7 @@ namespace PropaideiaApp
                     break;
                 case 10:
                     textBoxMain.Text = "10 * 1 = 10\n10 * 2 = 20\n10 * 3 = 30\n10 * 4 = 40\n10 * 5 = 50\n10 * 6 = 60\n10 * 7 = 70\n10 * 8 = 80\n10 * 9 = 90\n10 * 10 = 100\n";
+                    labelTip.Text = "Ξαναγράφουμε τον\nαριθμό και γράφουμε\nδίπλα του ένα 0";
                     break;
             }
             
