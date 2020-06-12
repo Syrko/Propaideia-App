@@ -9,6 +9,8 @@ namespace PropaideiaApp.Quizes
 	class QuestionMC : Question
 	{
 		private int[] possibleAns = new int[3];
+		private int[] descriptionComponents = new int[3];
+
 		public QuestionMC(PropaideiaType propaideia)
 		{
 			this.Propaideia = propaideia;
@@ -20,64 +22,131 @@ namespace PropaideiaApp.Quizes
 
 		private void GenerateQuestion()
 		{
-			int[] tempAsk = new int[3];
-
-			bool chance = (Rand.Next(100) - 50) < 0;
-			if (chance)
+			if (Propaideia == PropaideiaType.FINAL_EXAM)
 			{
-				tempAsk[0] = this.Propaideia;
-				tempAsk[1] = Rand.Next(1, this.Propaideia + 1);
+				// For the final exam
+
+				// Randomize and construct description
+				descriptionComponents[0] = Randomizer.RollDX(10);
+				descriptionComponents[1] = Randomizer.RollDX(10);
+
+				descriptionComponents[2] = descriptionComponents[0] * descriptionComponents[1];
+
+				Description = descriptionComponents[0] + " x " + descriptionComponents[1] + " = _";
+
+				// Randomize the position of the correct answer among the possible answers
+				int pos = Randomizer.RollZeroBasedD3();
+				CorrectAnswer = pos.ToString();
+
+				switch (pos)
+				{
+					case 0:
+						possibleAns[0] = descriptionComponents[2];
+						if (Randomizer.FlipCoin())
+						{
+							possibleAns[1] = descriptionComponents[2] + Randomizer.RollDX(10);
+							possibleAns[2] = descriptionComponents[2] - Randomizer.RollDX(10);
+						}
+						else
+						{
+							possibleAns[1] = descriptionComponents[2] - Randomizer.RollDX(10);
+							possibleAns[2] = descriptionComponents[2] + Randomizer.RollDX(10);
+						}
+						break;
+					case 1:
+						possibleAns[1] = descriptionComponents[2];
+						if (Randomizer.FlipCoin())
+						{
+							possibleAns[0] = descriptionComponents[2] + Randomizer.RollDX(10);
+							possibleAns[2] = descriptionComponents[2] - Randomizer.RollDX(10);
+						}
+						else
+						{
+							possibleAns[0] = descriptionComponents[2] - Randomizer.RollDX(10);
+							possibleAns[2] = descriptionComponents[2] + Randomizer.RollDX(10);
+						}
+						break;
+					case 2:
+						possibleAns[2] = descriptionComponents[2];
+						if (Randomizer.FlipCoin())
+						{
+							possibleAns[0] = descriptionComponents[2] + Randomizer.RollDX(10);
+							possibleAns[1] = descriptionComponents[2] - Randomizer.RollDX(10);
+						}
+						else
+						{
+							possibleAns[0] = descriptionComponents[2] - Randomizer.RollDX(10);
+							possibleAns[1] = descriptionComponents[2] + Randomizer.RollDX(10);
+						}
+						break;
+				}
 			}
 			else
 			{
-				tempAsk[1] = this.Propaideia;
-				tempAsk[0] = Rand.Next(1, this.Propaideia + 1);
-			}
+				// For regular quizes
 
-			tempAsk[2] = tempAsk[0] * tempAsk[1];
+				// Randomize and construct description
+				if (Randomizer.FlipCoin())
+				{
+					descriptionComponents[0] = (int)Propaideia;
+					descriptionComponents[1] = Randomizer.RollDX(10);
+				}
+				else
+				{
+					descriptionComponents[0] = Randomizer.RollDX(10);
+					descriptionComponents[1] = (int)Propaideia;
+				}
 
-			int ans = Rand.Next(0, 3);
-			possibleAns[ans] = tempAsk[2];
-			this.CorrectAnswer = possibleAns[ans].ToString();
-			chance = (Rand.Next(100) - 50) < 0;
-			switch (ans)
-			{
-				case 0:
-					if (chance)
-					{
-						possibleAns[1] = tempAsk[2] - this.Propaideia;
-						possibleAns[2] = tempAsk[2] + this.Propaideia;
-					}
-					else
-					{
-						possibleAns[1] = tempAsk[2] + this.Propaideia;
-						possibleAns[2] = tempAsk[2] - this.Propaideia;
-					}
-					break;
-				case 1:
-					if (chance)
-					{
-						possibleAns[0] = tempAsk[2] - this.Propaideia;
-						possibleAns[2] = tempAsk[2] + this.Propaideia;
-					}
-					else
-					{
-						possibleAns[2] = tempAsk[2] + this.Propaideia;
-						possibleAns[0] = tempAsk[2] - this.Propaideia;
-					}
-					break;
-				case 2:
-					if (chance)
-					{
-						possibleAns[0] = tempAsk[2] - this.Propaideia;
-						possibleAns[1] = tempAsk[2] + this.Propaideia;
-					}
-					else
-					{
-						possibleAns[1] = tempAsk[2] + this.Propaideia;
-						possibleAns[0] = tempAsk[2] - this.Propaideia;
-					}
-					break;
+				descriptionComponents[2] = descriptionComponents[0] * descriptionComponents[1];
+
+				Description = descriptionComponents[0] + " x " + descriptionComponents[1] + " = _";
+
+				// Randomize the position of the correct answer among the possible answers
+				int pos = Randomizer.RollZeroBasedD3();
+				CorrectAnswer = pos.ToString();
+
+				switch (pos)
+				{
+					case 0:
+						possibleAns[0] = descriptionComponents[2];
+						if (Randomizer.FlipCoin())
+						{
+							possibleAns[1] = descriptionComponents[2] + (int)Propaideia;
+							possibleAns[2] = descriptionComponents[2] - (int)Propaideia;
+						}
+						else
+						{
+							possibleAns[1] = descriptionComponents[2] - (int)Propaideia;
+							possibleAns[2] = descriptionComponents[2] + (int)Propaideia;
+						}
+						break;
+					case 1:
+						possibleAns[1] = descriptionComponents[2];
+						if (Randomizer.FlipCoin())
+						{
+							possibleAns[0] = descriptionComponents[2] + (int)Propaideia;
+							possibleAns[2] = descriptionComponents[2] - (int)Propaideia;
+						}
+						else
+						{
+							possibleAns[0] = descriptionComponents[2] - (int)Propaideia;
+							possibleAns[2] = descriptionComponents[2] + (int)Propaideia;
+						}
+						break;
+					case 2:
+						possibleAns[2] = descriptionComponents[2];
+						if (Randomizer.FlipCoin())
+						{
+							possibleAns[0] = descriptionComponents[2] + (int)Propaideia;
+							possibleAns[1] = descriptionComponents[2] - (int)Propaideia;
+						}
+						else
+						{
+							possibleAns[0] = descriptionComponents[2] - (int)Propaideia;
+							possibleAns[1] = descriptionComponents[2] + (int)Propaideia;
+						}
+						break;
+				}
 			}
 		}
 	}
