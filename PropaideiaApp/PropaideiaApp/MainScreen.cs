@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,10 @@ namespace PropaideiaApp
         Point hideMult = new Point(798, 31);
         Point hideBlank = new Point(181, 445);
         Point hideResult = new Point(608, 446);
-        int i = 0; //TO DELETE
+
+        int QUIZQUESTIONSNUM = 10;
+        static int questionCounter = 0;
+
 
         public MainScreen()
         {
@@ -146,65 +150,136 @@ namespace PropaideiaApp
 
         }
 
+        private QuizManager quizManager;
+        Question question;
+
         private void buttonTakeQuiz_Click(object sender, EventArgs e)
         {
             textBoxMain.Visible = false;
             pictureBoxNext.Visible = true;
             buttonTakeQuiz.Visible = false;
-            labelTitle.Text = "Quiz για την προπαίδεια του: ";
+            labelTitle.Text = "Quiz για την προπαίδεια του ";
             panelTip.Visible = false;
-            showQuestion("TF");
-        }
+            panelMenu.Enabled = false;
 
-        private void takeQuiz()
-        {
-
+            questionCounter = 0;
+            quizManager = new QuizManager((PropaideiaType)currentNumber, QUIZQUESTIONSNUM);
+            takeQuiz();
         }
 
         private void pictureBoxNext_Click(object sender, EventArgs e)
         {
-            //TODO Call getNextQuest function
-            if (i == 0)
+            if (question.GetType().ToString() == "PropaideiaApp.Quizes.QuestionMC")
             {
-                showQuestion("Blank");
+                if (radioButtonMult1.Checked)
+                {
+                    quizManager.AssignAnswer("0");
+                }
+                else if (radioButtonMult2.Checked)
+                {
+                    quizManager.AssignAnswer("1");
+                }
+                else if (radioButtonMult3.Checked)
+                {
+                    quizManager.AssignAnswer("2");
+                }
+                else
+                {
+                    MessageBox.Show("Please select an answer before continuing", "Select an Answer", MessageBoxButtons.OK);
+                    return;
+                }
             }
-            else if (i == 1)
+            else if(question.GetType().ToString() == "PropaideiaApp.Quizes.QuestionTF")
             {
-                showQuestion("Mult");
+                if (radioButtonTrue.Checked)
+                {
+                    quizManager.AssignAnswer("true");
+                }
+                else if(radioButtonFalse.Checked)
+                {
+                    quizManager.AssignAnswer("false");
+                }
+                else
+                {
+                    MessageBox.Show("Please select an answer to continue", "Select an Answer", MessageBoxButtons.OK);
+                    return;
+                }
+            }
+            else
+            {
+                quizManager.AssignAnswer(numericBlank.Value.ToString());
+            }
+
+            //Clear buttons
+            radioButtonMult1.Checked = false;
+            radioButtonMult2.Checked = false;
+            radioButtonMult3.Checked = false;
+            radioButtonTrue.Checked = false;
+            radioButtonFalse.Checked = false;
+            numericBlank.Value = 0;
+
+            takeQuiz();
+        }
+
+        private void takeQuiz()
+        {
+            if (questionCounter < QUIZQUESTIONSNUM)
+            {
+                question = quizManager.GetQuestion(questionCounter);
+
+                if (question.GetType().ToString() == "PropaideiaApp.Quizes.QuestionMC")
+                {
+                    showQuestionMult(question.Description, ((QuestionMC)question).PossibleAns);
+                }
+                else if (question.GetType().ToString() == "PropaideiaApp.Quizes.QuestionFG")
+                {
+                    showQuestion("FG", question.Description);
+                }
+                else
+                {
+                    showQuestion("TF", question.Description);
+                }
+                questionCounter++;
             }
             else
             {
                 endQuiz();
-                i = -1;
             }
-            i++;
         }
 
-        private void showQuestion(string questionType)
+        private void showQuestionMult(string questionDescr, int[] answersList)
         {
-            //List: 0-Blank, 1-Multiple Choice, 2-True/False
-            //TODO get questions from db
+            //Panel List: 0-Blank, 1-Multiple Choice, 2-True/False
 
-            if(questionType == "Blank")
+            questionPanelList[0].Visible = false;
+            questionPanelList[1].Location = questionPoint;
+            questionPanelList[1].Visible = true;
+            questionPanelList[2].Visible = false;
+            labelMultQuest.Text = questionDescr;
+            radioButtonMult1.Text = answersList[0].ToString();
+            radioButtonMult2.Text = answersList[1].ToString();
+            radioButtonMult3.Text = answersList[2].ToString();
+        }
+
+        private void showQuestion(string questionType, string questionDescr)
+        {
+            //Panel List: 0-Blank, 1-Multiple Choice, 2-True/False
+
+            if (questionType == "FG")
             {
                 questionPanelList[0].Location = questionPoint;
                 questionPanelList[0].Visible = true;
                 questionPanelList[1].Visible = false;
                 questionPanelList[2].Visible = false;
+                labelBlankQuest.Text = questionDescr;
             }
-            else if(questionType == "Mult")
-            {
-                questionPanelList[0].Visible = false;
-                questionPanelList[1].Location = questionPoint;
-                questionPanelList[1].Visible = true;
-                questionPanelList[2].Visible = false;
-            }
-            else if(questionType == "TF")
+            else if (questionType == "TF")
             {
                 questionPanelList[0].Visible = false;
                 questionPanelList[1].Visible = false;
                 questionPanelList[2].Location = questionPoint;
                 questionPanelList[2].Visible = true;
+                labelTFQuest.Text = questionDescr;
             }
         }
 
@@ -220,16 +295,19 @@ namespace PropaideiaApp
             panelResult.Visible = true;
             panelResult.Location = questionPoint;
 
-            //TODO May need numbering changes
-            buttonList[currentNumber - 1].Image = Resources.tick;
-            buttonList[currentNumber].Image = Resources.unlock;
-            buttonList[currentNumber].Enabled = true;
-            
-            //Replace with grade funct
-            progressBarResult.Value = 60;
-            labelResultGrade.Text = 60.ToString() + "/100";
-            //Save Results to DB
+            quizManager.GradeQuiz();
 
+            progressBarResult.Value = quizManager.QuizGrade;
+            labelResultGrade.Text = quizManager.QuizGrade.ToString() + "/100";
+
+            if (quizManager.QuizGrade > 80)
+            {
+                buttonList[currentNumber - 1].Image = Resources.tick;
+                buttonList[currentNumber].Image = Resources.unlock;
+                buttonList[currentNumber].Enabled = true;
+
+                labelResult.Text = "Πέρασες το quiz με βαθμό: ";
+            }
         }
 
         private void buttonResult_Click(object sender, EventArgs e)
@@ -240,6 +318,7 @@ namespace PropaideiaApp
             textBoxMain.Visible = true;
             pictureBoxNext.Visible = false;
             buttonTakeQuiz.Visible = true;
+            panelMenu.Enabled = true;
         }
 
         private void changeLesson(int current)

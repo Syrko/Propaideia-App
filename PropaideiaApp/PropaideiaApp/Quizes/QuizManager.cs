@@ -59,7 +59,8 @@ namespace PropaideiaApp.Quizes
 					quizGrade++;
 				}
 			}
-			quizGrade = quizGrade / questionsNum * 100;
+
+			quizGrade = (quizGrade * 100) / questionsNum;
 		}
 	}
 

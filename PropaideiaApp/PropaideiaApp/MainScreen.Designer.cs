@@ -54,9 +54,9 @@
             this.radioButtonTrue = new System.Windows.Forms.RadioButton();
             this.labelTFQuest = new System.Windows.Forms.Label();
             this.panelMult = new System.Windows.Forms.Panel();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonMult2 = new System.Windows.Forms.RadioButton();
+            this.radioButtonMult3 = new System.Windows.Forms.RadioButton();
+            this.radioButtonMult1 = new System.Windows.Forms.RadioButton();
             this.labelMultQuest = new System.Windows.Forms.Label();
             this.panelBlank = new System.Windows.Forms.Panel();
             this.numericBlank = new System.Windows.Forms.NumericUpDown();
@@ -68,10 +68,10 @@
             this.pictureBoxNext = new System.Windows.Forms.PictureBox();
             this.pictureBoxNumber = new System.Windows.Forms.PictureBox();
             this.panelResult = new System.Windows.Forms.Panel();
-            this.progressBarResult = new System.Windows.Forms.ProgressBar();
-            this.labelResult = new System.Windows.Forms.Label();
-            this.buttonResult = new System.Windows.Forms.Button();
             this.labelResultGrade = new System.Windows.Forms.Label();
+            this.buttonResult = new System.Windows.Forms.Button();
+            this.labelResult = new System.Windows.Forms.Label();
+            this.progressBarResult = new System.Windows.Forms.ProgressBar();
             this.panelMenu.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelTip.SuspendLayout();
@@ -159,6 +159,7 @@
             // 
             this.button10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.Enabled = false;
             this.button10.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -179,6 +180,7 @@
             // 
             this.button9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.Enabled = false;
             this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -199,6 +201,7 @@
             // 
             this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.Enabled = false;
             this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,6 +222,7 @@
             // 
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Enabled = false;
             this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -239,6 +243,7 @@
             // 
             this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Enabled = false;
             this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -259,6 +264,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Enabled = false;
             this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -279,6 +285,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Enabled = false;
             this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -299,6 +306,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Enabled = false;
             this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -319,6 +327,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Enabled = false;
             this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -362,7 +371,7 @@
             this.panelMain.Controls.Add(this.textBoxMain);
             this.panelMain.Location = new System.Drawing.Point(196, 76);
             this.panelMain.Name = "panelMain";
-            this.panelMain.Size = new System.Drawing.Size(481, 274);
+            this.panelMain.Size = new System.Drawing.Size(483, 274);
             this.panelMain.TabIndex = 7;
             // 
             // panelTip
@@ -470,54 +479,54 @@
             // panelMult
             // 
             this.panelMult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
-            this.panelMult.Controls.Add(this.radioButton3);
-            this.panelMult.Controls.Add(this.radioButton1);
-            this.panelMult.Controls.Add(this.radioButton2);
+            this.panelMult.Controls.Add(this.radioButtonMult2);
+            this.panelMult.Controls.Add(this.radioButtonMult3);
+            this.panelMult.Controls.Add(this.radioButtonMult1);
             this.panelMult.Controls.Add(this.labelMultQuest);
-            this.panelMult.Location = new System.Drawing.Point(798, 31);
+            this.panelMult.Location = new System.Drawing.Point(794, 31);
             this.panelMult.Name = "panelMult";
             this.panelMult.Size = new System.Drawing.Size(410, 239);
             this.panelMult.TabIndex = 19;
             this.panelMult.Visible = false;
             // 
-            // radioButton3
+            // radioButtonMult2
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.FlatAppearance.BorderSize = 0;
-            this.radioButton3.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.ForeColor = System.Drawing.Color.White;
-            this.radioButton3.Location = new System.Drawing.Point(43, 101);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(57, 36);
-            this.radioButton3.TabIndex = 18;
-            this.radioButton3.Text = "40";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButtonMult2.AutoSize = true;
+            this.radioButtonMult2.FlatAppearance.BorderSize = 0;
+            this.radioButtonMult2.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonMult2.ForeColor = System.Drawing.Color.White;
+            this.radioButtonMult2.Location = new System.Drawing.Point(43, 101);
+            this.radioButtonMult2.Name = "radioButtonMult2";
+            this.radioButtonMult2.Size = new System.Drawing.Size(57, 36);
+            this.radioButtonMult2.TabIndex = 18;
+            this.radioButtonMult2.Text = "40";
+            this.radioButtonMult2.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // radioButtonMult3
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.FlatAppearance.BorderSize = 0;
-            this.radioButton1.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton1.ForeColor = System.Drawing.Color.White;
-            this.radioButton1.Location = new System.Drawing.Point(43, 137);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(57, 36);
-            this.radioButton1.TabIndex = 17;
-            this.radioButton1.Text = "30";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonMult3.AutoSize = true;
+            this.radioButtonMult3.FlatAppearance.BorderSize = 0;
+            this.radioButtonMult3.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonMult3.ForeColor = System.Drawing.Color.White;
+            this.radioButtonMult3.Location = new System.Drawing.Point(43, 137);
+            this.radioButtonMult3.Name = "radioButtonMult3";
+            this.radioButtonMult3.Size = new System.Drawing.Size(57, 36);
+            this.radioButtonMult3.TabIndex = 17;
+            this.radioButtonMult3.Text = "30";
+            this.radioButtonMult3.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // radioButtonMult1
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.FlatAppearance.BorderSize = 0;
-            this.radioButton2.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.ForeColor = System.Drawing.Color.White;
-            this.radioButton2.Location = new System.Drawing.Point(43, 65);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(57, 36);
-            this.radioButton2.TabIndex = 16;
-            this.radioButton2.Text = "10";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonMult1.AutoSize = true;
+            this.radioButtonMult1.FlatAppearance.BorderSize = 0;
+            this.radioButtonMult1.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radioButtonMult1.ForeColor = System.Drawing.Color.White;
+            this.radioButtonMult1.Location = new System.Drawing.Point(43, 65);
+            this.radioButtonMult1.Name = "radioButtonMult1";
+            this.radioButtonMult1.Size = new System.Drawing.Size(57, 36);
+            this.radioButtonMult1.TabIndex = 16;
+            this.radioButtonMult1.Text = "10";
+            this.radioButtonMult1.UseVisualStyleBackColor = true;
             // 
             // labelMultQuest
             // 
@@ -632,29 +641,22 @@
             this.panelResult.Controls.Add(this.buttonResult);
             this.panelResult.Controls.Add(this.labelResult);
             this.panelResult.Controls.Add(this.progressBarResult);
-            this.panelResult.Location = new System.Drawing.Point(612, 445);
+            this.panelResult.Location = new System.Drawing.Point(622, 445);
             this.panelResult.Name = "panelResult";
             this.panelResult.Size = new System.Drawing.Size(410, 239);
             this.panelResult.TabIndex = 21;
             this.panelResult.Visible = false;
             // 
-            // progressBarResult
+            // labelResultGrade
             // 
-            this.progressBarResult.Location = new System.Drawing.Point(106, 100);
-            this.progressBarResult.Name = "progressBarResult";
-            this.progressBarResult.Size = new System.Drawing.Size(100, 23);
-            this.progressBarResult.TabIndex = 0;
-            // 
-            // labelResult
-            // 
-            this.labelResult.AutoSize = true;
-            this.labelResult.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResult.ForeColor = System.Drawing.Color.White;
-            this.labelResult.Location = new System.Drawing.Point(26, 14);
-            this.labelResult.Name = "labelResult";
-            this.labelResult.Size = new System.Drawing.Size(358, 33);
-            this.labelResult.TabIndex = 22;
-            this.labelResult.Text = "Το Quiz ολοκληρώθηκε με βαθμό: ";
+            this.labelResultGrade.AutoSize = true;
+            this.labelResultGrade.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResultGrade.ForeColor = System.Drawing.Color.White;
+            this.labelResultGrade.Location = new System.Drawing.Point(229, 96);
+            this.labelResultGrade.Name = "labelResultGrade";
+            this.labelResultGrade.Size = new System.Drawing.Size(71, 33);
+            this.labelResultGrade.TabIndex = 23;
+            this.labelResultGrade.Text = "0/100";
             // 
             // buttonResult
             // 
@@ -669,20 +671,27 @@
             this.buttonResult.Name = "buttonResult";
             this.buttonResult.Size = new System.Drawing.Size(113, 44);
             this.buttonResult.TabIndex = 22;
-            this.buttonResult.Text = "OK";
+            this.buttonResult.Text = "Ολοκλήρωση";
             this.buttonResult.UseVisualStyleBackColor = false;
             this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
             // 
-            // labelResultGrade
+            // labelResult
             // 
-            this.labelResultGrade.AutoSize = true;
-            this.labelResultGrade.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelResultGrade.ForeColor = System.Drawing.Color.White;
-            this.labelResultGrade.Location = new System.Drawing.Point(229, 96);
-            this.labelResultGrade.Name = "labelResultGrade";
-            this.labelResultGrade.Size = new System.Drawing.Size(71, 33);
-            this.labelResultGrade.TabIndex = 23;
-            this.labelResultGrade.Text = "0/100";
+            this.labelResult.AutoSize = true;
+            this.labelResult.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelResult.ForeColor = System.Drawing.Color.White;
+            this.labelResult.Location = new System.Drawing.Point(26, 14);
+            this.labelResult.Name = "labelResult";
+            this.labelResult.Size = new System.Drawing.Size(320, 33);
+            this.labelResult.TabIndex = 22;
+            this.labelResult.Text = "Δεν πέρασες το quiz με βαθμό:";
+            // 
+            // progressBarResult
+            // 
+            this.progressBarResult.Location = new System.Drawing.Point(106, 100);
+            this.progressBarResult.Name = "progressBarResult";
+            this.progressBarResult.Size = new System.Drawing.Size(100, 23);
+            this.progressBarResult.TabIndex = 0;
             // 
             // MainScreen
             // 
@@ -755,11 +764,11 @@
         private System.Windows.Forms.RadioButton radioButtonTrue;
         private System.Windows.Forms.Label labelTFQuest;
         private System.Windows.Forms.Panel panelMult;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButtonMult2;
         private System.Windows.Forms.Panel panelBlank;
         private System.Windows.Forms.Label labelBlankQuest;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButtonMult3;
+        private System.Windows.Forms.RadioButton radioButtonMult1;
         private System.Windows.Forms.Label labelMultQuest;
         private System.Windows.Forms.ToolTip toolTipNextQ;
         private System.Windows.Forms.NumericUpDown numericBlank;
