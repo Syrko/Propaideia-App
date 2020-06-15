@@ -28,7 +28,7 @@ namespace PropaideiaApp.DataMappers
 
                     SQLiteCommand cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "SELECT * FROM students WHERE username=@username;";
+                    cmd.CommandText = "SELECT * FROM users WHERE username=@username;";
                     cmd.Parameters.AddWithValue("@username", username);
                     SQLiteDataReader reader = cmd.ExecuteReader();
 
