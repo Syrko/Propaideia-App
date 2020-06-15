@@ -28,7 +28,7 @@ namespace PropaideiaApp.DataMappers
 
                     SQLiteCommand cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "SELECT * FROM users WHERE username='@username';";
+                    cmd.CommandText = "SELECT * FROM users WHERE username=@username;";
                     cmd.Parameters.AddWithValue("@username", username);
                     SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -83,7 +83,7 @@ namespace PropaideiaApp.DataMappers
                                                                  "propaideia9=@propaideia9," +
                                                                  "propaideia10=@propaideia10," +
                                                                  "finalExam=@finalExam" +
-                                                             "WHERE username='@username';";
+                                                             "WHERE username=@username;";
                     cmd.Parameters.AddWithValue("@username", progress.Username);
                     for (int i = 1; i <= 10; i++)
                     {

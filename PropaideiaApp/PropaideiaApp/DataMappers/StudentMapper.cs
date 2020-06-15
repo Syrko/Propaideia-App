@@ -28,7 +28,7 @@ namespace PropaideiaApp.DataMappers
 
                     SQLiteCommand cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "SELECT * FROM students WHERE username='@username';";
+                    cmd.CommandText = "SELECT * FROM students WHERE username=@username;";
                     cmd.Parameters.AddWithValue("@username", username);
                     SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -72,7 +72,7 @@ namespace PropaideiaApp.DataMappers
                     cmd.CommandText = "UPDATE students SET level=@level," +
                                                           "name=@name," +
                                                           "surname=@surname" +
-                                                   "WHERE username='@username';";
+                                                   "WHERE username=@username;";
                     cmd.Parameters.AddWithValue("@level", student.Level);
                     cmd.Parameters.AddWithValue("@name", student.Name);
                     cmd.Parameters.AddWithValue("@surname", student.Surname);
