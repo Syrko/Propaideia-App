@@ -82,7 +82,7 @@ namespace PropaideiaApp.DataMappers
                                                                  "propaideia8=@propaideia8," +
                                                                  "propaideia9=@propaideia9," +
                                                                  "propaideia10=@propaideia10," +
-                                                                 "finalExam=@finalExam" +
+                                                                 "finalExam=@finalExam " +
                                                              "WHERE username=@username;";
                     cmd.Parameters.AddWithValue("@username", progress.Username);
                     for (int i = 1; i <= 10; i++)

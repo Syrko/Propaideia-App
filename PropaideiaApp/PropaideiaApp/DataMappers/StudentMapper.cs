@@ -38,8 +38,16 @@ namespace PropaideiaApp.DataMappers
                         reader.Read();
                         string name = reader.GetString(reader.GetOrdinal("name"));
                         string surname = reader.GetString(reader.GetOrdinal("surname"));
+
+                        cmd = new SQLiteCommand(conn);
+
+                        cmd.CommandText = "SELECT * FROM students WHERE username=@username;";
+                        cmd.Parameters.AddWithValue("@username", username);
+                        reader = cmd.ExecuteReader();
                         int level = reader.GetInt32(reader.GetOrdinal("level"));
+
                         StudentProgress progress = StudentProgressMapper.Get(username);
+
                         Student student = new Student(username, name, surname, level, progress);
                         return student;
                     }
@@ -69,14 +77,23 @@ namespace PropaideiaApp.DataMappers
 
                     SQLiteCommand cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "UPDATE students SET level=@level," +
-                                                          "name=@name," +
-                                                          "surname=@surname" +
+                    cmd.CommandText = "UPDATE users SET name=@name," +
+                                                          " surname=@surname " +
                                                    "WHERE username=@username;";
-                    cmd.Parameters.AddWithValue("@level", student.Level);
                     cmd.Parameters.AddWithValue("@name", student.Name);
                     cmd.Parameters.AddWithValue("@surname", student.Surname);
+                    cmd.Parameters.AddWithValue("@username", student.Username);
                     cmd.ExecuteNonQuery();
+
+                    
+                    cmd = new SQLiteCommand(conn);
+
+                    cmd.CommandText = "UPDATE students SET level=@level " +
+                                                   "WHERE username=@username;";
+                    cmd.Parameters.AddWithValue("@level", student.Level);
+                    cmd.Parameters.AddWithValue("@username", student.Username);
+                    cmd.ExecuteNonQuery();
+
                     StudentProgressMapper.Update(student.StudentProgress);
 
                     return true;

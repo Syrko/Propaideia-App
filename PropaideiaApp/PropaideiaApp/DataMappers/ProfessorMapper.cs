@@ -72,7 +72,7 @@ namespace PropaideiaApp.DataMappers
 
                     cmd.CommandText = "UPDATE users SET username=@new_username," +
                                                        "name=@name," +
-                                                       "surname=@surname" +
+                                                       "surname=@surname " +
                                                    "WHERE username=@username;";
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@new_username", professor.Username);
