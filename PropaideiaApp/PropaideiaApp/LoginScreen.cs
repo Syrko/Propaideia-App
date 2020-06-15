@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PropaideiaApp.DataMappers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,21 +13,11 @@ namespace PropaideiaApp
 {
     public partial class LoginScreen : Form
     {
+        public static string activeUser;
+
         public LoginScreen()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(!String.IsNullOrEmpty(textBoxUsername.Text))
-            {
-                labelPassword.Visible = true;
-                textBoxPassword.Visible = true;
-            }
-            this.Hide();
-            MainScreen mainForm = new MainScreen();
-            mainForm.Show();
         }
 
         private void LoginScreen_Load(object sender, EventArgs e)
@@ -34,9 +25,34 @@ namespace PropaideiaApp
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void buttonLogin_Click(object sender, EventArgs e)
         {
+            MainScreen mainForm = new MainScreen();
 
+            if (!String.IsNullOrEmpty(textBoxUsername.Text))
+            {
+                if(StudentMapper.Get(textBoxUsername.Text) == null && ProfessorMapper.Get(textBoxUsername.Text) == null)
+                {
+                    MessageBox.Show("User not found! To create an account please click the Register button!", "Error", MessageBoxButtons.OK);
+                }
+                else if(StudentMapper.Get(textBoxUsername.Text) != null)
+                {
+                    activeUser = StudentMapper.Get(textBoxUsername.Text).ToString();
+                    this.Hide();
+                    mainForm.Show();
+                }
+                else if(ProfessorMapper.Get(textBoxUsername.Text) != null)
+                {
+                    activeUser = ProfessorMapper.Get(textBoxUsername.Text).ToString();
+                    this.Hide();
+                    mainForm.Show();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Please insert a username!", "Error", MessageBoxButtons.OK);
+            }
         }
 
         private void buttonLogin_MouseLeave(object sender, EventArgs e)
@@ -59,14 +75,11 @@ namespace PropaideiaApp
             buttonRegister.BackColor = Color.FromArgb(216, 40, 39);
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-
+            labelPassword.Visible = true;
+            textBoxPassword.Visible = true;
         }
+
     }
 }

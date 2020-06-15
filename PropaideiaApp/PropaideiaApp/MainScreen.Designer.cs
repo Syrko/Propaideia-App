@@ -386,23 +386,23 @@
             // 
             // labelTip
             // 
-            this.labelTip.AutoSize = true;
             this.labelTip.BackColor = System.Drawing.Color.Transparent;
-            this.labelTip.Font = new System.Drawing.Font("Minion Pro", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTip.Font = new System.Drawing.Font("Minion Pro", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.labelTip.Location = new System.Drawing.Point(57, 69);
+            this.labelTip.Location = new System.Drawing.Point(47, 52);
             this.labelTip.Name = "labelTip";
-            this.labelTip.Size = new System.Drawing.Size(87, 18);
+            this.labelTip.Size = new System.Drawing.Size(130, 80);
             this.labelTip.TabIndex = 14;
-            this.labelTip.Text = "Just do it, LOL";
+            this.labelTip.Text = "Ξαναγράφουμε τον αριθμό και γράφουμε δίπλα του ένα 0";
+            this.labelTip.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // pictureBoxTip
             // 
             this.pictureBoxTip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
             this.pictureBoxTip.Image = global::PropaideiaApp.Properties.Resources.bubble;
-            this.pictureBoxTip.Location = new System.Drawing.Point(0, 0);
+            this.pictureBoxTip.Location = new System.Drawing.Point(-14, -22);
             this.pictureBoxTip.Name = "pictureBoxTip";
-            this.pictureBoxTip.Size = new System.Drawing.Size(214, 196);
+            this.pictureBoxTip.Size = new System.Drawing.Size(245, 236);
             this.pictureBoxTip.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxTip.TabIndex = 21;
             this.pictureBoxTip.TabStop = false;
@@ -627,7 +627,7 @@
             // pictureBoxNumber
             // 
             this.pictureBoxNumber.Image = global::PropaideiaApp.Properties.Resources._10;
-            this.pictureBoxNumber.Location = new System.Drawing.Point(664, 276);
+            this.pictureBoxNumber.Location = new System.Drawing.Point(660, 290);
             this.pictureBoxNumber.Name = "pictureBoxNumber";
             this.pictureBoxNumber.Size = new System.Drawing.Size(147, 175);
             this.pictureBoxNumber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -671,7 +671,7 @@
             this.buttonResult.Name = "buttonResult";
             this.buttonResult.Size = new System.Drawing.Size(113, 44);
             this.buttonResult.TabIndex = 22;
-            this.buttonResult.Text = "Ολοκλήρωση";
+            this.buttonResult.Text = "Συνέχεια";
             this.buttonResult.UseVisualStyleBackColor = false;
             this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
             // 
@@ -718,7 +718,6 @@
             this.panelMenu.PerformLayout();
             this.panelMain.ResumeLayout(false);
             this.panelTip.ResumeLayout(false);
-            this.panelTip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxTip)).EndInit();
             this.panelTF.ResumeLayout(false);
             this.panelTF.PerformLayout();

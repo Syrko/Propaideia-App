@@ -72,7 +72,7 @@
             this.buttonLogin.TabIndex = 1;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
-            this.buttonLogin.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             this.buttonLogin.MouseEnter += new System.EventHandler(this.buttonLogin_MouseEnter);
             this.buttonLogin.MouseLeave += new System.EventHandler(this.buttonLogin_MouseLeave);
             // 
@@ -155,7 +155,6 @@
             this.labelUsername.Size = new System.Drawing.Size(132, 22);
             this.labelUsername.TabIndex = 8;
             this.labelUsername.Text = "Username:";
-            this.labelUsername.Click += new System.EventHandler(this.label1_Click);
             // 
             // labelPassword
             // 
@@ -191,7 +190,6 @@
             this.label1.Size = new System.Drawing.Size(197, 34);
             this.label1.TabIndex = 11;
             this.label1.Text = "Propaideia";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // LoginScreen
             // 
