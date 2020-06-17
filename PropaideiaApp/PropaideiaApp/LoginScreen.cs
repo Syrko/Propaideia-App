@@ -14,6 +14,7 @@ namespace PropaideiaApp
     public partial class LoginScreen : Form
     {
         public static string activeUser;
+        public static string userType;
 
         public LoginScreen()
         {
@@ -31,23 +32,24 @@ namespace PropaideiaApp
 
             if (!String.IsNullOrEmpty(textBoxUsername.Text))
             {
-                if(StudentMapper.Get(textBoxUsername.Text) == null && ProfessorMapper.Get(textBoxUsername.Text) == null)
+                if(StudentMapper.Get(textBoxUsername.Text) != null)
                 {
-                    MessageBox.Show("User not found! To create an account please click the Register button!", "Error", MessageBoxButtons.OK);
-                }
-                else if(StudentMapper.Get(textBoxUsername.Text) != null)
-                {
-                    activeUser = StudentMapper.Get(textBoxUsername.Text).ToString();
+                    activeUser = StudentMapper.Get(textBoxUsername.Text).Username;
+                    userType = "student";
                     this.Hide();
                     mainForm.Show();
                 }
                 else if(ProfessorMapper.Get(textBoxUsername.Text) != null)
                 {
-                    activeUser = ProfessorMapper.Get(textBoxUsername.Text).ToString();
+                    activeUser = ProfessorMapper.Get(textBoxUsername.Text).Username;
+                    userType = "professor";
                     this.Hide();
                     mainForm.Show();
                 }
-
+                else
+                {
+                    MessageBox.Show("User not found! To create an account please click the Register button!", "Error", MessageBoxButtons.OK);
+                }
             }
             else
             {
@@ -77,8 +79,7 @@ namespace PropaideiaApp
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            labelPassword.Visible = true;
-            textBoxPassword.Visible = true;
+            
         }
 
     }

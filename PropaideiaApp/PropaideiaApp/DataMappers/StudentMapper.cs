@@ -40,14 +40,13 @@ namespace PropaideiaApp.DataMappers
                         string surname = reader.GetString(reader.GetOrdinal("surname"));
 
                         cmd = new SQLiteCommand(conn);
-
                         cmd.CommandText = "SELECT * FROM students WHERE username=@username;";
                         cmd.Parameters.AddWithValue("@username", username);
                         reader = cmd.ExecuteReader();
+                        reader.Read();
                         int level = reader.GetInt32(reader.GetOrdinal("level"));
-
                         StudentProgress progress = StudentProgressMapper.Get(username);
-
+                        
                         Student student = new Student(username, name, surname, level, progress);
                         reader.Close();
                         return student;

@@ -31,7 +31,7 @@ namespace PropaideiaApp.DataMappers
                     cmd.CommandText = "SELECT * FROM studentProgress WHERE username=@username;";
                     cmd.Parameters.AddWithValue("@username", username);
                     SQLiteDataReader reader = cmd.ExecuteReader();
-
+ 
                     // Because we search with username which is unique
                     if (reader.HasRows)
                     {

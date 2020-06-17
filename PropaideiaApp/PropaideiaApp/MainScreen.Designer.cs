@@ -66,12 +66,40 @@
             this.labelTitleNumber = new System.Windows.Forms.Label();
             this.toolTipNextQ = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBoxNext = new System.Windows.Forms.PictureBox();
-            this.pictureBoxNumber = new System.Windows.Forms.PictureBox();
             this.panelResult = new System.Windows.Forms.Panel();
             this.labelResultGrade = new System.Windows.Forms.Label();
             this.buttonResult = new System.Windows.Forms.Button();
             this.labelResult = new System.Windows.Forms.Label();
             this.progressBarResult = new System.Windows.Forms.ProgressBar();
+            this.panelSettings = new System.Windows.Forms.Panel();
+            this.pictureBoxSettingsBack = new System.Windows.Forms.PictureBox();
+            this.labelSettingsSurname = new System.Windows.Forms.Label();
+            this.textBoxChangeSurname = new System.Windows.Forms.TextBox();
+            this.labelSettingsName = new System.Windows.Forms.Label();
+            this.labelSettings = new System.Windows.Forms.Label();
+            this.buttonSaveChanges = new System.Windows.Forms.Button();
+            this.textBoxChangeName = new System.Windows.Forms.TextBox();
+            this.buttonResetAccount = new System.Windows.Forms.Button();
+            this.panelProf = new System.Windows.Forms.Panel();
+            this.numericUpDownFinal = new System.Windows.Forms.NumericUpDown();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.textBoxSearchResults = new System.Windows.Forms.TextBox();
+            this.labelSearchUsername = new System.Windows.Forms.Label();
+            this.labelSearch = new System.Windows.Forms.Label();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.pictureBoxSettings = new System.Windows.Forms.PictureBox();
+            this.pictureBoxNumber = new System.Windows.Forms.PictureBox();
             this.panelMenu.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelTip.SuspendLayout();
@@ -81,8 +109,23 @@
             this.panelBlank.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericBlank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).BeginInit();
             this.panelResult.SuspendLayout();
+            this.panelSettings.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettingsBack)).BeginInit();
+            this.panelProf.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFinal)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -483,7 +526,7 @@
             this.panelMult.Controls.Add(this.radioButtonMult3);
             this.panelMult.Controls.Add(this.radioButtonMult1);
             this.panelMult.Controls.Add(this.labelMultQuest);
-            this.panelMult.Location = new System.Drawing.Point(794, 31);
+            this.panelMult.Location = new System.Drawing.Point(791, 31);
             this.panelMult.Name = "panelMult";
             this.panelMult.Size = new System.Drawing.Size(410, 239);
             this.panelMult.TabIndex = 19;
@@ -578,13 +621,13 @@
             this.buttonTakeQuiz.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.buttonTakeQuiz.FlatAppearance.BorderSize = 2;
             this.buttonTakeQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTakeQuiz.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.buttonTakeQuiz.Font = new System.Drawing.Font("Minion Pro", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.buttonTakeQuiz.ForeColor = System.Drawing.Color.White;
-            this.buttonTakeQuiz.Location = new System.Drawing.Point(385, 366);
+            this.buttonTakeQuiz.Location = new System.Drawing.Point(376, 366);
             this.buttonTakeQuiz.Name = "buttonTakeQuiz";
-            this.buttonTakeQuiz.Size = new System.Drawing.Size(113, 44);
+            this.buttonTakeQuiz.Size = new System.Drawing.Size(127, 44);
             this.buttonTakeQuiz.TabIndex = 8;
-            this.buttonTakeQuiz.Text = "Take Quiz";
+            this.buttonTakeQuiz.Text = "Ξεκινήστε το Quiz";
             this.buttonTakeQuiz.UseVisualStyleBackColor = false;
             this.buttonTakeQuiz.Click += new System.EventHandler(this.buttonTakeQuiz_Click);
             // 
@@ -623,16 +666,6 @@
             this.toolTipNextQ.SetToolTip(this.pictureBoxNext, "Επόμενη Ερώτηση");
             this.pictureBoxNext.Visible = false;
             this.pictureBoxNext.Click += new System.EventHandler(this.pictureBoxNext_Click);
-            // 
-            // pictureBoxNumber
-            // 
-            this.pictureBoxNumber.Image = global::PropaideiaApp.Properties.Resources._10;
-            this.pictureBoxNumber.Location = new System.Drawing.Point(660, 290);
-            this.pictureBoxNumber.Name = "pictureBoxNumber";
-            this.pictureBoxNumber.Size = new System.Drawing.Size(147, 175);
-            this.pictureBoxNumber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxNumber.TabIndex = 6;
-            this.pictureBoxNumber.TabStop = false;
             // 
             // panelResult
             // 
@@ -693,12 +726,393 @@
             this.progressBarResult.Size = new System.Drawing.Size(100, 23);
             this.progressBarResult.TabIndex = 0;
             // 
+            // panelSettings
+            // 
+            this.panelSettings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.panelSettings.Controls.Add(this.pictureBoxSettingsBack);
+            this.panelSettings.Controls.Add(this.labelSettingsSurname);
+            this.panelSettings.Controls.Add(this.textBoxChangeSurname);
+            this.panelSettings.Controls.Add(this.labelSettingsName);
+            this.panelSettings.Controls.Add(this.labelSettings);
+            this.panelSettings.Controls.Add(this.buttonSaveChanges);
+            this.panelSettings.Controls.Add(this.textBoxChangeName);
+            this.panelSettings.Controls.Add(this.buttonResetAccount);
+            this.panelSettings.Location = new System.Drawing.Point(796, 9);
+            this.panelSettings.Name = "panelSettings";
+            this.panelSettings.Size = new System.Drawing.Size(465, 254);
+            this.panelSettings.TabIndex = 23;
+            this.panelSettings.Visible = false;
+            // 
+            // pictureBoxSettingsBack
+            // 
+            this.pictureBoxSettingsBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxSettingsBack.Image = global::PropaideiaApp.Properties.Resources.back;
+            this.pictureBoxSettingsBack.Location = new System.Drawing.Point(15, 11);
+            this.pictureBoxSettingsBack.Name = "pictureBoxSettingsBack";
+            this.pictureBoxSettingsBack.Size = new System.Drawing.Size(43, 32);
+            this.pictureBoxSettingsBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxSettingsBack.TabIndex = 27;
+            this.pictureBoxSettingsBack.TabStop = false;
+            this.pictureBoxSettingsBack.Click += new System.EventHandler(this.pictureBoxSettingsBack_Click);
+            // 
+            // labelSettingsSurname
+            // 
+            this.labelSettingsSurname.AutoSize = true;
+            this.labelSettingsSurname.Font = new System.Drawing.Font("Minion Pro", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSettingsSurname.ForeColor = System.Drawing.Color.White;
+            this.labelSettingsSurname.Location = new System.Drawing.Point(36, 114);
+            this.labelSettingsSurname.Name = "labelSettingsSurname";
+            this.labelSettingsSurname.Size = new System.Drawing.Size(177, 28);
+            this.labelSettingsSurname.TabIndex = 27;
+            this.labelSettingsSurname.Text = "Αλλαγή Επωνύμου:";
+            // 
+            // textBoxChangeSurname
+            // 
+            this.textBoxChangeSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(60)))));
+            this.textBoxChangeSurname.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxChangeSurname.ForeColor = System.Drawing.Color.White;
+            this.textBoxChangeSurname.Location = new System.Drawing.Point(235, 113);
+            this.textBoxChangeSurname.Name = "textBoxChangeSurname";
+            this.textBoxChangeSurname.Size = new System.Drawing.Size(185, 29);
+            this.textBoxChangeSurname.TabIndex = 26;
+            // 
+            // labelSettingsName
+            // 
+            this.labelSettingsName.AutoSize = true;
+            this.labelSettingsName.Font = new System.Drawing.Font("Minion Pro", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSettingsName.ForeColor = System.Drawing.Color.White;
+            this.labelSettingsName.Location = new System.Drawing.Point(36, 74);
+            this.labelSettingsName.Name = "labelSettingsName";
+            this.labelSettingsName.Size = new System.Drawing.Size(174, 28);
+            this.labelSettingsName.TabIndex = 25;
+            this.labelSettingsName.Text = "Αλλαγή Ονόματος:";
+            // 
+            // labelSettings
+            // 
+            this.labelSettings.AutoSize = true;
+            this.labelSettings.Font = new System.Drawing.Font("Minion Pro", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSettings.ForeColor = System.Drawing.Color.White;
+            this.labelSettings.Location = new System.Drawing.Point(192, 10);
+            this.labelSettings.Name = "labelSettings";
+            this.labelSettings.Size = new System.Drawing.Size(128, 37);
+            this.labelSettings.TabIndex = 24;
+            this.labelSettings.Text = "Ρυθμίσεις";
+            // 
+            // buttonSaveChanges
+            // 
+            this.buttonSaveChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.buttonSaveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSaveChanges.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.buttonSaveChanges.FlatAppearance.BorderSize = 2;
+            this.buttonSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSaveChanges.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonSaveChanges.ForeColor = System.Drawing.Color.White;
+            this.buttonSaveChanges.Location = new System.Drawing.Point(285, 156);
+            this.buttonSaveChanges.Name = "buttonSaveChanges";
+            this.buttonSaveChanges.Size = new System.Drawing.Size(85, 30);
+            this.buttonSaveChanges.TabIndex = 11;
+            this.buttonSaveChanges.Text = "Αλλαγή";
+            this.buttonSaveChanges.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonSaveChanges.UseVisualStyleBackColor = false;
+            this.buttonSaveChanges.Click += new System.EventHandler(this.buttonChangeUsername_Click);
+            // 
+            // textBoxChangeName
+            // 
+            this.textBoxChangeName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(60)))));
+            this.textBoxChangeName.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxChangeName.ForeColor = System.Drawing.Color.White;
+            this.textBoxChangeName.Location = new System.Drawing.Point(235, 73);
+            this.textBoxChangeName.Name = "textBoxChangeName";
+            this.textBoxChangeName.Size = new System.Drawing.Size(185, 29);
+            this.textBoxChangeName.TabIndex = 10;
+            // 
+            // buttonResetAccount
+            // 
+            this.buttonResetAccount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.buttonResetAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonResetAccount.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.buttonResetAccount.FlatAppearance.BorderSize = 2;
+            this.buttonResetAccount.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonResetAccount.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonResetAccount.ForeColor = System.Drawing.Color.White;
+            this.buttonResetAccount.Location = new System.Drawing.Point(41, 185);
+            this.buttonResetAccount.Name = "buttonResetAccount";
+            this.buttonResetAccount.Size = new System.Drawing.Size(119, 56);
+            this.buttonResetAccount.TabIndex = 9;
+            this.buttonResetAccount.Text = "Επαναφορά Λογαριασμού";
+            this.buttonResetAccount.UseVisualStyleBackColor = false;
+            this.buttonResetAccount.Click += new System.EventHandler(this.buttonResetAccount_Click);
+            // 
+            // panelProf
+            // 
+            this.panelProf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.panelProf.Controls.Add(this.numericUpDownFinal);
+            this.panelProf.Controls.Add(this.buttonSearch);
+            this.panelProf.Controls.Add(this.numericUpDown10);
+            this.panelProf.Controls.Add(this.numericUpDown9);
+            this.panelProf.Controls.Add(this.numericUpDown8);
+            this.panelProf.Controls.Add(this.numericUpDown7);
+            this.panelProf.Controls.Add(this.numericUpDown6);
+            this.panelProf.Controls.Add(this.numericUpDown5);
+            this.panelProf.Controls.Add(this.numericUpDown4);
+            this.panelProf.Controls.Add(this.numericUpDown3);
+            this.panelProf.Controls.Add(this.numericUpDown2);
+            this.panelProf.Controls.Add(this.numericUpDown1);
+            this.panelProf.Controls.Add(this.textBoxSearchResults);
+            this.panelProf.Controls.Add(this.labelSearchUsername);
+            this.panelProf.Controls.Add(this.labelSearch);
+            this.panelProf.Controls.Add(this.textBoxSearch);
+            this.panelProf.Location = new System.Drawing.Point(193, 57);
+            this.panelProf.Name = "panelProf";
+            this.panelProf.Size = new System.Drawing.Size(486, 293);
+            this.panelProf.TabIndex = 24;
+            this.panelProf.Visible = false;
+            // 
+            // numericUpDownFinal
+            // 
+            this.numericUpDownFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.numericUpDownFinal.Font = new System.Drawing.Font("Minion Pro", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDownFinal.ForeColor = System.Drawing.Color.White;
+            this.numericUpDownFinal.Location = new System.Drawing.Point(367, 253);
+            this.numericUpDownFinal.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDownFinal.Name = "numericUpDownFinal";
+            this.numericUpDownFinal.Size = new System.Drawing.Size(68, 30);
+            this.numericUpDownFinal.TabIndex = 39;
+            this.numericUpDownFinal.Visible = false;
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.buttonSearch.FlatAppearance.BorderSize = 2;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Minion Pro", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Location = new System.Drawing.Point(371, 44);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(101, 29);
+            this.buttonSearch.TabIndex = 25;
+            this.buttonSearch.Text = "Αναζήτηση";
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // numericUpDown10
+            // 
+            this.numericUpDown10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.numericUpDown10.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown10.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown10.Location = new System.Drawing.Point(416, 130);
+            this.numericUpDown10.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown10.Name = "numericUpDown10";
+            this.numericUpDown10.Size = new System.Drawing.Size(51, 27);
+            this.numericUpDown10.TabIndex = 38;
+            this.numericUpDown10.Visible = false;
+            // 
+            // numericUpDown9
+            // 
+            this.numericUpDown9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.numericUpDown9.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown9.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown9.Location = new System.Drawing.Point(416, 83);
+            this.numericUpDown9.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown9.Name = "numericUpDown9";
+            this.numericUpDown9.Size = new System.Drawing.Size(51, 27);
+            this.numericUpDown9.TabIndex = 37;
+            this.numericUpDown9.Visible = false;
+            // 
+            // numericUpDown8
+            // 
+            this.numericUpDown8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.numericUpDown8.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown8.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown8.Location = new System.Drawing.Point(255, 223);
+            this.numericUpDown8.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(51, 27);
+            this.numericUpDown8.TabIndex = 36;
+            this.numericUpDown8.Visible = false;
+            // 
+            // numericUpDown7
+            // 
+            this.numericUpDown7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.numericUpDown7.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown7.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown7.Location = new System.Drawing.Point(255, 176);
+            this.numericUpDown7.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown7.Name = "numericUpDown7";
+            this.numericUpDown7.Size = new System.Drawing.Size(51, 27);
+            this.numericUpDown7.TabIndex = 35;
+            this.numericUpDown7.Visible = false;
+            // 
+            // numericUpDown6
+            // 
+            this.numericUpDown6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.numericUpDown6.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown6.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown6.Location = new System.Drawing.Point(255, 130);
+            this.numericUpDown6.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(51, 27);
+            this.numericUpDown6.TabIndex = 34;
+            this.numericUpDown6.Visible = false;
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.numericUpDown5.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown5.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown5.Location = new System.Drawing.Point(255, 83);
+            this.numericUpDown5.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(51, 27);
+            this.numericUpDown5.TabIndex = 33;
+            this.numericUpDown5.Visible = false;
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.numericUpDown4.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown4.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown4.Location = new System.Drawing.Point(95, 223);
+            this.numericUpDown4.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(51, 27);
+            this.numericUpDown4.TabIndex = 32;
+            this.numericUpDown4.Visible = false;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.numericUpDown3.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown3.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown3.Location = new System.Drawing.Point(95, 176);
+            this.numericUpDown3.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(51, 27);
+            this.numericUpDown3.TabIndex = 31;
+            this.numericUpDown3.Visible = false;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.numericUpDown2.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown2.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown2.Location = new System.Drawing.Point(95, 130);
+            this.numericUpDown2.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(51, 27);
+            this.numericUpDown2.TabIndex = 30;
+            this.numericUpDown2.Visible = false;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.numericUpDown1.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numericUpDown1.ForeColor = System.Drawing.Color.White;
+            this.numericUpDown1.Location = new System.Drawing.Point(95, 82);
+            this.numericUpDown1.Margin = new System.Windows.Forms.Padding(0);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(51, 27);
+            this.numericUpDown1.TabIndex = 29;
+            this.numericUpDown1.Visible = false;
+            // 
+            // textBoxSearchResults
+            // 
+            this.textBoxSearchResults.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.textBoxSearchResults.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.textBoxSearchResults.Font = new System.Drawing.Font("Minion Pro", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearchResults.ForeColor = System.Drawing.Color.White;
+            this.textBoxSearchResults.Location = new System.Drawing.Point(15, 79);
+            this.textBoxSearchResults.Multiline = true;
+            this.textBoxSearchResults.Name = "textBoxSearchResults";
+            this.textBoxSearchResults.Size = new System.Drawing.Size(465, 211);
+            this.textBoxSearchResults.TabIndex = 27;
+            this.textBoxSearchResults.Text = "Quiz 1:\t\tQuiz 5:\t\tQuiz 9:\r\n\r\nQuiz 2:\t\tQuiz 6:\t\tQuiz 10:\r\n\r\nQuiz 3:\t\tQuiz 7:\t\t\r\n\r\n" +
+    "Quiz 4:\t\tQuiz 8:\t\tΤελική Εξέταση:";
+            this.textBoxSearchResults.Click += new System.EventHandler(this.textBoxSearchResults_Click);
+            // 
+            // labelSearchUsername
+            // 
+            this.labelSearchUsername.AutoSize = true;
+            this.labelSearchUsername.Font = new System.Drawing.Font("Minion Pro", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchUsername.ForeColor = System.Drawing.Color.White;
+            this.labelSearchUsername.Location = new System.Drawing.Point(7, 46);
+            this.labelSearchUsername.Name = "labelSearchUsername";
+            this.labelSearchUsername.Size = new System.Drawing.Size(167, 26);
+            this.labelSearchUsername.TabIndex = 26;
+            this.labelSearchUsername.Text = "Username Μαθητή:";
+            // 
+            // labelSearch
+            // 
+            this.labelSearch.AutoSize = true;
+            this.labelSearch.Font = new System.Drawing.Font("Minion Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearch.ForeColor = System.Drawing.Color.White;
+            this.labelSearch.Location = new System.Drawing.Point(3, 7);
+            this.labelSearch.Name = "labelSearch";
+            this.labelSearch.Size = new System.Drawing.Size(213, 33);
+            this.labelSearch.TabIndex = 25;
+            this.labelSearch.Text = "Αναζήτηση Μαθητή";
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(60)))));
+            this.textBoxSearch.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.ForeColor = System.Drawing.Color.White;
+            this.textBoxSearch.Location = new System.Drawing.Point(180, 44);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(185, 29);
+            this.textBoxSearch.TabIndex = 11;
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.buttonSave.FlatAppearance.BorderSize = 2;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.buttonSave.ForeColor = System.Drawing.Color.White;
+            this.buttonSave.Location = new System.Drawing.Point(386, 367);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(113, 44);
+            this.buttonSave.TabIndex = 26;
+            this.buttonSave.Text = "Αποθήκευση";
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Visible = false;
+            // 
+            // pictureBoxSettings
+            // 
+            this.pictureBoxSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxSettings.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSettings.Image")));
+            this.pictureBoxSettings.Location = new System.Drawing.Point(744, 9);
+            this.pictureBoxSettings.Name = "pictureBoxSettings";
+            this.pictureBoxSettings.Size = new System.Drawing.Size(34, 37);
+            this.pictureBoxSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxSettings.TabIndex = 22;
+            this.pictureBoxSettings.TabStop = false;
+            this.pictureBoxSettings.Click += new System.EventHandler(this.pictureBoxSettings_Click);
+            // 
+            // pictureBoxNumber
+            // 
+            this.pictureBoxNumber.Image = global::PropaideiaApp.Properties.Resources._10;
+            this.pictureBoxNumber.Location = new System.Drawing.Point(662, 292);
+            this.pictureBoxNumber.Name = "pictureBoxNumber";
+            this.pictureBoxNumber.Size = new System.Drawing.Size(147, 175);
+            this.pictureBoxNumber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxNumber.TabIndex = 6;
+            this.pictureBoxNumber.TabStop = false;
+            // 
             // MainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(60)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelSettings);
+            this.Controls.Add(this.buttonSave);
+            this.Controls.Add(this.panelProf);
+            this.Controls.Add(this.pictureBoxSettings);
             this.Controls.Add(this.panelResult);
             this.Controls.Add(this.panelBlank);
             this.Controls.Add(this.panelMult);
@@ -727,9 +1141,26 @@
             this.panelBlank.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericBlank)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).EndInit();
             this.panelResult.ResumeLayout(false);
             this.panelResult.PerformLayout();
+            this.panelSettings.ResumeLayout(false);
+            this.panelSettings.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettingsBack)).EndInit();
+            this.panelProf.ResumeLayout(false);
+            this.panelProf.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFinal)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -779,5 +1210,33 @@
         private System.Windows.Forms.Label labelResult;
         private System.Windows.Forms.ProgressBar progressBarResult;
         private System.Windows.Forms.Label labelResultGrade;
+        private System.Windows.Forms.PictureBox pictureBoxSettings;
+        private System.Windows.Forms.Panel panelSettings;
+        private System.Windows.Forms.Button buttonResetAccount;
+        private System.Windows.Forms.TextBox textBoxChangeName;
+        private System.Windows.Forms.Button buttonSaveChanges;
+        private System.Windows.Forms.Label labelSettingsName;
+        private System.Windows.Forms.Label labelSettings;
+        private System.Windows.Forms.Panel panelProf;
+        private System.Windows.Forms.TextBox textBoxSearchResults;
+        private System.Windows.Forms.Label labelSearchUsername;
+        private System.Windows.Forms.Label labelSearch;
+        private System.Windows.Forms.TextBox textBoxSearch;
+        private System.Windows.Forms.Button buttonSearch;
+        private System.Windows.Forms.NumericUpDown numericUpDownFinal;
+        private System.Windows.Forms.NumericUpDown numericUpDown10;
+        private System.Windows.Forms.NumericUpDown numericUpDown9;
+        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button buttonSave;
+        private System.Windows.Forms.Label labelSettingsSurname;
+        private System.Windows.Forms.TextBox textBoxChangeSurname;
+        private System.Windows.Forms.PictureBox pictureBoxSettingsBack;
     }
 }

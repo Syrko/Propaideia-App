@@ -1,0 +1,16 @@
+diff a/PropaideiaApp/PropaideiaApp/DataMappers/ProfessorMapper.cs b/PropaideiaApp/PropaideiaApp/DataMappers/ProfessorMapper.cs	(rejected hunks)
+@@ -40,10 +40,14 @@
+                         string name = reader.GetString(reader.GetOrdinal("name"));
+                         string surname = reader.GetString(reader.GetOrdinal("surname"));
+                         Professor prof = new Professor(username, name, surname);
++                        reader.Close();
+                         return prof;
+                     }
+                     else
++                    {
++                        reader.Close();
+                         return null;
++                    }
+                 }
+                 catch(Exception e)
+                 {
