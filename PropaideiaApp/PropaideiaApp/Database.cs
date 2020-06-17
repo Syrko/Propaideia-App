@@ -10,6 +10,42 @@ namespace PropaideiaApp
     class Database
     {
         internal const string DATABASE_NAME = "database.db";
+
+        internal static string Login(string username, string password)
+        {
+            using(SQLiteConnection conn = new SQLiteConnection("Data source=" + DATABASE_NAME + ";"))
+            {
+                try
+                {
+                    conn.Open();
+
+                    SQLiteCommand cmd = new SQLiteCommand(conn);
+
+                    cmd.CommandText = "SELECT user_type FROM users WHERE username=@username AND password=@password;";
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    SQLiteDataReader reader = cmd.ExecuteReader();
+
+                    if (!reader.HasRows)
+                    {
+                        return null;
+                    }
+                    else
+                    {
+                        reader.Read();
+                        string user_type = reader.GetString(reader.GetOrdinal("user_type"));
+                        return user_type;
+                    }
+                }
+                catch(Exception e)
+                {
+                    Console.WriteLine("Exception at Login: " + e.Message);
+                    return null;
+                }
+            }
+        }
+
         internal static void Initialize_Database()
         {
             using(SQLiteConnection conn = new SQLiteConnection("Data source=" + DATABASE_NAME + ";"))
