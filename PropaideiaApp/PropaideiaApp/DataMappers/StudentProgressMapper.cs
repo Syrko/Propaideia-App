@@ -28,7 +28,7 @@ namespace PropaideiaApp.DataMappers
 
                     SQLiteCommand cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "SELECT * FROM users WHERE username=@username;";
+                    cmd.CommandText = "SELECT * FROM studentProgress WHERE username=@username;";
                     cmd.Parameters.AddWithValue("@username", username);
                     SQLiteDataReader reader = cmd.ExecuteReader();
 
@@ -117,7 +117,7 @@ namespace PropaideiaApp.DataMappers
 
                     SQLiteCommand cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "INSERT INTO users (username) VALUES (@username);";
+                    cmd.CommandText = "INSERT INTO studentProgress (username) VALUES (@username);";
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.ExecuteNonQuery();
                     return true;
@@ -145,7 +145,7 @@ namespace PropaideiaApp.DataMappers
 
                     SQLiteCommand cmd = new SQLiteCommand(conn);
 
-                    cmd.CommandText = "DELETE FROM users WHERE username=@username;";
+                    cmd.CommandText = "DELETE FROM studentProgress WHERE username=@username;";
                     cmd.Parameters.AddWithValue("@username", progress.Username);
                     cmd.ExecuteNonQuery();
                     return true;
