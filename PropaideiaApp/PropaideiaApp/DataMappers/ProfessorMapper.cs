@@ -40,10 +40,14 @@ namespace PropaideiaApp.DataMappers
                         string name = reader.GetString(reader.GetOrdinal("name"));
                         string surname = reader.GetString(reader.GetOrdinal("surname"));
                         Professor prof = new Professor(username, name, surname);
+                        reader.Close();
                         return prof;
                     }
                     else
+                    {
+                        reader.Close();
                         return null;
+                    }
                 }
                 catch(Exception e)
                 {

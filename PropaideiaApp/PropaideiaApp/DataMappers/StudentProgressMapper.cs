@@ -37,17 +37,21 @@ namespace PropaideiaApp.DataMappers
                     {
                         reader.Read();
                         List<int> prop = new List<int>();
-                        for(int i = 1; i <= 10; i++)
+                        for (int i = 1; i <= 10; i++)
                         {
                             int temp = reader.GetInt32(reader.GetOrdinal("propaideia" + i.ToString()));
                             prop.Add(temp);
                         }
                         int final = reader.GetInt32(reader.GetOrdinal("finalExam"));
                         StudentProgress progress = new StudentProgress(username, prop, final);
+                        reader.Close();
                         return progress;
                     }
                     else
+                    {
+                        reader.Close();
                         return null;
+                    }
                 }
                 catch (Exception e)
                 {

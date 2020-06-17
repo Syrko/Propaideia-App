@@ -49,10 +49,14 @@ namespace PropaideiaApp.DataMappers
                         StudentProgress progress = StudentProgressMapper.Get(username);
 
                         Student student = new Student(username, name, surname, level, progress);
+                        reader.Close();
                         return student;
                     }
                     else
+                    {
+                        reader.Close();
                         return null;
+                    }
                 }
                 catch (Exception e)
                 {
@@ -63,7 +67,7 @@ namespace PropaideiaApp.DataMappers
         }
 
         /// <summary>
-        /// Updates a professor entry in the database
+        /// Updates a student entry in the database
         /// </summary>
         /// <param name="student">Student object with the necessary information to update the database.</param>
         /// <returns>True if operation is successful</returns>
