@@ -72,17 +72,18 @@ namespace PropaideiaApp.DataMappers
                 {
                     conn.Open();
 
-                    SQLiteCommand cmd = new SQLiteCommand(conn);
-
-                    cmd.CommandText = "UPDATE users SET username=@new_username," +
-                                                       "name=@name," +
-                                                       "surname=@surname " +
-                                                   "WHERE username=@username;";
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@new_username", professor.Username);
-                    cmd.Parameters.AddWithValue("@name", professor.Name);
-                    cmd.Parameters.AddWithValue("@surname", professor.Surname);
-                    cmd.ExecuteNonQuery();
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                    { 
+                        cmd.CommandText = "UPDATE users SET username=@new_username," +
+                                                           "name=@name," +
+                                                           "surname=@surname " +
+                                                       "WHERE username=@username;";
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@new_username", professor.Username);
+                        cmd.Parameters.AddWithValue("@name", professor.Name);
+                        cmd.Parameters.AddWithValue("@surname", professor.Surname);
+                        cmd.ExecuteNonQuery();
+                    }
                     return true;
                 }
                 catch (Exception e)
@@ -107,16 +108,17 @@ namespace PropaideiaApp.DataMappers
                 {
                     conn.Open();
 
-                    SQLiteCommand cmd = new SQLiteCommand(conn);
-
-                    cmd.CommandText = "INSERT INTO users (username, user_type, name, surname, password) " +
-                                                        "VALUES(@username, @user_type, @name, @surname, @password);";
-                    cmd.Parameters.AddWithValue("@username", professor.Username);
-                    cmd.Parameters.AddWithValue("@user_type", UserTypes.PROFESSOR);
-                    cmd.Parameters.AddWithValue("@name", professor.Name);
-                    cmd.Parameters.AddWithValue("@surname", professor.Surname);
-                    cmd.Parameters.AddWithValue("@password", password);
-                    cmd.ExecuteNonQuery();
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                    {
+                        cmd.CommandText = "INSERT INTO users (username, user_type, name, surname, password) " +
+                                                            "VALUES(@username, @user_type, @name, @surname, @password);";
+                        cmd.Parameters.AddWithValue("@username", professor.Username);
+                        cmd.Parameters.AddWithValue("@user_type", UserTypes.PROFESSOR);
+                        cmd.Parameters.AddWithValue("@name", professor.Name);
+                        cmd.Parameters.AddWithValue("@surname", professor.Surname);
+                        cmd.Parameters.AddWithValue("@password", password);
+                        cmd.ExecuteNonQuery();
+                    }
                     return true;
                 }
                 catch (Exception e)
@@ -140,13 +142,13 @@ namespace PropaideiaApp.DataMappers
                 {
                     conn.Open();
 
-                    SQLiteCommand cmd = new SQLiteCommand(conn);
-
-                    cmd.CommandText = "DELETE FROM users WHERE username=@username;";
-                    cmd.Parameters.AddWithValue("@username", professor.Username);
-                    cmd.ExecuteNonQuery();
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                    {
+                        cmd.CommandText = "DELETE FROM users WHERE username=@username;";
+                        cmd.Parameters.AddWithValue("@username", professor.Username);
+                        cmd.ExecuteNonQuery();
+                    }
                     return true;
-
                 }
                 catch (Exception e)
                 {

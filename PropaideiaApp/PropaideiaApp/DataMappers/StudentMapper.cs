@@ -78,27 +78,28 @@ namespace PropaideiaApp.DataMappers
                 {
                     conn.Open();
 
-                    SQLiteCommand cmd = new SQLiteCommand(conn);
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                    {
 
-                    cmd.CommandText = "UPDATE users SET name=@name," +
-                                                          " surname=@surname " +
+                        cmd.CommandText = "UPDATE users SET name=@name," +
+                                                              " surname=@surname " +
+                                                       "WHERE username=@username;";
+                        cmd.Parameters.AddWithValue("@name", student.Name);
+                        cmd.Parameters.AddWithValue("@surname", student.Surname);
+                        cmd.Parameters.AddWithValue("@username", student.Username);
+                        cmd.ExecuteNonQuery();
+
+                    }
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                    {
+
+                        cmd.CommandText = "UPDATE students SET level=@level " +
                                                    "WHERE username=@username;";
-                    cmd.Parameters.AddWithValue("@name", student.Name);
-                    cmd.Parameters.AddWithValue("@surname", student.Surname);
-                    cmd.Parameters.AddWithValue("@username", student.Username);
-                    cmd.ExecuteNonQuery();
-
-                    
-                    cmd = new SQLiteCommand(conn);
-
-                    cmd.CommandText = "UPDATE students SET level=@level " +
-                                                   "WHERE username=@username;";
-                    cmd.Parameters.AddWithValue("@level", student.Level);
-                    cmd.Parameters.AddWithValue("@username", student.Username);
-                    cmd.ExecuteNonQuery();
-
+                        cmd.Parameters.AddWithValue("@level", student.Level);
+                        cmd.Parameters.AddWithValue("@username", student.Username);
+                        cmd.ExecuteNonQuery();
+                    }
                     StudentProgressMapper.Update(student.StudentProgress);
-
                     return true;
                 }
                 catch (Exception e)
@@ -123,23 +124,25 @@ namespace PropaideiaApp.DataMappers
                 {
                     conn.Open();
 
-                    SQLiteCommand cmd = new SQLiteCommand(conn);
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                    {
 
-                    cmd.CommandText = "INSERT INTO users (username, user_type, name, surname, password) " +
+                        cmd.CommandText = "INSERT INTO users (username, user_type, name, surname, password) " +
                                                         "VALUES(@username, @user_type, @name, @surname, @password);";
-                    cmd.Parameters.AddWithValue("@username", student.Username);
-                    cmd.Parameters.AddWithValue("@user_type", UserTypes.STUDENT);
-                    cmd.Parameters.AddWithValue("@name", student.Name);
-                    cmd.Parameters.AddWithValue("@surname", student.Surname);
-                    cmd.Parameters.AddWithValue("@password", password);
-                    cmd.ExecuteNonQuery();
+                        cmd.Parameters.AddWithValue("@username", student.Username);
+                        cmd.Parameters.AddWithValue("@user_type", UserTypes.STUDENT);
+                        cmd.Parameters.AddWithValue("@name", student.Name);
+                        cmd.Parameters.AddWithValue("@surname", student.Surname);
+                        cmd.Parameters.AddWithValue("@password", password);
+                        cmd.ExecuteNonQuery();
+                    }
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                    {
 
-                    cmd = new SQLiteCommand(conn);
-
-                    cmd.CommandText = "INSERT INTO students (username) VALUES(@username);";
-                    cmd.Parameters.AddWithValue("@username", student.Username);
-                    cmd.ExecuteNonQuery();
-
+                        cmd.CommandText = "INSERT INTO students (username) VALUES(@username);";
+                        cmd.Parameters.AddWithValue("@username", student.Username);
+                        cmd.ExecuteNonQuery();
+                    }
                     StudentProgressMapper.Insert(student.Username);
                     return true;
                 }
@@ -164,19 +167,21 @@ namespace PropaideiaApp.DataMappers
                 {
                     conn.Open();
 
-                    SQLiteCommand cmd = new SQLiteCommand(conn);
-
                     StudentProgressMapper.Delete(student.StudentProgress);
 
-                    cmd.CommandText = "DELETE FROM students WHERE username=@username;";
-                    cmd.Parameters.AddWithValue("@username", student.Username);
-                    cmd.ExecuteNonQuery();
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                    {
 
-                    cmd = new SQLiteCommand(conn);
-                    cmd.CommandText = "DELETE FROM users WHERE username=@username;";
-                    cmd.Parameters.AddWithValue("@username", student.Username);
-                    cmd.ExecuteNonQuery();
-
+                        cmd.CommandText = "DELETE FROM students WHERE username=@username;";
+                        cmd.Parameters.AddWithValue("@username", student.Username);
+                        cmd.ExecuteNonQuery();
+                    }
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                    {
+                        cmd.CommandText = "DELETE FROM users WHERE username=@username;";
+                        cmd.Parameters.AddWithValue("@username", student.Username);
+                        cmd.ExecuteNonQuery();
+                    }
                     return true;
 
                 }
