@@ -26,36 +26,38 @@ namespace PropaideiaApp.DataMappers
                 {
                     conn.Open();
 
-                    SQLiteCommand cmd = new SQLiteCommand(conn);
+                    string name, surname;
+                    int level;
 
-                    cmd.CommandText = "SELECT * FROM users WHERE username=@username;";
-                    cmd.Parameters.AddWithValue("@username", username);
-                    SQLiteDataReader reader = cmd.ExecuteReader();
-
-                    // Because we search with username which is unique
-                    if (reader.HasRows)
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
                     {
-                        reader.Read();
-                        string name = reader.GetString(reader.GetOrdinal("name"));
-                        string surname = reader.GetString(reader.GetOrdinal("surname"));
 
-                        cmd = new SQLiteCommand(conn);
+                        cmd.CommandText = "SELECT * FROM users WHERE username=@username;";
+                        cmd.Parameters.AddWithValue("@username", username);
+
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (!reader.HasRows)
+                                return null;
+                            reader.Read();
+                            name = reader.GetString(reader.GetOrdinal("name"));
+                            surname = reader.GetString(reader.GetOrdinal("surname"));
+                        }
+                    }
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                    {
                         cmd.CommandText = "SELECT * FROM students WHERE username=@username;";
                         cmd.Parameters.AddWithValue("@username", username);
-                        reader = cmd.ExecuteReader();
-                        reader.Read();
-                        int level = reader.GetInt32(reader.GetOrdinal("level"));
-                        StudentProgress progress = StudentProgressMapper.Get(username);
-                        
-                        Student student = new Student(username, name, surname, level, progress);
-                        reader.Close();
-                        return student;
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
+                        {
+                            reader.Read();
+                            level = reader.GetInt32(reader.GetOrdinal("level"));
+                        }
                     }
-                    else
-                    {
-                        reader.Close();
-                        return null;
-                    }
+                    StudentProgress progress = StudentProgressMapper.Get(username);
+                    Student student = new Student(username, name, surname, level, progress);
+                    
+                    return student;
                 }
                 catch (Exception e)
                 {

@@ -26,31 +26,34 @@ namespace PropaideiaApp.DataMappers
                 {
                     conn.Open();
 
-                    SQLiteCommand cmd = new SQLiteCommand(conn);
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
+                    {
 
-                    cmd.CommandText = "SELECT * FROM studentProgress WHERE username=@username;";
-                    cmd.Parameters.AddWithValue("@username", username);
-                    SQLiteDataReader reader = cmd.ExecuteReader();
- 
-                    // Because we search with username which is unique
-                    if (reader.HasRows)
-                    {
-                        reader.Read();
-                        List<int> prop = new List<int>();
-                        for (int i = 1; i <= 10; i++)
+                        cmd.CommandText = "SELECT * FROM studentProgress WHERE username=@username;";
+                        cmd.Parameters.AddWithValue("@username", username);
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
                         {
-                            int temp = reader.GetInt32(reader.GetOrdinal("propaideia" + i.ToString()));
-                            prop.Add(temp);
+
+                            // Because we search with username which is unique
+                            if (reader.HasRows)
+                            {
+                                reader.Read();
+                                List<int> prop = new List<int>();
+                                for (int i = 1; i <= 10; i++)
+                                {
+                                    int temp = reader.GetInt32(reader.GetOrdinal("propaideia" + i.ToString()));
+                                    prop.Add(temp);
+                                }
+                                int final = reader.GetInt32(reader.GetOrdinal("finalExam"));
+                                StudentProgress progress = new StudentProgress(username, prop, final);
+
+                                return progress;
+                            }
+                            else
+                            {
+                                return null;
+                            }
                         }
-                        int final = reader.GetInt32(reader.GetOrdinal("finalExam"));
-                        StudentProgress progress = new StudentProgress(username, prop, final);
-                        reader.Close();
-                        return progress;
-                    }
-                    else
-                    {
-                        reader.Close();
-                        return null;
                     }
                 }
                 catch (Exception e)

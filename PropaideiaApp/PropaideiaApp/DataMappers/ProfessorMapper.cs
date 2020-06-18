@@ -26,27 +26,29 @@ namespace PropaideiaApp.DataMappers
                 {
                     conn.Open();
 
-                    SQLiteCommand cmd = new SQLiteCommand(conn);
-
-                    cmd.CommandText = "SELECT * FROM users WHERE username=@username AND user_type=@user_type;";
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@user_type", UserTypes.PROFESSOR);
-                    SQLiteDataReader reader = cmd.ExecuteReader();
-
-                    // Because we search with username which is unique
-                    if (reader.HasRows)
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
                     {
-                        reader.Read();
-                        string name = reader.GetString(reader.GetOrdinal("name"));
-                        string surname = reader.GetString(reader.GetOrdinal("surname"));
-                        Professor prof = new Professor(username, name, surname);
-                        reader.Close();
-                        return prof;
-                    }
-                    else
-                    {
-                        reader.Close();
-                        return null;
+
+                        cmd.CommandText = "SELECT * FROM users WHERE username=@username AND user_type=@user_type;";
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@user_type", UserTypes.PROFESSOR);
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
+                        {
+
+                            // Because we search with username which is unique
+                            if (reader.HasRows)
+                            {
+                                reader.Read();
+                                string name = reader.GetString(reader.GetOrdinal("name"));
+                                string surname = reader.GetString(reader.GetOrdinal("surname"));
+                                Professor prof = new Professor(username, name, surname);
+                                return prof;
+                            }
+                            else
+                            {
+                                return null;
+                            }
+                        }
                     }
                 }
                 catch(Exception e)
