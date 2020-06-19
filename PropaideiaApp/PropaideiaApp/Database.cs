@@ -19,23 +19,27 @@ namespace PropaideiaApp
                 {
                     conn.Open();
 
-                    SQLiteCommand cmd = new SQLiteCommand(conn);
-
-                    cmd.CommandText = "SELECT user_type FROM users WHERE username=@username AND password=@password;";
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", password);
-
-                    SQLiteDataReader reader = cmd.ExecuteReader();
-
-                    if (!reader.HasRows)
+                    using (SQLiteCommand cmd = new SQLiteCommand(conn))
                     {
-                        return null;
-                    }
-                    else
-                    {
-                        reader.Read();
-                        string user_type = reader.GetString(reader.GetOrdinal("user_type"));
-                        return user_type;
+
+                        cmd.CommandText = "SELECT user_type FROM users WHERE username=@username AND password=@password;";
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@password", password);
+
+                        using (SQLiteDataReader reader = cmd.ExecuteReader())
+                        {
+
+                            if (!reader.HasRows)
+                            {
+                                return null;
+                            }
+                            else
+                            {
+                                reader.Read();
+                                string user_type = reader.GetString(reader.GetOrdinal("user_type"));
+                                return user_type;
+                            }
+                        }
                     }
                 }
                 catch(Exception e)
