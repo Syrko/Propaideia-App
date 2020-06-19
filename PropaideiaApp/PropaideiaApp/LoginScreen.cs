@@ -1,4 +1,5 @@
 ﻿using PropaideiaApp.DataMappers;
+using PropaideiaApp.Users;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -23,26 +24,27 @@ namespace PropaideiaApp
 
         private void LoginScreen_Load(object sender, EventArgs e)
         {
-
+            activeUser = "";
+            userType = "";
         }
 
         private void buttonLogin_Click(object sender, EventArgs e)
         {
             MainScreen mainForm = new MainScreen();
 
-            if (!String.IsNullOrEmpty(textBoxUsername.Text))
+
+            if (!String.IsNullOrEmpty(textBoxUsername.Text) && !String.IsNullOrEmpty(textBoxPassword.Text))
             {
-                if(StudentMapper.Get(textBoxUsername.Text) != null)
+                userType = Database.Login(textBoxUsername.Text, textBoxPassword.Text);
+                if(userType == UserTypes.STUDENT)
                 {
                     activeUser = StudentMapper.Get(textBoxUsername.Text).Username;
-                    userType = "student";
                     this.Hide();
                     mainForm.Show();
                 }
-                else if(ProfessorMapper.Get(textBoxUsername.Text) != null)
+                else if(userType == UserTypes.PROFESSOR)
                 {
                     activeUser = ProfessorMapper.Get(textBoxUsername.Text).Username;
-                    userType = "professor";
                     this.Hide();
                     mainForm.Show();
                 }

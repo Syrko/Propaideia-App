@@ -77,7 +77,7 @@
             this.textBoxChangeSurname = new System.Windows.Forms.TextBox();
             this.labelSettingsName = new System.Windows.Forms.Label();
             this.labelSettings = new System.Windows.Forms.Label();
-            this.buttonSaveChanges = new System.Windows.Forms.Button();
+            this.buttonUpdateName = new System.Windows.Forms.Button();
             this.textBoxChangeName = new System.Windows.Forms.TextBox();
             this.buttonResetAccount = new System.Windows.Forms.Button();
             this.panelProf = new System.Windows.Forms.Panel();
@@ -734,7 +734,7 @@
             this.panelSettings.Controls.Add(this.textBoxChangeSurname);
             this.panelSettings.Controls.Add(this.labelSettingsName);
             this.panelSettings.Controls.Add(this.labelSettings);
-            this.panelSettings.Controls.Add(this.buttonSaveChanges);
+            this.panelSettings.Controls.Add(this.buttonUpdateName);
             this.panelSettings.Controls.Add(this.textBoxChangeName);
             this.panelSettings.Controls.Add(this.buttonResetAccount);
             this.panelSettings.Location = new System.Drawing.Point(796, 9);
@@ -798,23 +798,23 @@
             this.labelSettings.TabIndex = 24;
             this.labelSettings.Text = "Ρυθμίσεις";
             // 
-            // buttonSaveChanges
+            // buttonUpdateName
             // 
-            this.buttonSaveChanges.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.buttonSaveChanges.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSaveChanges.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.buttonSaveChanges.FlatAppearance.BorderSize = 2;
-            this.buttonSaveChanges.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSaveChanges.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonSaveChanges.ForeColor = System.Drawing.Color.White;
-            this.buttonSaveChanges.Location = new System.Drawing.Point(285, 156);
-            this.buttonSaveChanges.Name = "buttonSaveChanges";
-            this.buttonSaveChanges.Size = new System.Drawing.Size(85, 30);
-            this.buttonSaveChanges.TabIndex = 11;
-            this.buttonSaveChanges.Text = "Αλλαγή";
-            this.buttonSaveChanges.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonSaveChanges.UseVisualStyleBackColor = false;
-            this.buttonSaveChanges.Click += new System.EventHandler(this.buttonChangeUsername_Click);
+            this.buttonUpdateName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.buttonUpdateName.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonUpdateName.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.buttonUpdateName.FlatAppearance.BorderSize = 2;
+            this.buttonUpdateName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonUpdateName.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUpdateName.ForeColor = System.Drawing.Color.White;
+            this.buttonUpdateName.Location = new System.Drawing.Point(285, 156);
+            this.buttonUpdateName.Name = "buttonUpdateName";
+            this.buttonUpdateName.Size = new System.Drawing.Size(85, 30);
+            this.buttonUpdateName.TabIndex = 11;
+            this.buttonUpdateName.Text = "Αλλαγή";
+            this.buttonUpdateName.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.buttonUpdateName.UseVisualStyleBackColor = false;
+            this.buttonUpdateName.Click += new System.EventHandler(this.buttonUpdateName_Click);
             // 
             // textBoxChangeName
             // 
@@ -1214,7 +1214,7 @@
         private System.Windows.Forms.Panel panelSettings;
         private System.Windows.Forms.Button buttonResetAccount;
         private System.Windows.Forms.TextBox textBoxChangeName;
-        private System.Windows.Forms.Button buttonSaveChanges;
+        private System.Windows.Forms.Button buttonUpdateName;
         private System.Windows.Forms.Label labelSettingsName;
         private System.Windows.Forms.Label labelSettings;
         private System.Windows.Forms.Panel panelProf;

@@ -31,8 +31,12 @@ namespace PropaideiaApp
 
         int QUIZQUESTIONSNUM = 2;
         static int questionCounter = 0;
+        int grade;
 
         //Database
+        private QuizManager quizManager;
+        Question question;
+
         Student activeStudent;
         Professor activeProfessor;
         
@@ -111,7 +115,6 @@ namespace PropaideiaApp
                 gradesList.Add(numericUpDown10);
                 gradesList.Add(numericUpDownFinal);
             }
-
         }
 
 
@@ -228,9 +231,6 @@ namespace PropaideiaApp
             buttonTakeQuiz.Visible = true;
 
         }
-
-        private QuizManager quizManager;
-        Question question;
 
         private void buttonTakeQuiz_Click(object sender, EventArgs e)
         {
@@ -374,22 +374,26 @@ namespace PropaideiaApp
             panelResult.Location = questionPoint;
 
             quizManager.GradeQuiz();
+            grade = quizManager.QuizGrade;
 
-            progressBarResult.Value = quizManager.QuizGrade;
-            labelResultGrade.Text = quizManager.QuizGrade.ToString() + "/100";
+            progressBarResult.Value = grade;
+            labelResultGrade.Text = grade.ToString() + "/100";
 
-            if (quizManager.QuizGrade > 80)
+            if (grade > 80)
             {
                 buttonList[currentNumber - 1].Image = Resources.tick;
                 buttonList[currentNumber].Image = Resources.unlock;
                 buttonList[currentNumber].Enabled = true;
-                labelResult.Text = "Συγχαρητήρια!!! Πέρασες το quiz με βαθμό: ";
+                labelResult.Text = "Συγχαρητήρια!!!\nΠέρασες το quiz με βαθμό: ";
+                if (activeStudent.Level <= currentNumber)
+                {
+                    activeStudent.Level = currentNumber;
+                }
             }
-            
-            activeStudent.StudentProgress.PropaideiaProgress[currentNumber - 1] = quizManager.QuizGrade;
-            if (!StudentMapper.Update(activeStudent))
+            if (activeStudent.StudentProgress.PropaideiaProgress[currentNumber - 1] < grade)
             {
-                MessageBox.Show("Failed to update progress!", "Error", MessageBoxButtons.OK);
+                activeStudent.StudentProgress.PropaideiaProgress[currentNumber - 1] = grade;
+                StudentMapper.Update(activeStudent);
             }
         }
 
@@ -461,12 +465,12 @@ namespace PropaideiaApp
             }
             
         }
-
         private void textBoxMain_Click(object sender, EventArgs e)
         {
             labelTitle.Focus();
         }
 
+        //Settings classes
         private void pictureBoxSettings_Click(object sender, EventArgs e)
         {
             resetQuiz();
@@ -476,10 +480,14 @@ namespace PropaideiaApp
             panelSettings.Location = questionPoint;
             panelTip.Visible = false;
             panelMain.Visible = false;
-            textBoxChangeName.Text = "";
+            buttonTakeQuiz.Visible = false;
+            buttonUpdateName.Visible = true;
+            textBoxChangeName.Text = activeStudent.Name;
+            textBoxChangeSurname.Text = activeStudent.Surname;
+
         }
 
-        private void buttonChangeUsername_Click(object sender, EventArgs e)
+        private void buttonUpdateName_Click(object sender, EventArgs e)
         {
             if (!String.IsNullOrEmpty(textBoxChangeName.Text) && !String.IsNullOrEmpty(textBoxChangeSurname.Text) && Regex.IsMatch(textBoxChangeName.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(textBoxChangeSurname.Text, @"^[a-zA-Z]+$"))
             {
@@ -494,27 +502,38 @@ namespace PropaideiaApp
                 {
                     MessageBox.Show("Student details change failed!", "Error", MessageBoxButtons.OK);
                 }
-                
             }
             else
             {
-               MessageBox.Show("Please type a valid name/surname!", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Please type a valid name/surname!", "Error", MessageBoxButtons.OK);
             }
         }
 
         private void buttonResetAccount_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Are you sure you want to reset your account's progress?", "Reset Progress?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure you want to reset your account's progress?", "Reset Progress?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 activeStudent.Level = 1;
                 activeStudent.StudentProgress.FinalExam = 0;
-                for(int i = 0; i < 10; i++)
+                for (int i = 0; i < 10; i++)
                 {
                     activeStudent.StudentProgress.PropaideiaProgress[i] = 0;
                 }
             }
         }
 
+        private void pictureBoxSettingsBack_Click(object sender, EventArgs e)
+        {
+            panelMenu.Enabled = true;
+            panelSettings.Visible = false;
+            panelSettings.Location = hideSettings;
+            panelTip.Visible = true;
+            panelMain.Visible = true;
+            buttonUpdateName.Visible = false;
+            buttonTakeQuiz.Visible = true;
+        }
+
+        //Professor Classes
         private void buttonSearch_Click(object sender, EventArgs e)
         {
             string searchUser;
@@ -525,7 +544,7 @@ namespace PropaideiaApp
                 {
                     searchUser = StudentMapper.Get(textBoxSearch.Text).Username;
                     StudentProgress prog = StudentProgressMapper.Get(searchUser);
-                    for(int i = 0; i < 10; i++)
+                    for (int i = 0; i < 10; i++)
                     {
                         gradesList[i].Visible = true;
                         gradesList[i].Value = prog.PropaideiaProgress[i];
@@ -542,19 +561,9 @@ namespace PropaideiaApp
                 MessageBox.Show("Please type the username of the student first!", "Error", MessageBoxButtons.OK);
             }
         }
-
         private void textBoxSearchResults_Click(object sender, EventArgs e)
         {
             labelLogo.Focus();
-        }
-
-        private void pictureBoxSettingsBack_Click(object sender, EventArgs e)
-        {
-            panelMenu.Enabled = true;
-            panelSettings.Visible = false;
-            panelSettings.Location = hideSettings;
-            panelTip.Visible = true;
-            panelMain.Visible = true;
         }
     }
 }

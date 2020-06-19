@@ -166,7 +166,6 @@
             this.labelPassword.Size = new System.Drawing.Size(129, 22);
             this.labelPassword.TabIndex = 10;
             this.labelPassword.Text = "Password:";
-            this.labelPassword.Visible = false;
             // 
             // textBoxPassword
             // 
@@ -178,7 +177,6 @@
             this.textBoxPassword.Size = new System.Drawing.Size(185, 26);
             this.textBoxPassword.TabIndex = 9;
             this.textBoxPassword.UseSystemPasswordChar = true;
-            this.textBoxPassword.Visible = false;
             // 
             // label1
             // 
