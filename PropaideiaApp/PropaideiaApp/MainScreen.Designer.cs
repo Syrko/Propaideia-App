@@ -98,8 +98,35 @@
             this.labelSearch = new System.Windows.Forms.Label();
             this.textBoxSearch = new System.Windows.Forms.TextBox();
             this.buttonSave = new System.Windows.Forms.Button();
+            this.pictureBoxGrades = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
             this.pictureBoxSettings = new System.Windows.Forms.PictureBox();
             this.pictureBoxNumber = new System.Windows.Forms.PictureBox();
+            this.panelGrades = new System.Windows.Forms.Panel();
+            this.pictureBoxGradesBack = new System.Windows.Forms.PictureBox();
+            this.labelGradeShowFinal = new System.Windows.Forms.Label();
+            this.labelGradeShow10 = new System.Windows.Forms.Label();
+            this.labelGradeShow9 = new System.Windows.Forms.Label();
+            this.labelGradeShow8 = new System.Windows.Forms.Label();
+            this.labelGradeShow7 = new System.Windows.Forms.Label();
+            this.labelGradeShow6 = new System.Windows.Forms.Label();
+            this.labelGradeShow5 = new System.Windows.Forms.Label();
+            this.labelGradeShow4 = new System.Windows.Forms.Label();
+            this.labelGradeShow3 = new System.Windows.Forms.Label();
+            this.labelGradeShow2 = new System.Windows.Forms.Label();
+            this.labelGradeShow1 = new System.Windows.Forms.Label();
+            this.labelGradeFinal = new System.Windows.Forms.Label();
+            this.pictureBoxGrade9 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGrade10 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGrade7 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGrade8 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGrade5 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGrade6 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGrade3 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGrade4 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGrade1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGrade2 = new System.Windows.Forms.PictureBox();
+            this.labelGradeTitle = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelTip.SuspendLayout();
@@ -124,8 +151,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).BeginInit();
+            this.panelGrades.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGradesBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -161,12 +202,14 @@
             this.buttonFinalExam.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonFinalExam.Font = new System.Drawing.Font("Minion Pro", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFinalExam.ForeColor = System.Drawing.Color.White;
+            this.buttonFinalExam.Image = global::PropaideiaApp.Properties.Resources.lock1;
             this.buttonFinalExam.Location = new System.Drawing.Point(-2, 341);
             this.buttonFinalExam.Margin = new System.Windows.Forms.Padding(0);
             this.buttonFinalExam.Name = "buttonFinalExam";
             this.buttonFinalExam.Size = new System.Drawing.Size(172, 53);
             this.buttonFinalExam.TabIndex = 11;
             this.buttonFinalExam.Text = "Τελική Εξέταση";
+            this.buttonFinalExam.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.buttonFinalExam.UseVisualStyleBackColor = false;
             this.buttonFinalExam.Click += new System.EventHandler(this.buttonFinalExam_Click);
             // 
@@ -474,7 +517,7 @@
             this.panelTF.Controls.Add(this.radioButtonTrue);
             this.panelTF.Controls.Add(this.labelTFQuest);
             this.panelTF.ForeColor = System.Drawing.Color.White;
-            this.panelTF.Location = new System.Drawing.Point(794, 439);
+            this.panelTF.Location = new System.Drawing.Point(787, 432);
             this.panelTF.Name = "panelTF";
             this.panelTF.Size = new System.Drawing.Size(414, 242);
             this.panelTF.TabIndex = 17;
@@ -621,13 +664,13 @@
             this.buttonTakeQuiz.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
             this.buttonTakeQuiz.FlatAppearance.BorderSize = 2;
             this.buttonTakeQuiz.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonTakeQuiz.Font = new System.Drawing.Font("Minion Pro", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.buttonTakeQuiz.Font = new System.Drawing.Font("Minion Pro", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.buttonTakeQuiz.ForeColor = System.Drawing.Color.White;
             this.buttonTakeQuiz.Location = new System.Drawing.Point(376, 366);
             this.buttonTakeQuiz.Name = "buttonTakeQuiz";
             this.buttonTakeQuiz.Size = new System.Drawing.Size(127, 44);
             this.buttonTakeQuiz.TabIndex = 8;
-            this.buttonTakeQuiz.Text = "Ξεκινήστε το Quiz";
+            this.buttonTakeQuiz.Text = "Ξεκινήστε";
             this.buttonTakeQuiz.UseVisualStyleBackColor = false;
             this.buttonTakeQuiz.Click += new System.EventHandler(this.buttonTakeQuiz_Click);
             // 
@@ -674,7 +717,7 @@
             this.panelResult.Controls.Add(this.buttonResult);
             this.panelResult.Controls.Add(this.labelResult);
             this.panelResult.Controls.Add(this.progressBarResult);
-            this.panelResult.Location = new System.Drawing.Point(622, 445);
+            this.panelResult.Location = new System.Drawing.Point(622, 446);
             this.panelResult.Name = "panelResult";
             this.panelResult.Size = new System.Drawing.Size(410, 239);
             this.panelResult.TabIndex = 21;
@@ -1063,6 +1106,7 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(185, 29);
             this.textBoxSearch.TabIndex = 11;
+            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
             // 
             // buttonSave
             // 
@@ -1080,12 +1124,38 @@
             this.buttonSave.Text = "Αποθήκευση";
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Visible = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // pictureBoxGrades
+            // 
+            this.pictureBoxGrades.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxGrades.Image = global::PropaideiaApp.Properties.Resources.grades;
+            this.pictureBoxGrades.Location = new System.Drawing.Point(662, 9);
+            this.pictureBoxGrades.Name = "pictureBoxGrades";
+            this.pictureBoxGrades.Size = new System.Drawing.Size(34, 37);
+            this.pictureBoxGrades.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrades.TabIndex = 28;
+            this.pictureBoxGrades.TabStop = false;
+            this.pictureBoxGrades.Visible = false;
+            this.pictureBoxGrades.Click += new System.EventHandler(this.pictureBoxGrades_Click);
+            // 
+            // pictureBoxHelp
+            // 
+            this.pictureBoxHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxHelp.Image = global::PropaideiaApp.Properties.Resources.question;
+            this.pictureBoxHelp.Location = new System.Drawing.Point(706, 9);
+            this.pictureBoxHelp.Name = "pictureBoxHelp";
+            this.pictureBoxHelp.Size = new System.Drawing.Size(34, 37);
+            this.pictureBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxHelp.TabIndex = 27;
+            this.pictureBoxHelp.TabStop = false;
+            this.pictureBoxHelp.Click += new System.EventHandler(this.pictureBoxHelp_Click);
             // 
             // pictureBoxSettings
             // 
             this.pictureBoxSettings.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBoxSettings.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSettings.Image")));
-            this.pictureBoxSettings.Location = new System.Drawing.Point(744, 9);
+            this.pictureBoxSettings.Location = new System.Drawing.Point(751, 9);
             this.pictureBoxSettings.Name = "pictureBoxSettings";
             this.pictureBoxSettings.Size = new System.Drawing.Size(34, 37);
             this.pictureBoxSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1096,12 +1166,322 @@
             // pictureBoxNumber
             // 
             this.pictureBoxNumber.Image = global::PropaideiaApp.Properties.Resources._10;
-            this.pictureBoxNumber.Location = new System.Drawing.Point(662, 292);
+            this.pictureBoxNumber.Location = new System.Drawing.Point(664, 293);
             this.pictureBoxNumber.Name = "pictureBoxNumber";
             this.pictureBoxNumber.Size = new System.Drawing.Size(147, 175);
             this.pictureBoxNumber.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxNumber.TabIndex = 6;
             this.pictureBoxNumber.TabStop = false;
+            // 
+            // panelGrades
+            // 
+            this.panelGrades.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.panelGrades.Controls.Add(this.pictureBoxGradesBack);
+            this.panelGrades.Controls.Add(this.labelGradeShowFinal);
+            this.panelGrades.Controls.Add(this.labelGradeShow10);
+            this.panelGrades.Controls.Add(this.labelGradeShow9);
+            this.panelGrades.Controls.Add(this.labelGradeShow8);
+            this.panelGrades.Controls.Add(this.labelGradeShow7);
+            this.panelGrades.Controls.Add(this.labelGradeShow6);
+            this.panelGrades.Controls.Add(this.labelGradeShow5);
+            this.panelGrades.Controls.Add(this.labelGradeShow4);
+            this.panelGrades.Controls.Add(this.labelGradeShow3);
+            this.panelGrades.Controls.Add(this.labelGradeShow2);
+            this.panelGrades.Controls.Add(this.labelGradeShow1);
+            this.panelGrades.Controls.Add(this.labelGradeFinal);
+            this.panelGrades.Controls.Add(this.pictureBoxGrade9);
+            this.panelGrades.Controls.Add(this.pictureBoxGrade10);
+            this.panelGrades.Controls.Add(this.pictureBoxGrade7);
+            this.panelGrades.Controls.Add(this.pictureBoxGrade8);
+            this.panelGrades.Controls.Add(this.pictureBoxGrade5);
+            this.panelGrades.Controls.Add(this.pictureBoxGrade6);
+            this.panelGrades.Controls.Add(this.pictureBoxGrade3);
+            this.panelGrades.Controls.Add(this.pictureBoxGrade4);
+            this.panelGrades.Controls.Add(this.pictureBoxGrade1);
+            this.panelGrades.Controls.Add(this.pictureBoxGrade2);
+            this.panelGrades.Controls.Add(this.labelGradeTitle);
+            this.panelGrades.Location = new System.Drawing.Point(794, 293);
+            this.panelGrades.Name = "panelGrades";
+            this.panelGrades.Size = new System.Drawing.Size(486, 293);
+            this.panelGrades.TabIndex = 40;
+            this.panelGrades.Visible = false;
+            // 
+            // pictureBoxGradesBack
+            // 
+            this.pictureBoxGradesBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxGradesBack.Image = global::PropaideiaApp.Properties.Resources.back;
+            this.pictureBoxGradesBack.Location = new System.Drawing.Point(20, 10);
+            this.pictureBoxGradesBack.Name = "pictureBoxGradesBack";
+            this.pictureBoxGradesBack.Size = new System.Drawing.Size(43, 32);
+            this.pictureBoxGradesBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGradesBack.TabIndex = 63;
+            this.pictureBoxGradesBack.TabStop = false;
+            this.pictureBoxGradesBack.Click += new System.EventHandler(this.pictureBoxGradesBack_Click);
+            // 
+            // labelGradeShowFinal
+            // 
+            this.labelGradeShowFinal.AutoSize = true;
+            this.labelGradeShowFinal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.labelGradeShowFinal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGradeShowFinal.Font = new System.Drawing.Font("Minion Pro", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeShowFinal.ForeColor = System.Drawing.Color.White;
+            this.labelGradeShowFinal.Location = new System.Drawing.Point(364, 224);
+            this.labelGradeShowFinal.Name = "labelGradeShowFinal";
+            this.labelGradeShowFinal.Size = new System.Drawing.Size(76, 50);
+            this.labelGradeShowFinal.TabIndex = 62;
+            this.labelGradeShowFinal.Text = "100";
+            // 
+            // labelGradeShow10
+            // 
+            this.labelGradeShow10.AutoSize = true;
+            this.labelGradeShow10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.labelGradeShow10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGradeShow10.Font = new System.Drawing.Font("Minion Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeShow10.ForeColor = System.Drawing.Color.White;
+            this.labelGradeShow10.Location = new System.Drawing.Point(403, 129);
+            this.labelGradeShow10.Name = "labelGradeShow10";
+            this.labelGradeShow10.Size = new System.Drawing.Size(61, 39);
+            this.labelGradeShow10.TabIndex = 61;
+            this.labelGradeShow10.Text = "100";
+            // 
+            // labelGradeShow9
+            // 
+            this.labelGradeShow9.AutoSize = true;
+            this.labelGradeShow9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.labelGradeShow9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGradeShow9.Font = new System.Drawing.Font("Minion Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeShow9.ForeColor = System.Drawing.Color.White;
+            this.labelGradeShow9.Location = new System.Drawing.Point(403, 72);
+            this.labelGradeShow9.Name = "labelGradeShow9";
+            this.labelGradeShow9.Size = new System.Drawing.Size(61, 39);
+            this.labelGradeShow9.TabIndex = 60;
+            this.labelGradeShow9.Text = "100";
+            // 
+            // labelGradeShow8
+            // 
+            this.labelGradeShow8.AutoSize = true;
+            this.labelGradeShow8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.labelGradeShow8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGradeShow8.Font = new System.Drawing.Font("Minion Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeShow8.ForeColor = System.Drawing.Color.White;
+            this.labelGradeShow8.Location = new System.Drawing.Point(237, 232);
+            this.labelGradeShow8.Name = "labelGradeShow8";
+            this.labelGradeShow8.Size = new System.Drawing.Size(61, 39);
+            this.labelGradeShow8.TabIndex = 59;
+            this.labelGradeShow8.Text = "100";
+            // 
+            // labelGradeShow7
+            // 
+            this.labelGradeShow7.AutoSize = true;
+            this.labelGradeShow7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.labelGradeShow7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGradeShow7.Font = new System.Drawing.Font("Minion Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeShow7.ForeColor = System.Drawing.Color.White;
+            this.labelGradeShow7.Location = new System.Drawing.Point(237, 180);
+            this.labelGradeShow7.Name = "labelGradeShow7";
+            this.labelGradeShow7.Size = new System.Drawing.Size(61, 39);
+            this.labelGradeShow7.TabIndex = 58;
+            this.labelGradeShow7.Text = "100";
+            // 
+            // labelGradeShow6
+            // 
+            this.labelGradeShow6.AutoSize = true;
+            this.labelGradeShow6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.labelGradeShow6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGradeShow6.Font = new System.Drawing.Font("Minion Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeShow6.ForeColor = System.Drawing.Color.White;
+            this.labelGradeShow6.Location = new System.Drawing.Point(235, 124);
+            this.labelGradeShow6.Name = "labelGradeShow6";
+            this.labelGradeShow6.Size = new System.Drawing.Size(61, 39);
+            this.labelGradeShow6.TabIndex = 57;
+            this.labelGradeShow6.Text = "100";
+            // 
+            // labelGradeShow5
+            // 
+            this.labelGradeShow5.AutoSize = true;
+            this.labelGradeShow5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.labelGradeShow5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGradeShow5.Font = new System.Drawing.Font("Minion Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeShow5.ForeColor = System.Drawing.Color.White;
+            this.labelGradeShow5.Location = new System.Drawing.Point(235, 72);
+            this.labelGradeShow5.Name = "labelGradeShow5";
+            this.labelGradeShow5.Size = new System.Drawing.Size(61, 39);
+            this.labelGradeShow5.TabIndex = 56;
+            this.labelGradeShow5.Text = "100";
+            // 
+            // labelGradeShow4
+            // 
+            this.labelGradeShow4.AutoSize = true;
+            this.labelGradeShow4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.labelGradeShow4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGradeShow4.Font = new System.Drawing.Font("Minion Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeShow4.ForeColor = System.Drawing.Color.White;
+            this.labelGradeShow4.Location = new System.Drawing.Point(82, 226);
+            this.labelGradeShow4.Name = "labelGradeShow4";
+            this.labelGradeShow4.Size = new System.Drawing.Size(61, 39);
+            this.labelGradeShow4.TabIndex = 55;
+            this.labelGradeShow4.Text = "100";
+            // 
+            // labelGradeShow3
+            // 
+            this.labelGradeShow3.AutoSize = true;
+            this.labelGradeShow3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.labelGradeShow3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGradeShow3.Font = new System.Drawing.Font("Minion Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeShow3.ForeColor = System.Drawing.Color.White;
+            this.labelGradeShow3.Location = new System.Drawing.Point(82, 174);
+            this.labelGradeShow3.Name = "labelGradeShow3";
+            this.labelGradeShow3.Size = new System.Drawing.Size(61, 39);
+            this.labelGradeShow3.TabIndex = 54;
+            this.labelGradeShow3.Text = "100";
+            // 
+            // labelGradeShow2
+            // 
+            this.labelGradeShow2.AutoSize = true;
+            this.labelGradeShow2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.labelGradeShow2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGradeShow2.Font = new System.Drawing.Font("Minion Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeShow2.ForeColor = System.Drawing.Color.White;
+            this.labelGradeShow2.Location = new System.Drawing.Point(82, 126);
+            this.labelGradeShow2.Name = "labelGradeShow2";
+            this.labelGradeShow2.Size = new System.Drawing.Size(61, 39);
+            this.labelGradeShow2.TabIndex = 53;
+            this.labelGradeShow2.Text = "100";
+            // 
+            // labelGradeShow1
+            // 
+            this.labelGradeShow1.AutoSize = true;
+            this.labelGradeShow1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
+            this.labelGradeShow1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelGradeShow1.Font = new System.Drawing.Font("Minion Pro", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeShow1.ForeColor = System.Drawing.Color.White;
+            this.labelGradeShow1.Location = new System.Drawing.Point(82, 72);
+            this.labelGradeShow1.Name = "labelGradeShow1";
+            this.labelGradeShow1.Size = new System.Drawing.Size(61, 39);
+            this.labelGradeShow1.TabIndex = 52;
+            this.labelGradeShow1.Text = "100";
+            // 
+            // labelGradeFinal
+            // 
+            this.labelGradeFinal.AutoSize = true;
+            this.labelGradeFinal.Font = new System.Drawing.Font("Minion Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeFinal.ForeColor = System.Drawing.Color.White;
+            this.labelGradeFinal.Location = new System.Drawing.Point(330, 192);
+            this.labelGradeFinal.Name = "labelGradeFinal";
+            this.labelGradeFinal.Size = new System.Drawing.Size(135, 26);
+            this.labelGradeFinal.TabIndex = 51;
+            this.labelGradeFinal.Text = "Τελική Εξέταση";
+            // 
+            // pictureBoxGrade9
+            // 
+            this.pictureBoxGrade9.Image = global::PropaideiaApp.Properties.Resources._9;
+            this.pictureBoxGrade9.Location = new System.Drawing.Point(328, 69);
+            this.pictureBoxGrade9.Name = "pictureBoxGrade9";
+            this.pictureBoxGrade9.Size = new System.Drawing.Size(37, 43);
+            this.pictureBoxGrade9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrade9.TabIndex = 50;
+            this.pictureBoxGrade9.TabStop = false;
+            // 
+            // pictureBoxGrade10
+            // 
+            this.pictureBoxGrade10.Image = global::PropaideiaApp.Properties.Resources._10;
+            this.pictureBoxGrade10.Location = new System.Drawing.Point(328, 125);
+            this.pictureBoxGrade10.Name = "pictureBoxGrade10";
+            this.pictureBoxGrade10.Size = new System.Drawing.Size(37, 43);
+            this.pictureBoxGrade10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrade10.TabIndex = 49;
+            this.pictureBoxGrade10.TabStop = false;
+            // 
+            // pictureBoxGrade7
+            // 
+            this.pictureBoxGrade7.Image = global::PropaideiaApp.Properties.Resources._7;
+            this.pictureBoxGrade7.Location = new System.Drawing.Point(175, 174);
+            this.pictureBoxGrade7.Name = "pictureBoxGrade7";
+            this.pictureBoxGrade7.Size = new System.Drawing.Size(37, 43);
+            this.pictureBoxGrade7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrade7.TabIndex = 48;
+            this.pictureBoxGrade7.TabStop = false;
+            // 
+            // pictureBoxGrade8
+            // 
+            this.pictureBoxGrade8.Image = global::PropaideiaApp.Properties.Resources._8;
+            this.pictureBoxGrade8.Location = new System.Drawing.Point(175, 226);
+            this.pictureBoxGrade8.Name = "pictureBoxGrade8";
+            this.pictureBoxGrade8.Size = new System.Drawing.Size(37, 43);
+            this.pictureBoxGrade8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrade8.TabIndex = 47;
+            this.pictureBoxGrade8.TabStop = false;
+            // 
+            // pictureBoxGrade5
+            // 
+            this.pictureBoxGrade5.Image = global::PropaideiaApp.Properties.Resources._5;
+            this.pictureBoxGrade5.Location = new System.Drawing.Point(175, 69);
+            this.pictureBoxGrade5.Name = "pictureBoxGrade5";
+            this.pictureBoxGrade5.Size = new System.Drawing.Size(37, 43);
+            this.pictureBoxGrade5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrade5.TabIndex = 46;
+            this.pictureBoxGrade5.TabStop = false;
+            // 
+            // pictureBoxGrade6
+            // 
+            this.pictureBoxGrade6.Image = global::PropaideiaApp.Properties.Resources._6;
+            this.pictureBoxGrade6.Location = new System.Drawing.Point(175, 121);
+            this.pictureBoxGrade6.Name = "pictureBoxGrade6";
+            this.pictureBoxGrade6.Size = new System.Drawing.Size(37, 43);
+            this.pictureBoxGrade6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrade6.TabIndex = 45;
+            this.pictureBoxGrade6.TabStop = false;
+            // 
+            // pictureBoxGrade3
+            // 
+            this.pictureBoxGrade3.Image = global::PropaideiaApp.Properties.Resources._3;
+            this.pictureBoxGrade3.Location = new System.Drawing.Point(20, 174);
+            this.pictureBoxGrade3.Name = "pictureBoxGrade3";
+            this.pictureBoxGrade3.Size = new System.Drawing.Size(37, 43);
+            this.pictureBoxGrade3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrade3.TabIndex = 44;
+            this.pictureBoxGrade3.TabStop = false;
+            // 
+            // pictureBoxGrade4
+            // 
+            this.pictureBoxGrade4.Image = global::PropaideiaApp.Properties.Resources._4;
+            this.pictureBoxGrade4.Location = new System.Drawing.Point(20, 226);
+            this.pictureBoxGrade4.Name = "pictureBoxGrade4";
+            this.pictureBoxGrade4.Size = new System.Drawing.Size(37, 43);
+            this.pictureBoxGrade4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrade4.TabIndex = 43;
+            this.pictureBoxGrade4.TabStop = false;
+            // 
+            // pictureBoxGrade1
+            // 
+            this.pictureBoxGrade1.Image = global::PropaideiaApp.Properties.Resources._1;
+            this.pictureBoxGrade1.Location = new System.Drawing.Point(20, 69);
+            this.pictureBoxGrade1.Name = "pictureBoxGrade1";
+            this.pictureBoxGrade1.Size = new System.Drawing.Size(37, 43);
+            this.pictureBoxGrade1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrade1.TabIndex = 42;
+            this.pictureBoxGrade1.TabStop = false;
+            // 
+            // pictureBoxGrade2
+            // 
+            this.pictureBoxGrade2.Image = global::PropaideiaApp.Properties.Resources._2;
+            this.pictureBoxGrade2.Location = new System.Drawing.Point(20, 121);
+            this.pictureBoxGrade2.Name = "pictureBoxGrade2";
+            this.pictureBoxGrade2.Size = new System.Drawing.Size(37, 43);
+            this.pictureBoxGrade2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrade2.TabIndex = 41;
+            this.pictureBoxGrade2.TabStop = false;
+            // 
+            // labelGradeTitle
+            // 
+            this.labelGradeTitle.AutoSize = true;
+            this.labelGradeTitle.Font = new System.Drawing.Font("Minion Pro", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelGradeTitle.ForeColor = System.Drawing.Color.White;
+            this.labelGradeTitle.Location = new System.Drawing.Point(155, 6);
+            this.labelGradeTitle.Name = "labelGradeTitle";
+            this.labelGradeTitle.Size = new System.Drawing.Size(181, 44);
+            this.labelGradeTitle.TabIndex = 25;
+            this.labelGradeTitle.Text = "Βαθμολογία";
             // 
             // MainScreen
             // 
@@ -1109,6 +1489,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(60)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelGrades);
+            this.Controls.Add(this.pictureBoxGrades);
+            this.Controls.Add(this.pictureBoxHelp);
             this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.panelProf);
@@ -1159,8 +1542,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).EndInit();
+            this.panelGrades.ResumeLayout(false);
+            this.panelGrades.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGradesBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1238,5 +1636,32 @@
         private System.Windows.Forms.Label labelSettingsSurname;
         private System.Windows.Forms.TextBox textBoxChangeSurname;
         private System.Windows.Forms.PictureBox pictureBoxSettingsBack;
+        private System.Windows.Forms.PictureBox pictureBoxHelp;
+        private System.Windows.Forms.PictureBox pictureBoxGrades;
+        private System.Windows.Forms.Panel panelGrades;
+        private System.Windows.Forms.Label labelGradeShowFinal;
+        private System.Windows.Forms.Label labelGradeShow10;
+        private System.Windows.Forms.Label labelGradeShow9;
+        private System.Windows.Forms.Label labelGradeShow8;
+        private System.Windows.Forms.Label labelGradeShow7;
+        private System.Windows.Forms.Label labelGradeShow6;
+        private System.Windows.Forms.Label labelGradeShow5;
+        private System.Windows.Forms.Label labelGradeShow4;
+        private System.Windows.Forms.Label labelGradeShow3;
+        private System.Windows.Forms.Label labelGradeShow2;
+        private System.Windows.Forms.Label labelGradeShow1;
+        private System.Windows.Forms.Label labelGradeFinal;
+        private System.Windows.Forms.PictureBox pictureBoxGrade9;
+        private System.Windows.Forms.PictureBox pictureBoxGrade10;
+        private System.Windows.Forms.PictureBox pictureBoxGrade7;
+        private System.Windows.Forms.PictureBox pictureBoxGrade8;
+        private System.Windows.Forms.PictureBox pictureBoxGrade5;
+        private System.Windows.Forms.PictureBox pictureBoxGrade6;
+        private System.Windows.Forms.PictureBox pictureBoxGrade3;
+        private System.Windows.Forms.PictureBox pictureBoxGrade4;
+        private System.Windows.Forms.PictureBox pictureBoxGrade1;
+        private System.Windows.Forms.PictureBox pictureBoxGrade2;
+        private System.Windows.Forms.Label labelGradeTitle;
+        private System.Windows.Forms.PictureBox pictureBoxGradesBack;
     }
 }

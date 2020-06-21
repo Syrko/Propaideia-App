@@ -40,6 +40,10 @@
             this.labelPassword = new System.Windows.Forms.Label();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelRegisterSurname = new System.Windows.Forms.Label();
+            this.textBoxRegisterSurname = new System.Windows.Forms.TextBox();
+            this.labelRegisterName = new System.Windows.Forms.Label();
+            this.textBoxRegisterName = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo6)).BeginInit();
@@ -52,10 +56,11 @@
             this.textBoxUsername.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(60)))));
             this.textBoxUsername.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.ForeColor = System.Drawing.Color.White;
-            this.textBoxUsername.Location = new System.Drawing.Point(330, 140);
+            this.textBoxUsername.Location = new System.Drawing.Point(331, 115);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(185, 29);
             this.textBoxUsername.TabIndex = 0;
+            this.textBoxUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUsername_KeyPress);
             // 
             // buttonLogin
             // 
@@ -65,11 +70,11 @@
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonLogin.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
-            this.buttonLogin.Location = new System.Drawing.Point(272, 229);
+            this.buttonLogin.Location = new System.Drawing.Point(271, 271);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(0);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(103, 37);
-            this.buttonLogin.TabIndex = 1;
+            this.buttonLogin.TabIndex = 2;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -84,11 +89,11 @@
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Ravie", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRegister.ForeColor = System.Drawing.Color.White;
-            this.buttonRegister.Location = new System.Drawing.Point(441, 229);
+            this.buttonRegister.Location = new System.Drawing.Point(440, 271);
             this.buttonRegister.Margin = new System.Windows.Forms.Padding(0);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(107, 37);
-            this.buttonRegister.TabIndex = 2;
+            this.buttonRegister.TabIndex = 3;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
@@ -98,7 +103,7 @@
             // pictureBoxNo1
             // 
             this.pictureBoxNo1.Image = global::PropaideiaApp.Properties.Resources._1;
-            this.pictureBoxNo1.Location = new System.Drawing.Point(134, 229);
+            this.pictureBoxNo1.Location = new System.Drawing.Point(121, 267);
             this.pictureBoxNo1.Name = "pictureBoxNo1";
             this.pictureBoxNo1.Size = new System.Drawing.Size(147, 175);
             this.pictureBoxNo1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -108,7 +113,7 @@
             // pictureBoxNo3
             // 
             this.pictureBoxNo3.Image = global::PropaideiaApp.Properties.Resources._3;
-            this.pictureBoxNo3.Location = new System.Drawing.Point(521, -10);
+            this.pictureBoxNo3.Location = new System.Drawing.Point(588, -10);
             this.pictureBoxNo3.Name = "pictureBoxNo3";
             this.pictureBoxNo3.Size = new System.Drawing.Size(147, 175);
             this.pictureBoxNo3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -128,7 +133,7 @@
             // pictureBoxNo7
             // 
             this.pictureBoxNo7.Image = global::PropaideiaApp.Properties.Resources._7;
-            this.pictureBoxNo7.Location = new System.Drawing.Point(616, 180);
+            this.pictureBoxNo7.Location = new System.Drawing.Point(641, 203);
             this.pictureBoxNo7.Name = "pictureBoxNo7";
             this.pictureBoxNo7.Size = new System.Drawing.Size(147, 175);
             this.pictureBoxNo7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -138,7 +143,7 @@
             // pictureBoxNo10
             // 
             this.pictureBoxNo10.Image = global::PropaideiaApp.Properties.Resources._10;
-            this.pictureBoxNo10.Location = new System.Drawing.Point(382, 292);
+            this.pictureBoxNo10.Location = new System.Drawing.Point(426, 297);
             this.pictureBoxNo10.Name = "pictureBoxNo10";
             this.pictureBoxNo10.Size = new System.Drawing.Size(147, 175);
             this.pictureBoxNo10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -150,10 +155,10 @@
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.Color.White;
-            this.labelUsername.Location = new System.Drawing.Point(197, 143);
+            this.labelUsername.Location = new System.Drawing.Point(198, 118);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(132, 22);
-            this.labelUsername.TabIndex = 8;
+            this.labelUsername.TabIndex = 0;
             this.labelUsername.Text = "Username:";
             // 
             // labelPassword
@@ -161,10 +166,10 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.ForeColor = System.Drawing.Color.White;
-            this.labelPassword.Location = new System.Drawing.Point(200, 182);
+            this.labelPassword.Location = new System.Drawing.Point(201, 155);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(129, 22);
-            this.labelPassword.TabIndex = 10;
+            this.labelPassword.TabIndex = 0;
             this.labelPassword.Text = "Password:";
             // 
             // textBoxPassword
@@ -172,11 +177,12 @@
             this.textBoxPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(60)))));
             this.textBoxPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.textBoxPassword.ForeColor = System.Drawing.Color.White;
-            this.textBoxPassword.Location = new System.Drawing.Point(330, 180);
+            this.textBoxPassword.Location = new System.Drawing.Point(331, 154);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(185, 26);
-            this.textBoxPassword.TabIndex = 9;
+            this.textBoxPassword.TabIndex = 1;
             this.textBoxPassword.UseSystemPasswordChar = true;
+            this.textBoxPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPassword_KeyPress);
             // 
             // label1
             // 
@@ -186,8 +192,55 @@
             this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 34);
-            this.label1.TabIndex = 11;
+            this.label1.TabIndex = 0;
             this.label1.Text = "Propaideia";
+            // 
+            // labelRegisterSurname
+            // 
+            this.labelRegisterSurname.AutoSize = true;
+            this.labelRegisterSurname.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegisterSurname.ForeColor = System.Drawing.Color.White;
+            this.labelRegisterSurname.Location = new System.Drawing.Point(211, 229);
+            this.labelRegisterSurname.Name = "labelRegisterSurname";
+            this.labelRegisterSurname.Size = new System.Drawing.Size(119, 22);
+            this.labelRegisterSurname.TabIndex = 8;
+            this.labelRegisterSurname.Text = "Surname:";
+            this.labelRegisterSurname.Visible = false;
+            // 
+            // textBoxRegisterSurname
+            // 
+            this.textBoxRegisterSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(60)))));
+            this.textBoxRegisterSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBoxRegisterSurname.ForeColor = System.Drawing.Color.White;
+            this.textBoxRegisterSurname.Location = new System.Drawing.Point(331, 229);
+            this.textBoxRegisterSurname.Name = "textBoxRegisterSurname";
+            this.textBoxRegisterSurname.Size = new System.Drawing.Size(185, 26);
+            this.textBoxRegisterSurname.TabIndex = 11;
+            this.textBoxRegisterSurname.UseSystemPasswordChar = true;
+            this.textBoxRegisterSurname.Visible = false;
+            // 
+            // labelRegisterName
+            // 
+            this.labelRegisterName.AutoSize = true;
+            this.labelRegisterName.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegisterName.ForeColor = System.Drawing.Color.White;
+            this.labelRegisterName.Location = new System.Drawing.Point(251, 192);
+            this.labelRegisterName.Name = "labelRegisterName";
+            this.labelRegisterName.Size = new System.Drawing.Size(79, 22);
+            this.labelRegisterName.TabIndex = 9;
+            this.labelRegisterName.Text = "Name:";
+            this.labelRegisterName.Visible = false;
+            // 
+            // textBoxRegisterName
+            // 
+            this.textBoxRegisterName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(60)))));
+            this.textBoxRegisterName.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxRegisterName.ForeColor = System.Drawing.Color.White;
+            this.textBoxRegisterName.Location = new System.Drawing.Point(331, 190);
+            this.textBoxRegisterName.Name = "textBoxRegisterName";
+            this.textBoxRegisterName.Size = new System.Drawing.Size(185, 29);
+            this.textBoxRegisterName.TabIndex = 10;
+            this.textBoxRegisterName.Visible = false;
             // 
             // LoginScreen
             // 
@@ -195,6 +248,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(60)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.labelRegisterSurname);
+            this.Controls.Add(this.textBoxRegisterSurname);
+            this.Controls.Add(this.labelRegisterName);
+            this.Controls.Add(this.textBoxRegisterName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.labelPassword);
             this.Controls.Add(this.textBoxPassword);
@@ -236,6 +293,10 @@
         private System.Windows.Forms.Label labelPassword;
         private System.Windows.Forms.TextBox textBoxPassword;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelRegisterSurname;
+        private System.Windows.Forms.TextBox textBoxRegisterSurname;
+        private System.Windows.Forms.Label labelRegisterName;
+        private System.Windows.Forms.TextBox textBoxRegisterName;
     }
 }
 

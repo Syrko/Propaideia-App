@@ -32,7 +32,6 @@ namespace PropaideiaApp
         {
             MainScreen mainForm = new MainScreen();
 
-
             if (!String.IsNullOrEmpty(textBoxUsername.Text) && !String.IsNullOrEmpty(textBoxPassword.Text))
             {
                 userType = Database.Login(textBoxUsername.Text, textBoxPassword.Text);
@@ -81,8 +80,24 @@ namespace PropaideiaApp
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            
+            Student newStudent = new Student(textBoxUsername.Text, textBoxRegisterName.Text, textBoxRegisterSurname.Text);
+            StudentMapper.Insert(newStudent, textBoxPassword.Text);
         }
 
+        private void textBoxUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == (char)Keys.Enter)
+            {
+                buttonLogin.PerformClick();
+            }
+        }
+
+        private void textBoxPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                buttonLogin.PerformClick();
+            }
+        }
     }
 }
