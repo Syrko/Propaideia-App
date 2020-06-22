@@ -80,8 +80,42 @@ namespace PropaideiaApp
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            Student newStudent = new Student(textBoxUsername.Text, textBoxRegisterName.Text, textBoxRegisterSurname.Text);
-            StudentMapper.Insert(newStudent, textBoxPassword.Text);
+            if (!labelRegisterName.Visible) //First button click shows the rest of the fields to fill in
+            {
+                labelRegisterName.Visible = true;
+                labelRegisterSurname.Visible = true;
+                textBoxRegisterName.Visible = true;
+                textBoxRegisterSurname.Visible = true;
+            }
+            else //After the rest of the fields are visible, the register button tries to register the user in the DB
+            {
+                if (!String.IsNullOrEmpty(textBoxUsername.Text) && !String.IsNullOrEmpty(textBoxPassword.Text) && !String.IsNullOrEmpty(textBoxRegisterName.Text) && !String.IsNullOrEmpty(textBoxRegisterSurname.Text))
+                {
+                    Student newStudent = new Student(textBoxUsername.Text, textBoxRegisterName.Text, textBoxRegisterSurname.Text);
+                    if (StudentMapper.Get(newStudent.Username) == null)
+                    {
+                        if (StudentMapper.Insert(newStudent, textBoxPassword.Text))
+                        {
+                            if (MessageBox.Show("User registered successfully!", "Registered Successfully!", MessageBoxButtons.OK) == DialogResult.OK)
+                            {
+                                buttonLogin.PerformClick();
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("There was an error while creating the user!", "Error", MessageBoxButtons.OK);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("A user with this username already exists!", "Error", MessageBoxButtons.OK);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please fill in all the above fields before registering!", "Error", MessageBoxButtons.OK);
+                }
+            }
         }
 
         private void textBoxUsername_KeyPress(object sender, KeyPressEventArgs e)

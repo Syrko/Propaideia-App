@@ -74,7 +74,7 @@
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(0);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(103, 37);
-            this.buttonLogin.TabIndex = 2;
+            this.buttonLogin.TabIndex = 4;
             this.buttonLogin.Text = "Login";
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
@@ -93,7 +93,7 @@
             this.buttonRegister.Margin = new System.Windows.Forms.Padding(0);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(107, 37);
-            this.buttonRegister.TabIndex = 3;
+            this.buttonRegister.TabIndex = 5;
             this.buttonRegister.Text = "Register";
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
@@ -210,13 +210,12 @@
             // textBoxRegisterSurname
             // 
             this.textBoxRegisterSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(60)))));
-            this.textBoxRegisterSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.textBoxRegisterSurname.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold);
             this.textBoxRegisterSurname.ForeColor = System.Drawing.Color.White;
             this.textBoxRegisterSurname.Location = new System.Drawing.Point(331, 229);
             this.textBoxRegisterSurname.Name = "textBoxRegisterSurname";
-            this.textBoxRegisterSurname.Size = new System.Drawing.Size(185, 26);
-            this.textBoxRegisterSurname.TabIndex = 11;
-            this.textBoxRegisterSurname.UseSystemPasswordChar = true;
+            this.textBoxRegisterSurname.Size = new System.Drawing.Size(185, 29);
+            this.textBoxRegisterSurname.TabIndex = 3;
             this.textBoxRegisterSurname.Visible = false;
             // 
             // labelRegisterName
@@ -239,7 +238,7 @@
             this.textBoxRegisterName.Location = new System.Drawing.Point(331, 190);
             this.textBoxRegisterName.Name = "textBoxRegisterName";
             this.textBoxRegisterName.Size = new System.Drawing.Size(185, 29);
-            this.textBoxRegisterName.TabIndex = 10;
+            this.textBoxRegisterName.TabIndex = 2;
             this.textBoxRegisterName.Visible = false;
             // 
             // LoginScreen
