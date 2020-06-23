@@ -1,0 +1,25 @@
+Bug 1:
+	Steps to reproduce:
+		1. Click 'View grades'
+		2. Click 'Settings'
+		3. Close grades panel
+	Result:
+		Settings panel overlaps chapter panel.
+
+Bug 2:
+	Description:
+		At the end of a quiz the next question button is visible
+		and results in alert and/or exception when clicking it.
+
+Bug 3:
+	Description:
+		At 50% grade the message said I passed the quiz but
+		there was no progress on interface.
+		(Wrong message)
+
+Bug 4: 
+	Description:
+		Before the final exam the bubble overlaps the text.
+
+Bug 5:
+	Description no unique screen after passing the final exam.
