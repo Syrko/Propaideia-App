@@ -39,6 +39,7 @@ Bug 7:
 Bug 8:
 	Description:
 		Login screen is in english / Rest of the program in greek
+		Alerts are in english too
 
 Bug 9:
 	Description:
@@ -49,6 +50,7 @@ Bug 10:
 		Professor no grades button.
 		Username -> Όνομα χρήστη
 		Quiz -> Test
+		Professor hide chapter title.
 
 Bug 11:
 	Steps to reproduce:
@@ -56,3 +58,7 @@ Bug 11:
 		2. Student tries to login
 	Result:
 		ArgumentOutOfRangeException at MainScreen_Load
+
+Bug 12:
+	Description:
+		Retaking a quiz -- ui shows next unlocked instead of passed
