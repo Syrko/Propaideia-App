@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace PropaideiaApp.Quizes
 {
+	/// <summary>
+	/// Fill the gap questions.
+	/// </summary>
 	class QuestionFG : Question
 	{
 		private int[] descriptionComponents = new int[3];
 
+		/// <summary>
+		/// Creates a new question of the given type.
+		/// </summary>
+		/// <param name="propaideia">Type of the question.</param>
 		public QuestionFG(PropaideiaType propaideia)
 		{
 			this.Propaideia = propaideia;
@@ -17,6 +24,9 @@ namespace PropaideiaApp.Quizes
 			GenerateQuestion();
 		}
 
+		/// <summary>
+		/// Generates the question.
+		/// </summary>
 		private void GenerateQuestion()
 		{
 			if (Propaideia == PropaideiaType.FINAL_EXAM)

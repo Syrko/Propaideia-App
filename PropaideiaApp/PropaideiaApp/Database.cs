@@ -7,10 +7,20 @@ using System.Data.SQLite;
 
 namespace PropaideiaApp
 {
+    /// <summary>
+    /// Contains the static methods for initializing the database
+    /// and the method used for logging in.
+    /// </summary>
     class Database
     {
         internal const string DATABASE_NAME = "database.db";
 
+        /// <summary>
+        /// Looks up in the users table if the user with the given username and password exists.
+        /// </summary>
+        /// <param name="username">The username of the user trying to login</param>
+        /// <param name="password">The password of the user trying to login</param>
+        /// <returns></returns>
         internal static string Login(string username, string password)
         {
             using(SQLiteConnection conn = new SQLiteConnection("Data source=" + DATABASE_NAME + ";"))
@@ -50,6 +60,9 @@ namespace PropaideiaApp
             }
         }
 
+        /// <summary>
+        /// Initializes the database by creating the necessary tables if they do not already exist.
+        /// </summary>
         internal static void Initialize_Database()
         {
             using(SQLiteConnection conn = new SQLiteConnection("Data source=" + DATABASE_NAME + ";"))
@@ -100,6 +113,10 @@ namespace PropaideiaApp
             }
         }
 
+        /// <summary>
+        /// Inserts into the database some dummy data. It fills all the tables except those that include constraints for default
+        /// values (e.g the studentProgress table's fields are all defaulting to 0 during creation - except the username of course).
+        /// </summary>
         internal static void InsertDummyData()
         {
             using (SQLiteConnection conn = new SQLiteConnection("Data source=" + DATABASE_NAME + ";"))
@@ -175,6 +192,9 @@ namespace PropaideiaApp
         }
     }
 
+    /// <summary>
+    /// Contains simple strings for identifying the user type, trying to minimize the errors by typos.
+    /// </summary>
     struct UserTypes
     {
         public const string STUDENT = "student";

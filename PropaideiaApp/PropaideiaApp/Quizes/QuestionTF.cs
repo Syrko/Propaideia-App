@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace PropaideiaApp.Quizes
 {
+	/// <summary>
+	/// True or false questions.
+	/// </summary>
 	class QuestionTF : Question
 	{
 		private int[] descriptionComponents = new int[3];
 
+		/// <summary>
+		/// Creates a new question of the given type.
+		/// </summary>
+		/// <param name="propaideia">Type of the question.</param>
 		public QuestionTF(PropaideiaType propaideia)
 		{
 			this.Propaideia = propaideia;
@@ -17,6 +24,9 @@ namespace PropaideiaApp.Quizes
 			GenerateQuestion();
 		}
 
+		/// <summary>
+		/// Generates the questions.
+		/// </summary>
 		void GenerateQuestion()
 		{
 			if(Propaideia == PropaideiaType.FINAL_EXAM)

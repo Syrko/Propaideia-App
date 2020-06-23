@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace PropaideiaApp.Users
 {
+    /// <summary>
+    /// This class contains the necessary information about the student's progress.
+    /// It includes the student's grade on each individual exam as well as the final one.
+    /// </summary>
     class StudentProgress
     {
         private string username;

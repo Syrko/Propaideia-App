@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PropaideiaApp.Quizes
 {
+	/// <summary>
+	/// Base class for all the question types containing the information that all types of question share.
+	/// </summary>
 	abstract class Question
 	{
 		private bool studentAnswer;

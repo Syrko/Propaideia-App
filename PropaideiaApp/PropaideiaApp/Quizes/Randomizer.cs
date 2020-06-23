@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PropaideiaApp.Quizes
 {
+    /// <summary>
+    /// Simple class that contains some commonly needed rolls for the generation of the quizes
+    /// </summary>
     class Randomizer
     {
         private static Random rand = new Random();

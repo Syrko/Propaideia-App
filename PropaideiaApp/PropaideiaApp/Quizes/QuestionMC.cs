@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace PropaideiaApp.Quizes
 {
+	/// <summary>
+	/// Multiple choice questions.
+	/// </summary>
 	class QuestionMC : Question
 	{
 		private int[] possibleAns = new int[3];
 		private int[] descriptionComponents = new int[3];
 
+		/// <summary>
+		/// Creates a new question of the given type.
+		/// </summary>
+		/// <param name="propaideia">Type of the question.</param>
 		public QuestionMC(PropaideiaType propaideia)
 		{
 			this.Propaideia = propaideia;
@@ -20,6 +27,9 @@ namespace PropaideiaApp.Quizes
 
 		public int[] PossibleAns { get => possibleAns; }
 
+		/// <summary>
+		/// Generates the question.
+		/// </summary>
 		private void GenerateQuestion()
 		{
 			if (Propaideia == PropaideiaType.FINAL_EXAM)

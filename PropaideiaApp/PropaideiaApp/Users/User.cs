@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PropaideiaApp.Users
 {
+    /// <summary>
+    /// Base class for both types of users -- contains their common information.
+    /// </summary>
     abstract class User
     {
         private string username;
