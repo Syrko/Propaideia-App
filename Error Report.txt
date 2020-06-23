@@ -1,4 +1,4 @@
-Bug 1:
+Bug 1: OK
 	Steps to reproduce:
 		1. Click 'View grades'
 		2. Click 'Settings'
@@ -6,18 +6,18 @@ Bug 1:
 	Result:
 		Settings panel overlaps chapter panel.
 
-Bug 2:
+Bug 2: OK
 	Description:
 		At the end of a quiz the next question button is visible
 		and results in alert and/or exception when clicking it.
 
-Bug 3:
+Bug 3: OK
 	Description:
 		At 50% grade the message said I passed the quiz but
 		there was no progress on interface.
 		(Wrong message)
 
-Bug 4: 
+Bug 4: OK
 	Description:
 		Before the final exam the bubble overlaps the text.
 
@@ -25,40 +25,36 @@ Bug 5:
 	Description:
 		No unique screen after passing the final exam.
 
-Bug 6:
+Bug 6: OK
 	Description:
 		Replace the '*' with 'x' in the chapters.
 		Try to find tips for 3 and 7.
 
-Bug 7:
+Bug 7: OK
 	Description:
 		After resetting the account the alert notifies I will be directed
 		to the login screen, but the user has already returned to the login screen.
 		(Change message)
 
-Bug 8:
+Bug 8: 
 	Description:
 		Login screen is in english / Rest of the program in greek
 		Alerts are in english too
+		Username -> Όνομα χρήστη
+		Quiz -> Test
 
-Bug 9:
+Bug 9: OK
 	Description:
 		After pressing the form's 'X' the application doesn't exit
 
-Bug 10:
-	Description:
-		Professor no grades button.
-		Username -> Όνομα χρήστη
-		Quiz -> Test
-		Professor hide chapter title.
 
-Bug 11:
+Bug 11: OK
 	Steps to reproduce:
 		1. Professor adds passing grade only for final exam
 		2. Student tries to login
 	Result:
 		ArgumentOutOfRangeException at MainScreen_Load
 
-Bug 12:
+Bug 12: OK
 	Description:
 		Retaking a quiz -- ui shows next unlocked instead of passed

@@ -88,10 +88,10 @@ namespace PropaideiaApp
                 activeStudent = StudentMapper.Get(LoginScreen.activeUser);
                 if(activeStudent.Level < 12)
                 {
-                    for (int i = 1; i <= activeStudent.Level; i++)
+                    for (int i = 0; i < activeStudent.Level; i++)
                     {
-                        buttonList[i - 1].Enabled = true;
-                        buttonList[i - 1].Image = Resources.tick;
+                        buttonList[i].Enabled = true;
+                        buttonList[i].Image = Resources.tick;
                     }
                     buttonList[activeStudent.Level - 1].Image = Resources.unlock;
                     buttonList[activeStudent.Level - 1].PerformClick();
@@ -103,7 +103,7 @@ namespace PropaideiaApp
                         buttonList[i].Enabled = true;
                         buttonList[i].Image = Resources.tick;
                     }
-                    buttonList[0].PerformClick();
+                    buttonList[10].PerformClick();
                 }
                 
                 
@@ -134,6 +134,8 @@ namespace PropaideiaApp
                 buttonTakeQuiz.Visible = false;
                 //TODO Add tooltip to disabled settings button
                 pictureBoxSettings.Enabled = false;
+                labelTitle.Text = "Διαχείριση Μαθητών";
+                labelTitleNumber.Visible = false;
 
                 gradesList.Add(numericUpDown1);
                 gradesList.Add(numericUpDown2);
@@ -164,6 +166,8 @@ namespace PropaideiaApp
             panelMenu.Enabled = false;
             panelMain.Visible = false;
             panelSettings.Visible = false;
+            panelTip.Visible = false;
+            panelSettings.Visible = false;
             buttonTakeQuiz.Visible = false;
 
             for(int i = 0; i < 10; i++)
@@ -177,8 +181,10 @@ namespace PropaideiaApp
         {
             panelGrades.Location = hideGrades;
             panelGrades.Visible = false;
+            panelSettings.Visible = false;
             panelMenu.Enabled = true;
             panelMain.Visible = true;
+            panelTip.Visible = true;
             buttonTakeQuiz.Visible = true;
         }
 
@@ -274,9 +280,20 @@ namespace PropaideiaApp
 
         private void buttonFinalExam_Click(object sender, EventArgs e)
         {
-            labelTitleNumber.Text = "";
             currentNumber = 0;
-            changeLesson(currentNumber);
+            if (activeStudent.Level == 12)
+            {
+                labelTitle.Text = "Συγχαρητήρια!";
+                labelTitleNumber.Visible = false;
+                labelTip.Text = "Μπράβο! Τώρα πια ξέρεις την προπαίδεια μέχρι και το 10!";
+                textBoxMain.Text = "Πολύ καλή προσπάθεια! Έχετε ολοκληρώσει την εκπαίδευση,\nμπορείτε να συνεχίσετε να διαβάζετε\nή να βελτιώσετε τους βαθμούς σας στα τεστ!";
+                labelTip.Font = new Font("Minion Pro", 10, FontStyle.Bold);
+            }
+            else
+            {
+                labelTitleNumber.Text = "";
+                changeLesson(currentNumber);
+            }
             resetQuiz();
         }
 
@@ -456,6 +473,8 @@ namespace PropaideiaApp
             questionPanelList[2].Visible = false;
             questionPanelList[2].Location = hideTF;
 
+            pictureBoxNext.Visible = false;
+
             panelResult.Visible = true;
             panelResult.Location = questionPoint;
 
@@ -474,13 +493,20 @@ namespace PropaideiaApp
                 if (grade > 80)
                 {
                     buttonList[currentNumber - 1].Image = Resources.tick;
-                    buttonList[currentNumber].Image = Resources.unlock;
-                    buttonList[currentNumber].Enabled = true;
+                    if (!buttonList[currentNumber].Enabled)
+                    {
+                        buttonList[currentNumber].Image = Resources.unlock;
+                        buttonList[currentNumber].Enabled = true;
+                    }
                     labelResult.Text = "Συγχαρητήρια!!!\nΠέρασες το quiz με βαθμό: ";
                     if (activeStudent.Level <= currentNumber)
                     {
                         activeStudent.Level = currentNumber + 1;
                     }
+                }
+                else
+                {
+                    labelResult.Text = "Δεν πέρασες το τεστ!\nΔιάβασε την προπαίδεια\nκαι ξαναδοκίμασε!";
                 }
             }
             else //Final Exam
@@ -509,7 +535,6 @@ namespace PropaideiaApp
             panelTip.Visible = true;
             panelMain.Visible = true;
             textBoxMain.Visible = true;
-            pictureBoxNext.Visible = false;
             buttonTakeQuiz.Visible = true;
             buttonList[currentNumber].PerformClick();
         }
@@ -538,7 +563,7 @@ namespace PropaideiaApp
             {
                 case 0:
                     labelTitle.Text = "Τελική Εξέταση";
-                    textBoxMain.Text = "Συγχαρητήρια!\n\nΈχετε περάσει όλα τα quiz!\n\nΤο μόνο που μένει είναι να απαντήσετε\nστις ερωτήσεις του\nτελικού διαγωνίσματος!\n\nΠατήστε το παράκατω κουμπί\nόταν είστε έτοιμοι";
+                    textBoxMain.Text = "Συγχαρητήρια!\n\nΈχετε περάσει όλα τα quiz!\n\nΤο μόνο που μένει είναι\nνα απαντήσετε στις ερωτήσεις\nτου τελικού διαγωνίσματος!\n\nΠατήστε το παράκατω\nκουμπί όταν είστε έτοιμοι";
                     labelTip.Text = "Κάνε μια επανάληψη πριν δώσεις το διαγώνισμα!";
                     labelTip.Font = new Font("Minion Pro", 10, FontStyle.Bold);
                     break;
@@ -620,6 +645,7 @@ namespace PropaideiaApp
             panelSettings.Location = questionPoint;
             panelTip.Visible = false;
             panelMain.Visible = false;
+            panelGrades.Visible = false;
             buttonTakeQuiz.Visible = false;
             buttonUpdateName.Visible = true;
             textBoxChangeName.Text = activeStudent.Name;
@@ -661,10 +687,10 @@ namespace PropaideiaApp
                     activeStudent.StudentProgress.PropaideiaProgress[i] = 0;
                 }
                 StudentMapper.Update(activeStudent);
+                MessageBox.Show("Your account has been reset! You will be redirected to the login screen!", "Account Reset", MessageBoxButtons.OK);
                 this.Hide();
                 LoginScreen loginForm = new LoginScreen();
                 loginForm.Show();
-                MessageBox.Show("Your account has been reset! You will be redirected to the login screen!", "Account Reset", MessageBoxButtons.OK);
             }
         }
 
@@ -715,11 +741,18 @@ namespace PropaideiaApp
                 {
                     if(gradesList[i].Value > 80)
                     {
-                        tempLevel = i + 2;
+                        tempLevel = i + 2; //Find the highest passed propaideia
+                        searchUser.StudentProgress.PropaideiaProgress[i] = Convert.ToInt32(gradesList[i].Value);
                     }
-                    searchUser.StudentProgress.PropaideiaProgress[i] = Convert.ToInt32(gradesList[i].Value);
                 }
-                searchUser.Level = tempLevel;
+                if(gradesList[10].Value > 80)
+                {
+                    searchUser.Level = 12;
+                }
+                else
+                {
+                    searchUser.Level = tempLevel;
+                }
                 searchUser.StudentProgress.FinalExam = Convert.ToInt32(gradesList[10].Value);
                 StudentMapper.Update(searchUser);
                 MessageBox.Show(searchUser.Username + "'s grades have been updated successfully!", "Updated Successfully!", MessageBoxButtons.OK);
@@ -743,5 +776,9 @@ namespace PropaideiaApp
             }
         }
 
+        private void MainScreen_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
