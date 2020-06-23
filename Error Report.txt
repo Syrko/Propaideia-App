@@ -41,5 +41,11 @@ Bug 8:
 		Login screen is in english / Rest of the program in greek
 
 Bug 9:
-	Description
+	Description:
 		After pressing the form's 'X' the application doesn't exit
+
+Bug 10:
+	Description:
+		Professor no grades button.
+		Username -> Όνομα χρήστη
+		Quiz -> Test
