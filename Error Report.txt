@@ -49,3 +49,10 @@ Bug 10:
 		Professor no grades button.
 		Username -> Όνομα χρήστη
 		Quiz -> Test
+
+Bug 11:
+	Steps to reproduce:
+		1. Professor adds passing grade only for final exam
+		2. Student tries to login
+	Result:
+		ArgumentOutOfRangeException at MainScreen_Load
