@@ -22,4 +22,24 @@ Bug 4:
 		Before the final exam the bubble overlaps the text.
 
 Bug 5:
-	Description no unique screen after passing the final exam.
+	Description:
+		No unique screen after passing the final exam.
+
+Bug 6:
+	Description:
+		Replace the '*' with 'x' in the chapters.
+		Try to find tips for 3 and 7.
+
+Bug 7:
+	Description:
+		After resetting the account the alert notifies I will be directed
+		to the login screen, but the user has already returned to the login screen.
+		(Change message)
+
+Bug 8:
+	Description:
+		Login screen is in english / Rest of the program in greek
+
+Bug 9:
+	Description
+		After pressing the form's 'X' the application doesn't exit
