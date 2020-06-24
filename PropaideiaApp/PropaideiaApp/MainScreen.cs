@@ -82,9 +82,8 @@ namespace PropaideiaApp
             questionPanelList.Add(panelMult);
             questionPanelList.Add(panelTF);
 
-            if (LoginScreen.userType == "student")
+            if (LoginScreen.userType == "student") //User is a Student
             {
-                //TODO Move Panel Visibility changes here
                 activeStudent = StudentMapper.Get(LoginScreen.activeUser);
                 if(activeStudent.Level < 12)
                 {
@@ -124,9 +123,8 @@ namespace PropaideiaApp
                 studentGrades.Add(labelGradeShow10);
                 studentGrades.Add(labelGradeShowFinal);
             }
-            else
+            else //User is a professor
             {
-                //TODO Move Panel Visibility changes here
                 activeProfessor = ProfessorMapper.Get(LoginScreen.activeUser);
                 for(int i = 0; i < 11; i++)
                 {
@@ -135,7 +133,6 @@ namespace PropaideiaApp
                 buttonSave.Visible = true;
                 panelProf.Visible = true;
                 buttonTakeQuiz.Visible = false;
-                //TODO Add tooltip to disabled settings button
                 pictureBoxSettings.Enabled = false;
                 labelTitle.Text = "Διαχείριση Μαθητών";
                 labelTitleNumber.Visible = false;
@@ -157,7 +154,15 @@ namespace PropaideiaApp
 
         private void pictureBoxHelp_Click(object sender, EventArgs e)
         {
-            //TODO Show HTML Help page
+            if(LoginScreen.userType == "student")
+            {
+                System.Diagnostics.Process.Start(@"..\..\..\..\MainHelp.html");
+            }
+            else
+            {
+                System.Diagnostics.Process.Start(@"..\..\..\..\MainProfHelp.html");
+            }
+            
         }
 
         //Student's Grades List

@@ -66,13 +66,20 @@
             this.labelTitleNumber = new System.Windows.Forms.Label();
             this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBoxNext = new System.Windows.Forms.PictureBox();
+            this.buttonResult = new System.Windows.Forms.Button();
+            this.pictureBoxSettingsBack = new System.Windows.Forms.PictureBox();
+            this.buttonSearch = new System.Windows.Forms.Button();
+            this.textBoxSearch = new System.Windows.Forms.TextBox();
+            this.buttonSave = new System.Windows.Forms.Button();
+            this.pictureBoxGrades = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
+            this.pictureBoxSettings = new System.Windows.Forms.PictureBox();
+            this.pictureBoxGradesBack = new System.Windows.Forms.PictureBox();
             this.panelResult = new System.Windows.Forms.Panel();
             this.labelResultGrade = new System.Windows.Forms.Label();
-            this.buttonResult = new System.Windows.Forms.Button();
             this.labelResult = new System.Windows.Forms.Label();
             this.progressBarResult = new System.Windows.Forms.ProgressBar();
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.pictureBoxSettingsBack = new System.Windows.Forms.PictureBox();
             this.labelSettingsSurname = new System.Windows.Forms.Label();
             this.textBoxChangeSurname = new System.Windows.Forms.TextBox();
             this.labelSettingsName = new System.Windows.Forms.Label();
@@ -82,7 +89,6 @@
             this.buttonResetAccount = new System.Windows.Forms.Button();
             this.panelProf = new System.Windows.Forms.Panel();
             this.numericUpDownFinal = new System.Windows.Forms.NumericUpDown();
-            this.buttonSearch = new System.Windows.Forms.Button();
             this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown9 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
@@ -96,14 +102,8 @@
             this.textBoxSearchResults = new System.Windows.Forms.TextBox();
             this.labelSearchUsername = new System.Windows.Forms.Label();
             this.labelSearch = new System.Windows.Forms.Label();
-            this.textBoxSearch = new System.Windows.Forms.TextBox();
-            this.buttonSave = new System.Windows.Forms.Button();
-            this.pictureBoxGrades = new System.Windows.Forms.PictureBox();
-            this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
-            this.pictureBoxSettings = new System.Windows.Forms.PictureBox();
             this.pictureBoxNumber = new System.Windows.Forms.PictureBox();
             this.panelGrades = new System.Windows.Forms.Panel();
-            this.pictureBoxGradesBack = new System.Windows.Forms.PictureBox();
             this.labelGradeShowFinal = new System.Windows.Forms.Label();
             this.labelGradeShow10 = new System.Windows.Forms.Label();
             this.labelGradeShow9 = new System.Windows.Forms.Label();
@@ -136,9 +136,13 @@
             this.panelBlank.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericBlank)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettingsBack)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrades)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGradesBack)).BeginInit();
             this.panelResult.SuspendLayout();
             this.panelSettings.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettingsBack)).BeginInit();
             this.panelProf.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFinal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
@@ -151,12 +155,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrades)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).BeginInit();
             this.panelGrades.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGradesBack)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade7)).BeginInit();
@@ -723,6 +723,140 @@
             this.pictureBoxNext.Visible = false;
             this.pictureBoxNext.Click += new System.EventHandler(this.pictureBoxNext_Click);
             // 
+            // buttonResult
+            // 
+            this.buttonResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.buttonResult.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonResult.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.buttonResult.FlatAppearance.BorderSize = 2;
+            this.buttonResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonResult.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.buttonResult.ForeColor = System.Drawing.Color.White;
+            this.buttonResult.Location = new System.Drawing.Point(149, 163);
+            this.buttonResult.Name = "buttonResult";
+            this.buttonResult.Size = new System.Drawing.Size(113, 44);
+            this.buttonResult.TabIndex = 22;
+            this.buttonResult.Text = "Συνέχεια";
+            this.toolTipMain.SetToolTip(this.buttonResult, "Συνέχεια!");
+            this.buttonResult.UseVisualStyleBackColor = false;
+            this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
+            // 
+            // pictureBoxSettingsBack
+            // 
+            this.pictureBoxSettingsBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxSettingsBack.Image = global::PropaideiaApp.Properties.Resources.back;
+            this.pictureBoxSettingsBack.Location = new System.Drawing.Point(15, 11);
+            this.pictureBoxSettingsBack.Name = "pictureBoxSettingsBack";
+            this.pictureBoxSettingsBack.Size = new System.Drawing.Size(43, 32);
+            this.pictureBoxSettingsBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxSettingsBack.TabIndex = 27;
+            this.pictureBoxSettingsBack.TabStop = false;
+            this.toolTipMain.SetToolTip(this.pictureBoxSettingsBack, "Επιστροφή");
+            this.pictureBoxSettingsBack.Click += new System.EventHandler(this.pictureBoxSettingsBack_Click);
+            // 
+            // buttonSearch
+            // 
+            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.buttonSearch.FlatAppearance.BorderSize = 2;
+            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSearch.Font = new System.Drawing.Font("Minion Pro", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.buttonSearch.ForeColor = System.Drawing.Color.White;
+            this.buttonSearch.Location = new System.Drawing.Point(371, 44);
+            this.buttonSearch.Name = "buttonSearch";
+            this.buttonSearch.Size = new System.Drawing.Size(101, 29);
+            this.buttonSearch.TabIndex = 25;
+            this.buttonSearch.Text = "Αναζήτηση";
+            this.toolTipMain.SetToolTip(this.buttonSearch, "Πατήστε για αναζήτηση των βαθμών του μαθητή!");
+            this.buttonSearch.UseVisualStyleBackColor = false;
+            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
+            // 
+            // textBoxSearch
+            // 
+            this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(60)))));
+            this.textBoxSearch.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearch.ForeColor = System.Drawing.Color.White;
+            this.textBoxSearch.Location = new System.Drawing.Point(180, 44);
+            this.textBoxSearch.Name = "textBoxSearch";
+            this.textBoxSearch.Size = new System.Drawing.Size(185, 29);
+            this.textBoxSearch.TabIndex = 11;
+            this.toolTipMain.SetToolTip(this.textBoxSearch, "Πληκτρολογήστε το όνομα χρήστη του μαθητή του οποίου τους βαθμούς θέλετε να βρείτ" +
+        "ε!");
+            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
+            // 
+            // buttonSave
+            // 
+            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
+            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
+            this.buttonSave.FlatAppearance.BorderSize = 2;
+            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonSave.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.buttonSave.ForeColor = System.Drawing.Color.White;
+            this.buttonSave.Location = new System.Drawing.Point(386, 367);
+            this.buttonSave.Name = "buttonSave";
+            this.buttonSave.Size = new System.Drawing.Size(113, 44);
+            this.buttonSave.TabIndex = 26;
+            this.buttonSave.Text = "Αποθήκευση";
+            this.toolTipMain.SetToolTip(this.buttonSave, "Αποθήκευση των βαθμών του μαθητή");
+            this.buttonSave.UseVisualStyleBackColor = false;
+            this.buttonSave.Visible = false;
+            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
+            // 
+            // pictureBoxGrades
+            // 
+            this.pictureBoxGrades.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxGrades.Image = global::PropaideiaApp.Properties.Resources.grades;
+            this.pictureBoxGrades.Location = new System.Drawing.Point(662, 9);
+            this.pictureBoxGrades.Name = "pictureBoxGrades";
+            this.pictureBoxGrades.Size = new System.Drawing.Size(34, 37);
+            this.pictureBoxGrades.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGrades.TabIndex = 28;
+            this.pictureBoxGrades.TabStop = false;
+            this.toolTipMain.SetToolTip(this.pictureBoxGrades, "Δείτε τις βαθμολογίες σας!");
+            this.pictureBoxGrades.Visible = false;
+            this.pictureBoxGrades.Click += new System.EventHandler(this.pictureBoxGrades_Click);
+            // 
+            // pictureBoxHelp
+            // 
+            this.pictureBoxHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxHelp.Image = global::PropaideiaApp.Properties.Resources.question;
+            this.pictureBoxHelp.Location = new System.Drawing.Point(706, 9);
+            this.pictureBoxHelp.Name = "pictureBoxHelp";
+            this.pictureBoxHelp.Size = new System.Drawing.Size(34, 37);
+            this.pictureBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxHelp.TabIndex = 27;
+            this.pictureBoxHelp.TabStop = false;
+            this.toolTipMain.SetToolTip(this.pictureBoxHelp, "Βοήθεια");
+            this.pictureBoxHelp.Click += new System.EventHandler(this.pictureBoxHelp_Click);
+            // 
+            // pictureBoxSettings
+            // 
+            this.pictureBoxSettings.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxSettings.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSettings.Image")));
+            this.pictureBoxSettings.Location = new System.Drawing.Point(751, 9);
+            this.pictureBoxSettings.Name = "pictureBoxSettings";
+            this.pictureBoxSettings.Size = new System.Drawing.Size(34, 37);
+            this.pictureBoxSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxSettings.TabIndex = 22;
+            this.pictureBoxSettings.TabStop = false;
+            this.toolTipMain.SetToolTip(this.pictureBoxSettings, "Ρυθμίσεις");
+            this.pictureBoxSettings.Click += new System.EventHandler(this.pictureBoxSettings_Click);
+            // 
+            // pictureBoxGradesBack
+            // 
+            this.pictureBoxGradesBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxGradesBack.Image = global::PropaideiaApp.Properties.Resources.back;
+            this.pictureBoxGradesBack.Location = new System.Drawing.Point(20, 10);
+            this.pictureBoxGradesBack.Name = "pictureBoxGradesBack";
+            this.pictureBoxGradesBack.Size = new System.Drawing.Size(43, 32);
+            this.pictureBoxGradesBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxGradesBack.TabIndex = 63;
+            this.pictureBoxGradesBack.TabStop = false;
+            this.toolTipMain.SetToolTip(this.pictureBoxGradesBack, "Επιστροφή");
+            this.pictureBoxGradesBack.Click += new System.EventHandler(this.pictureBoxGradesBack_Click);
+            // 
             // panelResult
             // 
             this.panelResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(107)))), ((int)(((byte)(66)))), ((int)(((byte)(138)))));
@@ -746,24 +880,6 @@
             this.labelResultGrade.Size = new System.Drawing.Size(71, 33);
             this.labelResultGrade.TabIndex = 23;
             this.labelResultGrade.Text = "0/100";
-            // 
-            // buttonResult
-            // 
-            this.buttonResult.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.buttonResult.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonResult.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.buttonResult.FlatAppearance.BorderSize = 2;
-            this.buttonResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonResult.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.buttonResult.ForeColor = System.Drawing.Color.White;
-            this.buttonResult.Location = new System.Drawing.Point(149, 163);
-            this.buttonResult.Name = "buttonResult";
-            this.buttonResult.Size = new System.Drawing.Size(113, 44);
-            this.buttonResult.TabIndex = 22;
-            this.buttonResult.Text = "Συνέχεια";
-            this.toolTipMain.SetToolTip(this.buttonResult, "Συνέχεια!");
-            this.buttonResult.UseVisualStyleBackColor = false;
-            this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
             // 
             // labelResult
             // 
@@ -799,19 +915,6 @@
             this.panelSettings.Size = new System.Drawing.Size(465, 254);
             this.panelSettings.TabIndex = 23;
             this.panelSettings.Visible = false;
-            // 
-            // pictureBoxSettingsBack
-            // 
-            this.pictureBoxSettingsBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSettingsBack.Image = global::PropaideiaApp.Properties.Resources.back;
-            this.pictureBoxSettingsBack.Location = new System.Drawing.Point(15, 11);
-            this.pictureBoxSettingsBack.Name = "pictureBoxSettingsBack";
-            this.pictureBoxSettingsBack.Size = new System.Drawing.Size(43, 32);
-            this.pictureBoxSettingsBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxSettingsBack.TabIndex = 27;
-            this.pictureBoxSettingsBack.TabStop = false;
-            this.toolTipMain.SetToolTip(this.pictureBoxSettingsBack, "Επιστροφή");
-            this.pictureBoxSettingsBack.Click += new System.EventHandler(this.pictureBoxSettingsBack_Click);
             // 
             // labelSettingsSurname
             // 
@@ -937,24 +1040,6 @@
             this.numericUpDownFinal.Size = new System.Drawing.Size(68, 30);
             this.numericUpDownFinal.TabIndex = 39;
             this.numericUpDownFinal.Visible = false;
-            // 
-            // buttonSearch
-            // 
-            this.buttonSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.buttonSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSearch.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.buttonSearch.FlatAppearance.BorderSize = 2;
-            this.buttonSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSearch.Font = new System.Drawing.Font("Minion Pro", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.buttonSearch.ForeColor = System.Drawing.Color.White;
-            this.buttonSearch.Location = new System.Drawing.Point(371, 44);
-            this.buttonSearch.Name = "buttonSearch";
-            this.buttonSearch.Size = new System.Drawing.Size(101, 29);
-            this.buttonSearch.TabIndex = 25;
-            this.buttonSearch.Text = "Αναζήτηση";
-            this.toolTipMain.SetToolTip(this.buttonSearch, "Πατήστε για αναζήτηση των βαθμών του μαθητή!");
-            this.buttonSearch.UseVisualStyleBackColor = false;
-            this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
             // numericUpDown10
             // 
@@ -1113,78 +1198,6 @@
             this.labelSearch.TabIndex = 25;
             this.labelSearch.Text = "Αναζήτηση Μαθητή";
             // 
-            // textBoxSearch
-            // 
-            this.textBoxSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(203)))), ((int)(((byte)(60)))));
-            this.textBoxSearch.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearch.ForeColor = System.Drawing.Color.White;
-            this.textBoxSearch.Location = new System.Drawing.Point(180, 44);
-            this.textBoxSearch.Name = "textBoxSearch";
-            this.textBoxSearch.Size = new System.Drawing.Size(185, 29);
-            this.textBoxSearch.TabIndex = 11;
-            this.toolTipMain.SetToolTip(this.textBoxSearch, "Πληκτρολογήστε το όνομα χρήστη του μαθητή του οποίου τους βαθμούς θέλετε να βρείτ" +
-        "ε!");
-            this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
-            // 
-            // buttonSave
-            // 
-            this.buttonSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(77)))), ((int)(((byte)(128)))));
-            this.buttonSave.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonSave.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(90)))), ((int)(((byte)(230)))));
-            this.buttonSave.FlatAppearance.BorderSize = 2;
-            this.buttonSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonSave.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.buttonSave.ForeColor = System.Drawing.Color.White;
-            this.buttonSave.Location = new System.Drawing.Point(386, 367);
-            this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(113, 44);
-            this.buttonSave.TabIndex = 26;
-            this.buttonSave.Text = "Αποθήκευση";
-            this.toolTipMain.SetToolTip(this.buttonSave, "Αποθήκευση των βαθμών του μαθητή");
-            this.buttonSave.UseVisualStyleBackColor = false;
-            this.buttonSave.Visible = false;
-            this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
-            // 
-            // pictureBoxGrades
-            // 
-            this.pictureBoxGrades.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxGrades.Image = global::PropaideiaApp.Properties.Resources.grades;
-            this.pictureBoxGrades.Location = new System.Drawing.Point(662, 9);
-            this.pictureBoxGrades.Name = "pictureBoxGrades";
-            this.pictureBoxGrades.Size = new System.Drawing.Size(34, 37);
-            this.pictureBoxGrades.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxGrades.TabIndex = 28;
-            this.pictureBoxGrades.TabStop = false;
-            this.toolTipMain.SetToolTip(this.pictureBoxGrades, "Δείτε τις βαθμολογίες σας!");
-            this.pictureBoxGrades.Visible = false;
-            this.pictureBoxGrades.Click += new System.EventHandler(this.pictureBoxGrades_Click);
-            // 
-            // pictureBoxHelp
-            // 
-            this.pictureBoxHelp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxHelp.Image = global::PropaideiaApp.Properties.Resources.question;
-            this.pictureBoxHelp.Location = new System.Drawing.Point(706, 9);
-            this.pictureBoxHelp.Name = "pictureBoxHelp";
-            this.pictureBoxHelp.Size = new System.Drawing.Size(34, 37);
-            this.pictureBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxHelp.TabIndex = 27;
-            this.pictureBoxHelp.TabStop = false;
-            this.toolTipMain.SetToolTip(this.pictureBoxHelp, "Βοήθεια");
-            this.pictureBoxHelp.Click += new System.EventHandler(this.pictureBoxHelp_Click);
-            // 
-            // pictureBoxSettings
-            // 
-            this.pictureBoxSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxSettings.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxSettings.Image")));
-            this.pictureBoxSettings.Location = new System.Drawing.Point(751, 9);
-            this.pictureBoxSettings.Name = "pictureBoxSettings";
-            this.pictureBoxSettings.Size = new System.Drawing.Size(34, 37);
-            this.pictureBoxSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxSettings.TabIndex = 22;
-            this.pictureBoxSettings.TabStop = false;
-            this.toolTipMain.SetToolTip(this.pictureBoxSettings, "Ρυθμίσεις");
-            this.pictureBoxSettings.Click += new System.EventHandler(this.pictureBoxSettings_Click);
-            // 
             // pictureBoxNumber
             // 
             this.pictureBoxNumber.Image = global::PropaideiaApp.Properties.Resources._10;
@@ -1227,19 +1240,6 @@
             this.panelGrades.Size = new System.Drawing.Size(486, 293);
             this.panelGrades.TabIndex = 40;
             this.panelGrades.Visible = false;
-            // 
-            // pictureBoxGradesBack
-            // 
-            this.pictureBoxGradesBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBoxGradesBack.Image = global::PropaideiaApp.Properties.Resources.back;
-            this.pictureBoxGradesBack.Location = new System.Drawing.Point(20, 10);
-            this.pictureBoxGradesBack.Name = "pictureBoxGradesBack";
-            this.pictureBoxGradesBack.Size = new System.Drawing.Size(43, 32);
-            this.pictureBoxGradesBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxGradesBack.TabIndex = 63;
-            this.pictureBoxGradesBack.TabStop = false;
-            this.toolTipMain.SetToolTip(this.pictureBoxGradesBack, "Επιστροφή");
-            this.pictureBoxGradesBack.Click += new System.EventHandler(this.pictureBoxGradesBack_Click);
             // 
             // labelGradeShowFinal
             // 
@@ -1533,7 +1533,6 @@
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Προπαίδεια";
-            this.toolTipMain.SetToolTip(this, "Προπαίδεια");
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainScreen_FormClosed);
             this.Load += new System.EventHandler(this.MainScreen_Load);
             this.panelMenu.ResumeLayout(false);
@@ -1549,11 +1548,15 @@
             this.panelBlank.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericBlank)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNext)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettingsBack)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrades)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGradesBack)).EndInit();
             this.panelResult.ResumeLayout(false);
             this.panelResult.PerformLayout();
             this.panelSettings.ResumeLayout(false);
             this.panelSettings.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettingsBack)).EndInit();
             this.panelProf.ResumeLayout(false);
             this.panelProf.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFinal)).EndInit();
@@ -1567,13 +1570,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrades)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNumber)).EndInit();
             this.panelGrades.ResumeLayout(false);
             this.panelGrades.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGradesBack)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGrade7)).EndInit();

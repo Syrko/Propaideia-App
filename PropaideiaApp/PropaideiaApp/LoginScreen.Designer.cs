@@ -46,11 +46,13 @@
             this.labelRegisterName = new System.Windows.Forms.Label();
             this.textBoxRegisterName = new System.Windows.Forms.TextBox();
             this.toolTipLogin = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo10)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxUsername
@@ -245,12 +247,25 @@
             this.textBoxRegisterName.TabIndex = 2;
             this.textBoxRegisterName.Visible = false;
             // 
+            // pictureBoxHelp
+            // 
+            this.pictureBoxHelp.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBoxHelp.Image = global::PropaideiaApp.Properties.Resources.question;
+            this.pictureBoxHelp.Location = new System.Drawing.Point(754, 12);
+            this.pictureBoxHelp.Name = "pictureBoxHelp";
+            this.pictureBoxHelp.Size = new System.Drawing.Size(34, 37);
+            this.pictureBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxHelp.TabIndex = 28;
+            this.pictureBoxHelp.TabStop = false;
+            this.pictureBoxHelp.Click += new System.EventHandler(this.pictureBoxHelp_Click);
+            // 
             // LoginScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(76)))), ((int)(((byte)(60)))), ((int)(((byte)(114)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBoxHelp);
             this.Controls.Add(this.labelRegisterSurname);
             this.Controls.Add(this.textBoxRegisterSurname);
             this.Controls.Add(this.labelRegisterName);
@@ -278,6 +293,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo10)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,6 +318,7 @@
         private System.Windows.Forms.Label labelRegisterName;
         private System.Windows.Forms.TextBox textBoxRegisterName;
         private System.Windows.Forms.ToolTip toolTipLogin;
+        private System.Windows.Forms.PictureBox pictureBoxHelp;
     }
 }
 

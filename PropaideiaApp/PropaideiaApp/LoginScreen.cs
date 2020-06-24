@@ -138,5 +138,10 @@ namespace PropaideiaApp
         {
             Application.Exit();
         }
+
+        private void pictureBoxHelp_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start(@"..\..\..\..\MainHelp.html");
+        }
     }
 }
