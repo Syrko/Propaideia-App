@@ -64,7 +64,7 @@
             this.buttonTakeQuiz = new System.Windows.Forms.Button();
             this.labelTitle = new System.Windows.Forms.Label();
             this.labelTitleNumber = new System.Windows.Forms.Label();
-            this.toolTipNextQ = new System.Windows.Forms.ToolTip(this.components);
+            this.toolTipMain = new System.Windows.Forms.ToolTip(this.components);
             this.pictureBoxNext = new System.Windows.Forms.PictureBox();
             this.panelResult = new System.Windows.Forms.Panel();
             this.labelResultGrade = new System.Windows.Forms.Label();
@@ -210,6 +210,7 @@
             this.buttonFinalExam.TabIndex = 11;
             this.buttonFinalExam.Text = "Τελική Εξέταση";
             this.buttonFinalExam.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTipMain.SetToolTip(this.buttonFinalExam, "Πρέπει να ολοκληρώσετε τα προηγούμενα τεστ για να προχωρήσετε!");
             this.buttonFinalExam.UseVisualStyleBackColor = false;
             this.buttonFinalExam.Click += new System.EventHandler(this.buttonFinalExam_Click);
             // 
@@ -227,6 +228,7 @@
             this.buttonLogout.Size = new System.Drawing.Size(172, 56);
             this.buttonLogout.TabIndex = 10;
             this.buttonLogout.Text = "Αποσύνδεση";
+            this.toolTipMain.SetToolTip(this.buttonLogout, "Πατήστε για να επιστρέψετε στην οθόνη σύνδεσης");
             this.buttonLogout.UseVisualStyleBackColor = false;
             this.buttonLogout.Click += new System.EventHandler(this.buttonLogout_Click);
             // 
@@ -259,6 +261,7 @@
             this.button10.TabIndex = 8;
             this.button10.Text = "Προπαίδεια του 10";
             this.button10.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTipMain.SetToolTip(this.button10, "Πρέπει να ολοκληρώσετε τα προηγούμενα τεστ για να προχωρήσετε!");
             this.button10.UseVisualStyleBackColor = false;
             this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
@@ -280,6 +283,7 @@
             this.button9.TabIndex = 7;
             this.button9.Text = "Προπαίδεια του 9";
             this.button9.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTipMain.SetToolTip(this.button9, "Πρέπει να ολοκληρώσετε τα προηγούμενα τεστ για να προχωρήσετε!");
             this.button9.UseVisualStyleBackColor = false;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -301,6 +305,7 @@
             this.button8.TabIndex = 6;
             this.button8.Text = "Προπαίδεια του 8";
             this.button8.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTipMain.SetToolTip(this.button8, "Πρέπει να ολοκληρώσετε τα προηγούμενα τεστ για να προχωρήσετε!");
             this.button8.UseVisualStyleBackColor = false;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
@@ -322,6 +327,7 @@
             this.button7.TabIndex = 5;
             this.button7.Text = "Προπαίδεια του 7";
             this.button7.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTipMain.SetToolTip(this.button7, "Πρέπει να ολοκληρώσετε τα προηγούμενα τεστ για να προχωρήσετε!");
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -343,6 +349,7 @@
             this.button6.TabIndex = 4;
             this.button6.Text = "Προπαίδεια του 6";
             this.button6.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTipMain.SetToolTip(this.button6, "Πρέπει να ολοκληρώσετε τα προηγούμενα τεστ για να προχωρήσετε!");
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -364,6 +371,7 @@
             this.button5.TabIndex = 3;
             this.button5.Text = "Προπαίδεια του 5";
             this.button5.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTipMain.SetToolTip(this.button5, "Πρέπει να ολοκληρώσετε τα προηγούμενα τεστ για να προχωρήσετε!");
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -385,6 +393,7 @@
             this.button4.TabIndex = 2;
             this.button4.Text = "Προπαίδεια του 4";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTipMain.SetToolTip(this.button4, "Πρέπει να ολοκληρώσετε τα προηγούμενα τεστ για να προχωρήσετε!");
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -406,6 +415,7 @@
             this.button3.TabIndex = 1;
             this.button3.Text = "Προπαίδεια του 3";
             this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTipMain.SetToolTip(this.button3, "Πρέπει να ολοκληρώσετε τα προηγούμενα τεστ για να προχωρήσετε!");
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -427,6 +437,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Προπαίδεια του 2";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTipMain.SetToolTip(this.button2, "Πρέπει να ολοκληρώσετε τα προηγούμενα τεστ για να προχωρήσετε!");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -447,6 +458,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Προπαίδεια του 1";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.toolTipMain.SetToolTip(this.button1, "Πρέπει να ολοκληρώσετε τα προηγούμενα τεστ για να προχωρήσετε!");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -671,6 +683,7 @@
             this.buttonTakeQuiz.Size = new System.Drawing.Size(127, 44);
             this.buttonTakeQuiz.TabIndex = 8;
             this.buttonTakeQuiz.Text = "Ξεκινήστε";
+            this.toolTipMain.SetToolTip(this.buttonTakeQuiz, "Πατήστε εδώ να ξεκινήσετε το τεστ!");
             this.buttonTakeQuiz.UseVisualStyleBackColor = false;
             this.buttonTakeQuiz.Click += new System.EventHandler(this.buttonTakeQuiz_Click);
             // 
@@ -679,7 +692,7 @@
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Minion Pro", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(207, 19);
+            this.labelTitle.Location = new System.Drawing.Point(195, 13);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(342, 37);
             this.labelTitle.TabIndex = 12;
@@ -690,7 +703,7 @@
             this.labelTitleNumber.AutoSize = true;
             this.labelTitleNumber.Font = new System.Drawing.Font("Minion Pro", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelTitleNumber.ForeColor = System.Drawing.Color.White;
-            this.labelTitleNumber.Location = new System.Drawing.Point(544, 16);
+            this.labelTitleNumber.Location = new System.Drawing.Point(532, 10);
             this.labelTitleNumber.Name = "labelTitleNumber";
             this.labelTitleNumber.Size = new System.Drawing.Size(47, 40);
             this.labelTitleNumber.TabIndex = 13;
@@ -706,7 +719,7 @@
             this.pictureBoxNext.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxNext.TabIndex = 1;
             this.pictureBoxNext.TabStop = false;
-            this.toolTipNextQ.SetToolTip(this.pictureBoxNext, "Επόμενη Ερώτηση");
+            this.toolTipMain.SetToolTip(this.pictureBoxNext, "Επόμενη Ερώτηση");
             this.pictureBoxNext.Visible = false;
             this.pictureBoxNext.Click += new System.EventHandler(this.pictureBoxNext_Click);
             // 
@@ -748,6 +761,7 @@
             this.buttonResult.Size = new System.Drawing.Size(113, 44);
             this.buttonResult.TabIndex = 22;
             this.buttonResult.Text = "Συνέχεια";
+            this.toolTipMain.SetToolTip(this.buttonResult, "Συνέχεια!");
             this.buttonResult.UseVisualStyleBackColor = false;
             this.buttonResult.Click += new System.EventHandler(this.buttonResult_Click);
             // 
@@ -796,6 +810,7 @@
             this.pictureBoxSettingsBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxSettingsBack.TabIndex = 27;
             this.pictureBoxSettingsBack.TabStop = false;
+            this.toolTipMain.SetToolTip(this.pictureBoxSettingsBack, "Επιστροφή");
             this.pictureBoxSettingsBack.Click += new System.EventHandler(this.pictureBoxSettingsBack_Click);
             // 
             // labelSettingsSurname
@@ -937,6 +952,7 @@
             this.buttonSearch.Size = new System.Drawing.Size(101, 29);
             this.buttonSearch.TabIndex = 25;
             this.buttonSearch.Text = "Αναζήτηση";
+            this.toolTipMain.SetToolTip(this.buttonSearch, "Πατήστε για αναζήτηση των βαθμών του μαθητή!");
             this.buttonSearch.UseVisualStyleBackColor = false;
             this.buttonSearch.Click += new System.EventHandler(this.buttonSearch_Click);
             // 
@@ -1071,20 +1087,20 @@
             this.textBoxSearchResults.Name = "textBoxSearchResults";
             this.textBoxSearchResults.Size = new System.Drawing.Size(465, 211);
             this.textBoxSearchResults.TabIndex = 27;
-            this.textBoxSearchResults.Text = "Quiz 1:\t\tQuiz 5:\t\tQuiz 9:\r\n\r\nQuiz 2:\t\tQuiz 6:\t\tQuiz 10:\r\n\r\nQuiz 3:\t\tQuiz 7:\t\t\r\n\r\n" +
-    "Quiz 4:\t\tQuiz 8:\t\tΤελική Εξέταση:";
+            this.textBoxSearchResults.Text = "Τεστ 1:\t\tΤεστ 5:\t\tΤεστ 9:\r\n\r\nΤεστ 2:\t\tΤεστ 6:\t\tΤεστ 10:\r\n\r\nΤεστ 3:\t\tΤεστ 7:\t\t\r\n\r\n" +
+    "Τεστ 4:\t\tΤεστ 8:\t\tΤελική Εξέταση:";
             this.textBoxSearchResults.Click += new System.EventHandler(this.textBoxSearchResults_Click);
             // 
             // labelSearchUsername
             // 
             this.labelSearchUsername.AutoSize = true;
-            this.labelSearchUsername.Font = new System.Drawing.Font("Minion Pro", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSearchUsername.Font = new System.Drawing.Font("Minion Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSearchUsername.ForeColor = System.Drawing.Color.White;
             this.labelSearchUsername.Location = new System.Drawing.Point(7, 46);
             this.labelSearchUsername.Name = "labelSearchUsername";
-            this.labelSearchUsername.Size = new System.Drawing.Size(167, 26);
+            this.labelSearchUsername.Size = new System.Drawing.Size(170, 22);
             this.labelSearchUsername.TabIndex = 26;
-            this.labelSearchUsername.Text = "Username Μαθητή:";
+            this.labelSearchUsername.Text = "Όνομα Χρήστη Μαθητή:";
             // 
             // labelSearch
             // 
@@ -1106,6 +1122,8 @@
             this.textBoxSearch.Name = "textBoxSearch";
             this.textBoxSearch.Size = new System.Drawing.Size(185, 29);
             this.textBoxSearch.TabIndex = 11;
+            this.toolTipMain.SetToolTip(this.textBoxSearch, "Πληκτρολογήστε το όνομα χρήστη του μαθητή του οποίου τους βαθμούς θέλετε να βρείτ" +
+        "ε!");
             this.textBoxSearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearch_KeyPress);
             // 
             // buttonSave
@@ -1122,6 +1140,7 @@
             this.buttonSave.Size = new System.Drawing.Size(113, 44);
             this.buttonSave.TabIndex = 26;
             this.buttonSave.Text = "Αποθήκευση";
+            this.toolTipMain.SetToolTip(this.buttonSave, "Αποθήκευση των βαθμών του μαθητή");
             this.buttonSave.UseVisualStyleBackColor = false;
             this.buttonSave.Visible = false;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -1136,6 +1155,7 @@
             this.pictureBoxGrades.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGrades.TabIndex = 28;
             this.pictureBoxGrades.TabStop = false;
+            this.toolTipMain.SetToolTip(this.pictureBoxGrades, "Δείτε τις βαθμολογίες σας!");
             this.pictureBoxGrades.Visible = false;
             this.pictureBoxGrades.Click += new System.EventHandler(this.pictureBoxGrades_Click);
             // 
@@ -1149,6 +1169,7 @@
             this.pictureBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxHelp.TabIndex = 27;
             this.pictureBoxHelp.TabStop = false;
+            this.toolTipMain.SetToolTip(this.pictureBoxHelp, "Βοήθεια");
             this.pictureBoxHelp.Click += new System.EventHandler(this.pictureBoxHelp_Click);
             // 
             // pictureBoxSettings
@@ -1161,6 +1182,7 @@
             this.pictureBoxSettings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxSettings.TabIndex = 22;
             this.pictureBoxSettings.TabStop = false;
+            this.toolTipMain.SetToolTip(this.pictureBoxSettings, "Ρυθμίσεις");
             this.pictureBoxSettings.Click += new System.EventHandler(this.pictureBoxSettings_Click);
             // 
             // pictureBoxNumber
@@ -1216,6 +1238,7 @@
             this.pictureBoxGradesBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxGradesBack.TabIndex = 63;
             this.pictureBoxGradesBack.TabStop = false;
+            this.toolTipMain.SetToolTip(this.pictureBoxGradesBack, "Επιστροφή");
             this.pictureBoxGradesBack.Click += new System.EventHandler(this.pictureBoxGradesBack_Click);
             // 
             // labelGradeShowFinal
@@ -1510,6 +1533,7 @@
             this.Name = "MainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Προπαίδεια";
+            this.toolTipMain.SetToolTip(this, "Προπαίδεια");
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainScreen_FormClosed);
             this.Load += new System.EventHandler(this.MainScreen_Load);
             this.panelMenu.ResumeLayout(false);
@@ -1599,7 +1623,7 @@
         private System.Windows.Forms.RadioButton radioButtonMult3;
         private System.Windows.Forms.RadioButton radioButtonMult1;
         private System.Windows.Forms.Label labelMultQuest;
-        private System.Windows.Forms.ToolTip toolTipNextQ;
+        private System.Windows.Forms.ToolTip toolTipMain;
         private System.Windows.Forms.NumericUpDown numericBlank;
         private System.Windows.Forms.PictureBox pictureBoxTip;
         private System.Windows.Forms.Label labelTip;

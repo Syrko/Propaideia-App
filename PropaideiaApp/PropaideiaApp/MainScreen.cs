@@ -92,8 +92,10 @@ namespace PropaideiaApp
                     {
                         buttonList[i].Enabled = true;
                         buttonList[i].Image = Resources.tick;
+                        toolTipMain.SetToolTip(buttonList[i], "Έχει ολοκληρωθεί η προπαίδεια του " + (i + 1).ToString());
                     }
                     buttonList[activeStudent.Level - 1].Image = Resources.unlock;
+                    toolTipMain.SetToolTip(buttonList[activeStudent.Level - 1], "Διαβάστε την προπαίδεια και όταν είστε έτοιμοι δοκιμάστε το τεστ!");
                     buttonList[activeStudent.Level - 1].PerformClick();
                 }
                 else
@@ -102,6 +104,7 @@ namespace PropaideiaApp
                     {
                         buttonList[i].Enabled = true;
                         buttonList[i].Image = Resources.tick;
+                        toolTipMain.SetToolTip(buttonList[i], "Έχει ολοκληρωθεί η προπαίδεια του " + (i + 1).ToString());
                     }
                     buttonList[10].PerformClick();
                 }
@@ -287,10 +290,12 @@ namespace PropaideiaApp
                 labelTitleNumber.Visible = false;
                 labelTip.Text = "Μπράβο! Τώρα πια ξέρεις την προπαίδεια μέχρι και το 10!";
                 textBoxMain.Text = "Πολύ καλή προσπάθεια! Έχετε ολοκληρώσει την εκπαίδευση,\nμπορείτε να συνεχίσετε να διαβάζετε\nή να βελτιώσετε τους βαθμούς σας στα τεστ!";
+                toolTipMain.SetToolTip(buttonList[10], "Έχετε ολοκληρώσει και την τελική εξέταση!");
                 labelTip.Font = new Font("Minion Pro", 10, FontStyle.Bold);
             }
             else
             {
+                toolTipMain.SetToolTip(buttonList[10], "Κάντε μια επανάληψη και δοκιμάστε την τελική εξέταση!");
                 labelTitleNumber.Text = "";
                 changeLesson(currentNumber);
             }
@@ -493,9 +498,11 @@ namespace PropaideiaApp
                 if (grade > 80)
                 {
                     buttonList[currentNumber - 1].Image = Resources.tick;
+                    toolTipMain.SetToolTip(buttonList[currentNumber - 1], "Έχει ολοκληρωθεί η προπαίδεια του " + currentNumber);
                     if (!buttonList[currentNumber].Enabled)
                     {
                         buttonList[currentNumber].Image = Resources.unlock;
+                        toolTipMain.SetToolTip(buttonList[currentNumber], "Διαβάστε την προπαίδεια και όταν είστε έτοιμοι δοκιμάστε το τεστ!");
                         buttonList[currentNumber].Enabled = true;
                     }
                     labelResult.Text = "Συγχαρητήρια!!!\nΠέρασες το quiz με βαθμό: ";

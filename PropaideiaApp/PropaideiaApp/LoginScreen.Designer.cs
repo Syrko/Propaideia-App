@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.buttonLogin = new System.Windows.Forms.Button();
             this.buttonRegister = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             this.textBoxRegisterSurname = new System.Windows.Forms.TextBox();
             this.labelRegisterName = new System.Windows.Forms.Label();
             this.textBoxRegisterName = new System.Windows.Forms.TextBox();
+            this.toolTipLogin = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxNo6)).BeginInit();
@@ -68,14 +70,15 @@
             this.buttonLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonLogin.FlatAppearance.BorderSize = 0;
             this.buttonLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonLogin.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLogin.Font = new System.Drawing.Font("Minion Pro", 16F, System.Drawing.FontStyle.Bold);
             this.buttonLogin.ForeColor = System.Drawing.Color.White;
             this.buttonLogin.Location = new System.Drawing.Point(271, 271);
             this.buttonLogin.Margin = new System.Windows.Forms.Padding(0);
             this.buttonLogin.Name = "buttonLogin";
             this.buttonLogin.Size = new System.Drawing.Size(103, 37);
             this.buttonLogin.TabIndex = 4;
-            this.buttonLogin.Text = "Login";
+            this.buttonLogin.Text = "Σύνδεση";
+            this.toolTipLogin.SetToolTip(this.buttonLogin, "Συμπληρώστε Όνομα Χρήστη και κωδικό και πατήστε εδώ για να συνδεθείτε!");
             this.buttonLogin.UseVisualStyleBackColor = false;
             this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
             this.buttonLogin.MouseEnter += new System.EventHandler(this.buttonLogin_MouseEnter);
@@ -87,14 +90,15 @@
             this.buttonRegister.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonRegister.FlatAppearance.BorderSize = 0;
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonRegister.Font = new System.Drawing.Font("Ravie", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonRegister.Font = new System.Drawing.Font("Minion Pro", 14F, System.Drawing.FontStyle.Bold);
             this.buttonRegister.ForeColor = System.Drawing.Color.White;
             this.buttonRegister.Location = new System.Drawing.Point(440, 271);
             this.buttonRegister.Margin = new System.Windows.Forms.Padding(0);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(107, 37);
             this.buttonRegister.TabIndex = 5;
-            this.buttonRegister.Text = "Register";
+            this.buttonRegister.Text = "Εγγραφή";
+            this.toolTipLogin.SetToolTip(this.buttonRegister, "Πατήστε εδώ για εγγραφή!");
             this.buttonRegister.UseVisualStyleBackColor = false;
             this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
             this.buttonRegister.MouseEnter += new System.EventHandler(this.buttonRegister_MouseEnter);
@@ -153,24 +157,24 @@
             // labelUsername
             // 
             this.labelUsername.AutoSize = true;
-            this.labelUsername.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelUsername.Font = new System.Drawing.Font("Minion Pro", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelUsername.ForeColor = System.Drawing.Color.White;
-            this.labelUsername.Location = new System.Drawing.Point(198, 118);
+            this.labelUsername.Location = new System.Drawing.Point(187, 118);
             this.labelUsername.Name = "labelUsername";
-            this.labelUsername.Size = new System.Drawing.Size(132, 22);
+            this.labelUsername.Size = new System.Drawing.Size(137, 26);
             this.labelUsername.TabIndex = 0;
-            this.labelUsername.Text = "Username:";
+            this.labelUsername.Text = "Όνομα Χρήστη:";
             // 
             // labelPassword
             // 
             this.labelPassword.AutoSize = true;
-            this.labelPassword.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPassword.Font = new System.Drawing.Font("Minion Pro", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPassword.ForeColor = System.Drawing.Color.White;
-            this.labelPassword.Location = new System.Drawing.Point(201, 155);
+            this.labelPassword.Location = new System.Drawing.Point(234, 155);
             this.labelPassword.Name = "labelPassword";
-            this.labelPassword.Size = new System.Drawing.Size(129, 22);
+            this.labelPassword.Size = new System.Drawing.Size(85, 26);
             this.labelPassword.TabIndex = 0;
-            this.labelPassword.Text = "Password:";
+            this.labelPassword.Text = "Κωδικός:";
             // 
             // textBoxPassword
             // 
@@ -187,24 +191,24 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ravie", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Minion Pro", 24F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(12, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(197, 34);
+            this.label1.Size = new System.Drawing.Size(178, 44);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Propaideia";
+            this.label1.Text = "Προπαίδεια";
             // 
             // labelRegisterSurname
             // 
             this.labelRegisterSurname.AutoSize = true;
-            this.labelRegisterSurname.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegisterSurname.Font = new System.Drawing.Font("Minion Pro", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRegisterSurname.ForeColor = System.Drawing.Color.White;
-            this.labelRegisterSurname.Location = new System.Drawing.Point(211, 229);
+            this.labelRegisterSurname.Location = new System.Drawing.Point(235, 232);
             this.labelRegisterSurname.Name = "labelRegisterSurname";
-            this.labelRegisterSurname.Size = new System.Drawing.Size(119, 22);
+            this.labelRegisterSurname.Size = new System.Drawing.Size(88, 26);
             this.labelRegisterSurname.TabIndex = 8;
-            this.labelRegisterSurname.Text = "Surname:";
+            this.labelRegisterSurname.Text = "Επώνυμο:";
             this.labelRegisterSurname.Visible = false;
             // 
             // textBoxRegisterSurname
@@ -221,13 +225,13 @@
             // labelRegisterName
             // 
             this.labelRegisterName.AutoSize = true;
-            this.labelRegisterName.Font = new System.Drawing.Font("Ravie", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelRegisterName.Font = new System.Drawing.Font("Minion Pro", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRegisterName.ForeColor = System.Drawing.Color.White;
             this.labelRegisterName.Location = new System.Drawing.Point(251, 192);
             this.labelRegisterName.Name = "labelRegisterName";
-            this.labelRegisterName.Size = new System.Drawing.Size(79, 22);
+            this.labelRegisterName.Size = new System.Drawing.Size(71, 26);
             this.labelRegisterName.TabIndex = 9;
-            this.labelRegisterName.Text = "Name:";
+            this.labelRegisterName.Text = "Όνομα:";
             this.labelRegisterName.Visible = false;
             // 
             // textBoxRegisterName
@@ -297,6 +301,7 @@
         private System.Windows.Forms.TextBox textBoxRegisterSurname;
         private System.Windows.Forms.Label labelRegisterName;
         private System.Windows.Forms.TextBox textBoxRegisterName;
+        private System.Windows.Forms.ToolTip toolTipLogin;
     }
 }
 
