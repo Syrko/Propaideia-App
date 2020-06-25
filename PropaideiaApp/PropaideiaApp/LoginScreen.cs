@@ -24,6 +24,7 @@ namespace PropaideiaApp
 
         private void LoginScreen_Load(object sender, EventArgs e)
         {
+            //Reset user data, in case we return here from a logout
             activeUser = "";
             userType = "";
         }
@@ -34,7 +35,7 @@ namespace PropaideiaApp
 
             if (!String.IsNullOrEmpty(textBoxUsername.Text) && !String.IsNullOrEmpty(textBoxPassword.Text))
             {
-                userType = Database.Login(textBoxUsername.Text, textBoxPassword.Text);
+                userType = Database.Login(textBoxUsername.Text, textBoxPassword.Text); //Try to login, if it successed the user's type is returned
                 if(userType == UserTypes.STUDENT)
                 {
                     activeUser = StudentMapper.Get(textBoxUsername.Text).Username;
@@ -58,29 +59,10 @@ namespace PropaideiaApp
             }
         }
 
-        private void buttonLogin_MouseLeave(object sender, EventArgs e)
-        {
-            buttonLogin.BackColor = Color.FromArgb(244, 211, 8);
-        }
-
-        private void buttonLogin_MouseEnter(object sender, EventArgs e)
-        {
-            buttonLogin.BackColor = Color.FromArgb(255, 222, 8);
-        }
-
-        private void buttonRegister_MouseEnter(object sender, EventArgs e)
-        {
-            buttonRegister.BackColor = Color.FromArgb(219, 75, 74);
-        }
-
-        private void buttonRegister_MouseLeave(object sender, EventArgs e)
-        {
-            buttonRegister.BackColor = Color.FromArgb(216, 40, 39);
-        }
-
+        
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            if (!labelRegisterName.Visible) //First button click shows the rest of the fields to fill in
+            if (!labelRegisterName.Visible) //First button click shows the rest of the fields that need to be filled in
             {
                 labelRegisterName.Visible = true;
                 labelRegisterSurname.Visible = true;
@@ -92,12 +74,13 @@ namespace PropaideiaApp
                 if (!String.IsNullOrEmpty(textBoxUsername.Text) && !String.IsNullOrEmpty(textBoxPassword.Text) && !String.IsNullOrEmpty(textBoxRegisterName.Text) && !String.IsNullOrEmpty(textBoxRegisterSurname.Text))
                 {
                     Student newStudent = new Student(textBoxUsername.Text, textBoxRegisterName.Text, textBoxRegisterSurname.Text);
-                    if (StudentMapper.Get(newStudent.Username) == null)
+                    if (StudentMapper.Get(newStudent.Username) == null) //If the student doesn't already exist
                     {
                         if (StudentMapper.Insert(newStudent, textBoxPassword.Text))
                         {
                             if (MessageBox.Show("User registered successfully!", "Registered Successfully!", MessageBoxButtons.OK) == DialogResult.OK)
                             {
+                                //auto login after register
                                 buttonLogin.PerformClick();
                             }
                         }
@@ -142,6 +125,27 @@ namespace PropaideiaApp
         private void pictureBoxHelp_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start(@"..\..\..\..\MainHelp.html");
+        }
+
+        //Hover animations
+        private void buttonLogin_MouseLeave(object sender, EventArgs e)
+        {
+            buttonLogin.BackColor = Color.FromArgb(244, 211, 8);
+        }
+
+        private void buttonLogin_MouseEnter(object sender, EventArgs e)
+        {
+            buttonLogin.BackColor = Color.FromArgb(255, 222, 8);
+        }
+
+        private void buttonRegister_MouseEnter(object sender, EventArgs e)
+        {
+            buttonRegister.BackColor = Color.FromArgb(219, 75, 74);
+        }
+
+        private void buttonRegister_MouseLeave(object sender, EventArgs e)
+        {
+            buttonRegister.BackColor = Color.FromArgb(216, 40, 39);
         }
     }
 }

@@ -18,11 +18,11 @@ namespace PropaideiaApp
 {
     public partial class MainScreen : Form
     {
-        List<Button> buttonList = new List<Button>();
-        List<Panel> questionPanelList = new List<Panel>();
+        List<Button> buttonList = new List<Button>(); //List with all the side-menu buttons
+        List<Panel> questionPanelList = new List<Panel>(); //List with all 3 question panel types
         List<NumericUpDown> gradesList = new List<NumericUpDown>(); //Grades List for professor view
         List<Label> studentGrades = new List<Label>(); //Students Grades list
-        int currentNumber;
+        int currentNumber; //Shows currently selected propaideia number
 
         //When hiding a panel, it is moved to the side. Each panel has a separate spot so they don't become nested
         Point questionPoint = new Point(214, 96);
@@ -33,19 +33,18 @@ namespace PropaideiaApp
         Point hideSettings = new Point(797, 3);
         Point hideGrades = new Point(795, 323);
 
-        static int QUIZQUESTIONSNUM = 2;
-        static int EXAMQUESTIONSNUM = 4;
+        static int QUIZQUESTIONSNUM = 2; //Number of questions of each quiz
+        static int EXAMQUESTIONSNUM = 4; //Number of questions of the final exam
         static int questionCounter = 0;
         int grade;
 
-        //Database
+        //Quiz-Users object declarations
         private QuizManager quizManager;
         Question question;
 
         Student activeStudent;
         Professor activeProfessor;
         Student searchUser;
-
 
 
         public MainScreen()
@@ -85,7 +84,7 @@ namespace PropaideiaApp
             if (LoginScreen.userType == "student") //User is a Student
             {
                 activeStudent = StudentMapper.Get(LoginScreen.activeUser);
-                if(activeStudent.Level < 12)
+                if(activeStudent.Level < 12) //Update buttons based on quiz completion (Level)
                 {
                     for (int i = 0; i < activeStudent.Level; i++)
                     {
@@ -97,7 +96,7 @@ namespace PropaideiaApp
                     toolTipMain.SetToolTip(buttonList[activeStudent.Level - 1], "Διαβάστε την προπαίδεια και όταν είστε έτοιμοι δοκιμάστε το τεστ!");
                     buttonList[activeStudent.Level - 1].PerformClick();
                 }
-                else
+                else //Update all buttons as complete
                 {
                     for (int i = 0; i <= 10; i++)
                     {
@@ -107,7 +106,6 @@ namespace PropaideiaApp
                     }
                     buttonList[10].PerformClick();
                 }
-                
                 
                 pictureBoxGrades.Visible = true;
 
@@ -156,11 +154,11 @@ namespace PropaideiaApp
         {
             if(LoginScreen.userType == "student")
             {
-                System.Diagnostics.Process.Start(@"..\..\..\..\MainHelp.html");
+                Process.Start(@"..\..\..\..\MainHelp.html");
             }
             else
             {
-                System.Diagnostics.Process.Start(@"..\..\..\..\MainProfHelp.html");
+                Process.Start(@"..\..\..\..\MainProfHelp.html");
             }
             
         }
@@ -168,6 +166,7 @@ namespace PropaideiaApp
         //Student's Grades List
         private void pictureBoxGrades_Click(object sender, EventArgs e)
         {
+            //Show student grades
             resetQuiz();
             panelGrades.Location = new Point(193,65);
             panelGrades.Visible = true;
@@ -178,6 +177,7 @@ namespace PropaideiaApp
             panelSettings.Visible = false;
             buttonTakeQuiz.Visible = false;
 
+            //Fill the numbericUpDowns with the student's progress
             for(int i = 0; i < 10; i++)
             {
                 studentGrades[i].Text = activeStudent.StudentProgress.PropaideiaProgress[i].ToString();
@@ -187,6 +187,7 @@ namespace PropaideiaApp
 
         private void pictureBoxGradesBack_Click(object sender, EventArgs e)
         {
+            //Return to main menu
             panelGrades.Location = hideGrades;
             panelGrades.Visible = false;
             panelSettings.Visible = false;
@@ -196,6 +197,8 @@ namespace PropaideiaApp
             buttonTakeQuiz.Visible = true;
         }
 
+        //Clicking a sidemenu button updates the current propaideia number and changes the text in titles and textboxes
+        //If the user is in a quiz and clicks a sidemenu button, he leaves the quiz and all progress is lost
         private void button1_Click(object sender, EventArgs e)
         {
             labelTitleNumber.Text = "1";
@@ -288,6 +291,7 @@ namespace PropaideiaApp
 
         private void buttonFinalExam_Click(object sender, EventArgs e)
         {
+            //Show different text based on if the student has passed the final exam
             currentNumber = 0;
             if (activeStudent.Level == 12)
             {
@@ -310,6 +314,7 @@ namespace PropaideiaApp
         //Quiz Classes
         private void buttonTakeQuiz_Click(object sender, EventArgs e)
         {
+            //Start Quiz
             textBoxMain.Visible = false;
             pictureBoxNext.Visible = true;
             buttonTakeQuiz.Visible = false;
@@ -331,6 +336,7 @@ namespace PropaideiaApp
 
         private void pictureBoxNext_Click(object sender, EventArgs e)
         {
+            //Save answer and calls takeQuiz to go to the next question
             if (question.GetType().ToString() == "PropaideiaApp.Quizes.QuestionMC")
             {
                 if (radioButtonMult1.Checked)
@@ -383,7 +389,7 @@ namespace PropaideiaApp
             takeQuiz();
         }
 
-        private void takeQuiz() //Starts Quiz
+        private void takeQuiz() //show question based on it's type until we reach QUIZQUESTIONNUM number of questions
         {
             if(currentNumber != 0) //Quiz
             {
@@ -438,6 +444,7 @@ namespace PropaideiaApp
             
         }
 
+        //Quiz UI visibility updates
         private void showQuestionMult(string questionDescr, int[] answersList)
         {
             //Panel List: 0-Blank, 1-Multiple Choice, 2-True/False
@@ -476,6 +483,7 @@ namespace PropaideiaApp
 
         private void endQuiz()
         {
+            //hide every question
             questionPanelList[0].Visible = false;
             questionPanelList[0].Location = hideBlank;
             questionPanelList[1].Visible = false;
@@ -488,9 +496,11 @@ namespace PropaideiaApp
             panelResult.Visible = true;
             panelResult.Location = questionPoint;
 
+            //Get results-grade
             quizManager.GradeQuiz();
             grade = quizManager.QuizGrade;
 
+            //Update UI based on results
             progressBarResult.Value = grade;
             labelResultGrade.Text = grade.ToString() + "/100";
 
@@ -542,6 +552,7 @@ namespace PropaideiaApp
 
         private void buttonResult_Click(object sender, EventArgs e)
         {
+            //Continue button after quiz returns the user to the main screen
             panelResult.Visible = false;
             panelResult.Location = hideResult;
             panelTip.Visible = true;
@@ -552,6 +563,7 @@ namespace PropaideiaApp
         }
         private void resetQuiz()
         {
+            //hide every question and return to main screen
             questionPanelList[0].Visible = false;
             questionPanelList[0].Location = hideBlank;
             questionPanelList[1].Visible = false;
@@ -569,6 +581,7 @@ namespace PropaideiaApp
 
         }
 
+        //Change the main screen text content, based on the current active propaideia
         private void changeLesson(int current)
         {
             switch (current)
@@ -644,12 +657,14 @@ namespace PropaideiaApp
         }
         private void textBoxMain_Click(object sender, EventArgs e)
         {
+            //Avoiding cursor on textbox
             labelTitle.Focus();
         }
 
         //Settings classes
         private void pictureBoxSettings_Click(object sender, EventArgs e)
         {
+            //Show settings menu
             resetQuiz();
 
             panelMenu.Enabled = false;
@@ -669,6 +684,7 @@ namespace PropaideiaApp
         {
             if (!String.IsNullOrEmpty(textBoxChangeName.Text) && !String.IsNullOrEmpty(textBoxChangeSurname.Text) && Regex.IsMatch(textBoxChangeName.Text, @"^[a-zA-Z]+$") && Regex.IsMatch(textBoxChangeSurname.Text, @"^[a-zA-Z]+$"))
             {
+                //Change name and surname of a temp user and if StudentMapper. Update succeeds we replace the activeStudent with it
                 Student tempStudent = activeStudent;
                 tempStudent.Name = textBoxChangeName.Text;
                 tempStudent.Surname = textBoxChangeSurname.Text;
@@ -690,6 +706,7 @@ namespace PropaideiaApp
 
         private void buttonResetAccount_Click(object sender, EventArgs e)
         {
+            //After a warning, the student's progress is reset to 0
             if (MessageBox.Show("Are you sure you want to reset your account's progress?", "Reset Progress?", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 activeStudent.Level = 1;
@@ -708,6 +725,7 @@ namespace PropaideiaApp
 
         private void pictureBoxSettingsBack_Click(object sender, EventArgs e)
         {
+            //Return to main screen
             panelMenu.Enabled = true;
             panelSettings.Visible = false;
             panelSettings.Location = hideSettings;
@@ -722,8 +740,9 @@ namespace PropaideiaApp
         {
             if (!String.IsNullOrEmpty(textBoxSearch.Text))
             {
-                if (StudentMapper.Get(textBoxSearch.Text) != null)
+                if (StudentMapper.Get(textBoxSearch.Text) != null) //If the student exists
                 {
+                    //Display student's grades on the NumericUpDowns
                     searchUser = StudentMapper.Get(textBoxSearch.Text);
                     for (int i = 0; i < 10; i++)
                     {
@@ -746,6 +765,7 @@ namespace PropaideiaApp
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            //
             int tempLevel = 0;
             if(searchUser != null)
             {
@@ -753,7 +773,7 @@ namespace PropaideiaApp
                 {
                     if(gradesList[i].Value > 80)
                     {
-                        tempLevel = i + 2; //Find the highest passed propaideia
+                        tempLevel = i + 2; //Find the highest passed propaideia i.e. if propaideia 6 quiz is passed the Level should be 7 and because "i" starts from zero, we increase it by 2
                         searchUser.StudentProgress.PropaideiaProgress[i] = Convert.ToInt32(gradesList[i].Value);
                     }
                 }
