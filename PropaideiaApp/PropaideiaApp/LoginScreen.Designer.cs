@@ -257,6 +257,7 @@
             this.pictureBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxHelp.TabIndex = 28;
             this.pictureBoxHelp.TabStop = false;
+            this.toolTipLogin.SetToolTip(this.pictureBoxHelp, "Βοήθεια!");
             this.pictureBoxHelp.Click += new System.EventHandler(this.pictureBoxHelp_Click);
             // 
             // LoginScreen

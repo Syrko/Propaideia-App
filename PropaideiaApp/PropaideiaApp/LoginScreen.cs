@@ -50,12 +50,12 @@ namespace PropaideiaApp
                 }
                 else
                 {
-                    MessageBox.Show("User not found! To create an account please click the Register button!", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Δεν βρέθηκε ο χρήστης! Για να δημιουργήσετε ένα λογαριασμό παρακαλούμε πατήστε το κουμπί Εγγραφή!", "Ειδοποίηση", MessageBoxButtons.OK);
                 }
             }
             else
             {
-                MessageBox.Show("Please insert a username!", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Παρακαλούμε εισάγετε ένα όνομα χρήστη!", "Ειδοποίηση", MessageBoxButtons.OK);
             }
         }
 
@@ -78,7 +78,7 @@ namespace PropaideiaApp
                     {
                         if (StudentMapper.Insert(newStudent, textBoxPassword.Text))
                         {
-                            if (MessageBox.Show("User registered successfully!", "Registered Successfully!", MessageBoxButtons.OK) == DialogResult.OK)
+                            if (MessageBox.Show("Ο χρήστης εγγράφηκε επιτυχώς!", "Επιτυχής Εγγραφή!", MessageBoxButtons.OK) == DialogResult.OK)
                             {
                                 //auto login after register
                                 buttonLogin.PerformClick();
@@ -86,17 +86,17 @@ namespace PropaideiaApp
                         }
                         else
                         {
-                            MessageBox.Show("There was an error while creating the user!", "Error", MessageBoxButtons.OK);
+                            MessageBox.Show("Υπήρξε ένα σφάλμα κατά την δημιουργία του χρήστη!", "Σφάλμα", MessageBoxButtons.OK);
                         }
                     }
                     else
                     {
-                        MessageBox.Show("A user with this username already exists!", "Error", MessageBoxButtons.OK);
+                        MessageBox.Show("Υπάρχει ήδη ένας χρήστης με αυτό το όνομα χρήστη!", "Σφάλμα", MessageBoxButtons.OK);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please fill in all the above fields before registering!", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Παρακαλούμε συμπληρώστε όλα τα παραπάνω πεδιά πριν συνεχίσετε!", "Σφάλμα", MessageBoxButtons.OK);
                 }
             }
         }
@@ -124,7 +124,7 @@ namespace PropaideiaApp
 
         private void pictureBoxHelp_Click(object sender, EventArgs e)
         {
-            System.Diagnostics.Process.Start(@"..\..\..\..\MainHelp.html");
+            System.Diagnostics.Process.Start(@"OnlineHelp\MainHelp.html");
         }
 
         //Hover animations

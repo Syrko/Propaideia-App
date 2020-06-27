@@ -33,8 +33,8 @@ namespace PropaideiaApp
         Point hideSettings = new Point(797, 3);
         Point hideGrades = new Point(795, 323);
 
-        static int QUIZQUESTIONSNUM = 2; //Number of questions of each quiz
-        static int EXAMQUESTIONSNUM = 4; //Number of questions of the final exam
+        static int QUIZQUESTIONSNUM = 10; //Number of questions of each quiz
+        static int EXAMQUESTIONSNUM = 20; //Number of questions of the final exam
         static int questionCounter = 0;
         int grade;
 
@@ -154,11 +154,11 @@ namespace PropaideiaApp
         {
             if(LoginScreen.userType == "student")
             {
-                Process.Start(@"..\..\..\..\MainHelp.html");
+                Process.Start(@"OnlineHelp\MainHelp.html");
             }
             else
             {
-                Process.Start(@"..\..\..\..\MainProfHelp.html");
+                Process.Start(@"OnlineHelp\MainProfHelp.html");
             }
             
         }
@@ -353,7 +353,7 @@ namespace PropaideiaApp
                 }
                 else
                 {
-                    MessageBox.Show("Please select an answer before continuing", "Select an Answer", MessageBoxButtons.OK);
+                    MessageBox.Show("Παρακαλούμε επιλέξτε μια απάντηση πριν συνεχίσετε!", "Επιλέξτε μια απάντηση", MessageBoxButtons.OK);
                     return;
                 }
             }
@@ -369,7 +369,7 @@ namespace PropaideiaApp
                 }
                 else
                 {
-                    MessageBox.Show("Please select an answer to continue", "Select an Answer", MessageBoxButtons.OK);
+                    MessageBox.Show("Παρακαλούμε επιλέξτε μια απάντηση", "Επιλέξτε μια απάντηση", MessageBoxButtons.OK);
                     return;
                 }
             }
@@ -528,7 +528,7 @@ namespace PropaideiaApp
                 }
                 else
                 {
-                    labelResult.Text = "Δεν πέρασες το τεστ!\nΔιάβασε την προπαίδεια\nκαι ξαναδοκίμασε!";
+                    labelResult.Text = "Δεν πέρασες το τεστ!\nΔιάβασε ξανά την προπαίδεια\nκαι ξαναδοκίμασε!";
                 }
             }
             else //Final Exam
@@ -691,23 +691,23 @@ namespace PropaideiaApp
                 if (StudentMapper.Update(tempStudent))
                 {
                     activeStudent = tempStudent;
-                    MessageBox.Show("Account details updated successfully!", "Account Updated Successfully", MessageBoxButtons.OK);
+                    MessageBox.Show("Τα στοιχεία του λογαριασμού σας ενημερώθηκαν επιτυχώς!", "Ο λογαριασμός ενημερώθηκε επιτυχώς", MessageBoxButtons.OK);
                 }
                 else
                 {
-                    MessageBox.Show("Student details change failed!", "Error", MessageBoxButtons.OK);
+                    MessageBox.Show("Η αλλαγή των στοιχείων του μαθητή απέτυχε!", "Σφάλμα", MessageBoxButtons.OK);
                 }
             }
             else
             {
-                MessageBox.Show("Please type a valid name/surname!", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Παρακαλούμε πληκτρολογήστε ένα έγκυρο όνομα/επώνυμο!", "Ειδοποίηση", MessageBoxButtons.OK);
             }
         }
 
         private void buttonResetAccount_Click(object sender, EventArgs e)
         {
             //After a warning, the student's progress is reset to 0
-            if (MessageBox.Show("Are you sure you want to reset your account's progress?", "Reset Progress?", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("Είστε βέβαιοι ότι θέλετε να επαναφέτε την πρόοδο του λογαριασμού σας?", "Επαναφορά προόδου;", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 activeStudent.Level = 1;
                 activeStudent.StudentProgress.FinalExam = 0;
@@ -716,7 +716,7 @@ namespace PropaideiaApp
                     activeStudent.StudentProgress.PropaideiaProgress[i] = 0;
                 }
                 StudentMapper.Update(activeStudent);
-                MessageBox.Show("Your account has been reset! You will be redirected to the login screen!", "Account Reset", MessageBoxButtons.OK);
+                MessageBox.Show("Ο λογαριασμός σας έχει επαναφερθεί! Θα μεταφερθείτε στην οθόνη σύνδεσης!", "Επαναφορά Λογαριασμού", MessageBoxButtons.OK);
                 this.Hide();
                 LoginScreen loginForm = new LoginScreen();
                 loginForm.Show();
@@ -754,12 +754,12 @@ namespace PropaideiaApp
                 }
                 else
                 {
-                    MessageBox.Show("Student not found! Please try again!", "Not found", MessageBoxButtons.OK);
+                    MessageBox.Show("Δεν βρέθηκε ο μαθητής!", "Δεν βρέθηκε", MessageBoxButtons.OK);
                 }
             }
             else
             {
-                MessageBox.Show("Please type the username of the student first!", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Παρακαλούμε πληκτρολογήστε το όνομα χρήστη του μαθητή πρώτα!", "Ειδοποίηση", MessageBoxButtons.OK);
             }
         }
 
@@ -787,11 +787,11 @@ namespace PropaideiaApp
                 }
                 searchUser.StudentProgress.FinalExam = Convert.ToInt32(gradesList[10].Value);
                 StudentMapper.Update(searchUser);
-                MessageBox.Show(searchUser.Username + "'s grades have been updated successfully!", "Updated Successfully!", MessageBoxButtons.OK);
+                MessageBox.Show("Οι βαθμοί του " + searchUser.Username + " έχουν ενημερωθεί!", "Επιτυχής ενημέρωση!", MessageBoxButtons.OK);
             }
             else
             {
-                MessageBox.Show("Please search for a student first!", "Error", MessageBoxButtons.OK);
+                MessageBox.Show("Παρακαλούμε αναζητήστε πρώτα έναν μαθητή!", "Ειδοποίηση", MessageBoxButtons.OK);
             }
         }
         private void textBoxSearchResults_Click(object sender, EventArgs e)
