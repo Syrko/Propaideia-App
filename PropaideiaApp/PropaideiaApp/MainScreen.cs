@@ -765,7 +765,7 @@ namespace PropaideiaApp
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            //
+            //Save student's grades
             int tempLevel = 0;
             if(searchUser != null)
             {
